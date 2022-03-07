@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>在服务器部署jupyter notebook，实现服务器环境运算</title>
+      <link href="//post/jupyter-notebook.html"/>
+      <url>//post/jupyter-notebook.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="在服务器部署jupyter-notebook，实现服务器环境运算"><a href="#在服务器部署jupyter-notebook，实现服务器环境运算" class="headerlink" title="在服务器部署jupyter notebook，实现服务器环境运算"></a>在服务器部署jupyter notebook，实现服务器环境运算</h1><blockquote><p>大学时期为了借用服务器环境，已踩坑无数，今天突然想起来，部署着玩玩，python初学者也可使用jupyter notebook，ipython对python初学者很友好，也很适合做深度学习，数据分析等</p></blockquote><p>能实现随时随地在浏览器上进行Python处理数据等程序</p><p>效果：</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160131561.png" alt="image-20220216013107482"></p><h2 id="简单说下jupyter-notebook"><a href="#简单说下jupyter-notebook" class="headerlink" title="简单说下jupyter notebook"></a>简单说下jupyter notebook</h2><p>Jupyter notebook是一种 Web 应用，能让用户将说明文本、数学方程、代码和可视化内容全部组合到一个易于共享的文档中。与常规的py文件不同的是，Jupyter notebook主要运行的是ipython，ipython是一个python的交互式shell，非常适合进行科学计算和交互可视化。</p><p>看下图就能明白区别</p><p>iPython(Jupyter notebook)</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160100134.png" alt="image-20220216010041321"></p><p>Python：</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160128853.png" alt="image-20220216012827342"></p><h2 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h2><p>直接使用<code> pip install jupyter</code> 即可安装</p><p>但这里我们还是用anaconda，anaconda虽然很臃肿，但包含了许多的库，可以节省许多精力，<strong>即使不安装anaconda也是可以安装</strong></p><h3 id="anaconda安装"><a href="#anaconda安装" class="headerlink" title="anaconda安装"></a>anaconda安装</h3><p>在<a href="https://www.anaconda.com/">Anaconda官网</a>寻找适合linux的安装脚本，这里直接给出地址<a href="https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh">https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh</a></p><p>由于软件更新，地址可能出现失效，实际已官网提供为准。</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160142772.png" alt="image-20220216014226572"></p><p>下载好脚本后，用scp<code>或</code>ftp<code>上传至服务器</code>，当然也可直接在服务器<code>wget</code><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160141546.png" alt="image-20220216014144845"></p><p>运行安装脚本:</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">bash Anaconda3-2021.11-Linux-x86_64.sh</code></pre><p>这里的文件名以自己下载的为准</p><p>运行脚本后，为了方便基本可以全程回车和yes，但建议还是看每项是否都需要yes，一切根据自身情况判断</p><p>安装好后，需要配置环境变量，修改<code>/etc/profile</code>或者<code>/etc/bashrc</code>的配置信息来设置环境变量</p><p>在<code>/etc/profile</code> 中添加：</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">export PATH=$PATH:/root/anaconda3/bin</code></pre><p>这里的路径为你安装anaconda的目录</p><p>保存退出，执行<code>source /etc/profile</code></p><p>输入python3 ，看看环境：</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160147985.png" alt="image-20220216014727419"></p><p>如果是上图这样，则不成功，系统调用了原装的python3.6</p><p>执行python3.9，运行anaconda环境：</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160149595.png" alt="image-20220216014906051"></p><p>多版本python的情况可以利用别名进行区分：</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">alias python3=python3.9</code></pre><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160152179.png" alt="image-20220216015210129"></p><p> 安装好anaconda和python环境后，需要对jupyter进行配置</p><p>进入python，执行以下命令</p><pre class="line-numbers language-python" data-language="python"><code class="language-python">from notebook.auth import passwd passwd()</code></pre><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160948965.png" alt="image-20220216094836772"></p><p>此时提示需要输入密码，设置一个进入jupyter notebook的密码，系统会输出一个sha1加密的字符串，这个要保存下来，后面要用</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202160950884.png" alt="image-20220216095052523"></p><p>在终端执行jupyter 配置文件生成命令，如果是root用户执行的，加上<code>加上</code>–allow-config``</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">jupyter notebook --generate-configjupyter notebook --generate-config --allow-config</code></pre><p>如果提示找不到命令，请进入<code>anaconda3/etc/jupyter/</code> 目录下执行</p><p>此时会生成一个配置文件jupyter_notebook_config.py ，接着用编辑器打开（命令执行后有目录位置的提示）</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim ~/.jupyter/jupyter_notebook_config.py</code></pre><p>在配置文件中添加以下参数：</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"># 允许访问此服务器的 IP，星号表示任意 IPc.NotebookApp.ip = "*"# 运行时不打开本机浏览器c.NotebookAPp.open_browser = False# 之前生成的密码 hash 字串c.NotebookApp.password = 'sha1:781d82cc6080:e047e581703e4f0c6cd6ec4d037b244315aebe9c'# 使用的端口，记得在安全组中开放c.NotebookApp.port= 8000#指定后续程序的目录，创建好再启动c.NotebookApp.notebook_dir = "/root/jupyter_project"# 禁止使用终端c.NotebookApp.terminals_enabled = True</code></pre><p>其余注释的配置，感兴趣的可以自行查询效果，根据自己意愿进行配置</p><p>保存并退出</p><p>启动jupyter notebook</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">jupyter notebook --allow-root</code></pre><p>其中root用户才需要<code>--allow-root</code></p><p>此时系统会出现运行日志，如果报错可根据日志查询报错原因</p><p>如果成功运行，此时，用ip或域名加上刚才配置文件指定的ip，看看能不能访问到</p><p>如果成功进入，输入刚才你设置的密码即可</p><p>需要进行反向代理的，也可以配置nginx，这里不深入了</p><p>测试jupyter notebook</p><p>右上角new一个python3 ，此时会进入jupyter notebook编辑页面，尝试写一些代码，看看python和各类库是否正常</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202161006258.png" alt="image-20220216100627203"></p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202161021586.png" alt="image-20220216102155441"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 部署 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> python </tag>
+            
+            <tag> jupyter notebook </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>alias的详解与运维</title>
+      <link href="//post/alias.html"/>
+      <url>//post/alias.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="alias的详解"><a href="#alias的详解" class="headerlink" title="alias的详解"></a>alias的详解</h1><p>alias 可以为命令指定别名，所谓别名可以省去一长串命令的麻烦</p><h2 id="查看别名"><a href="#查看别名" class="headerlink" title="查看别名"></a>查看别名</h2><p>直接使用命令<code>alias</code>可以查看所有的别名，如果想看某一命令，在alias后跟命令即可</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202141523138.png" alt="image-20220214152355809"></p><h2 id="创建别名"><a href="#创建别名" class="headerlink" title="创建别名"></a>创建别名</h2><p>例如：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">alias newcmd='cmd'alias install='sudo apt-getinstall'</code></pre><p>上述方式一旦关闭终端，设置的别名就失效了</p><p>可以将命令放入 <del>/.bashrc 中，当每个进程生成时，都要执行`</del>/.bashrc`中的命令</p><h2 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h2><p><code>unalias</code> 命令可以将之前的别名删除</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">unalias vi</code></pre><p>使用<code>-a</code>参数可以清除所有的别名</p><h2 id="不使用别名"><a href="#不使用别名" class="headerlink" title="不使用别名"></a>不使用别名</h2><p>当我们为命令加上日常参数后，但有时需要使用原始的命令时，有三种方法可以调用原始命令</p><ol><li>使用命令的绝对路径</li><li>切换命令所在目录，使用<code>./cmd</code></li><li>在命令前使用反斜线<code>\</code></li></ol><p>别名</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文章 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Jenkins安装</title>
+      <link href="//post/jenkins-install.html"/>
+      <url>//post/jenkins-install.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Jenkins-安装"><a href="#Jenkins-安装" class="headerlink" title="Jenkins 安装"></a>Jenkins 安装</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 部署 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> 阿里云 </tag>
+            
+            <tag> Jenkins </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在服务器部署Jenkins同步github代码</title>
+      <link href="//post/jenkins-github.html"/>
+      <url>//post/jenkins-github.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="在服务器部署Jenkins同步github代码"><a href="#在服务器部署Jenkins同步github代码" class="headerlink" title="在服务器部署Jenkins同步github代码"></a>在服务器部署Jenkins同步github代码</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>使用hexo在github托管个人网站后，如果想要在自己的服务器上部署并且代码与github一致，可以使用Jenkins来同步</p><p>Jenkins可以监控github的动作，设置当代码push后，Jenkins监控到这一动作，自动拉取最新的代码</p><h2 id="Jenkins安装"><a href="#Jenkins安装" class="headerlink" title="Jenkins安装"></a><a href="">Jenkins安装</a></h2><h2 id="获取hook"><a href="#获取hook" class="headerlink" title="获取hook"></a>获取hook</h2><p>在安装Jenkins时，已经默认安装了github的插件，首先需要配置全局的github，在管理Jenkins中点击Configure System，进入设置。这里的入口与其他博客可能会有不同，请根据自己安装的Jenkins版本自行判断</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051315671.png" alt="image-20220205131509975"></p><p>找到github的配置块</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051315820.png" alt="image-20220205131557625"></p><p>Jenkins在关联Github前，需要准备好Hook，这个Hook需要点击高级，找到为 Github 指定另外一个 Hook URL，勾选这个CheckBox（一时想不起来中文叫啥了)，获取到这个URL</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051323334.png" alt="image-20220205132303844"></p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051323137.png" alt="image-20220205132229972"></p><h2 id="github添加hook"><a href="#github添加hook" class="headerlink" title="github添加hook"></a>github添加hook</h2><p>到github，选择需要同步的项目，进入设置界面，点击Webhooks</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051326764.png" alt="image-20220205132622973"></p><p>新建一个webhooks（右上角Add Webhooks）</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051328277.png" alt="image-20220205132829053"></p><p>这里的Payload URL填写刚才在Jenkins中的URL<code>http://ip:port/github-webhook/</code></p><p>下面选择第三个</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051329104.png" alt="image-20220205132951899"></p><p>在下面勾选Pushes<img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051330792.png" alt="image-20220205133026618"></p><p>最后点击添加即可</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051331682.png" alt="image-20220205133125556"></p><h2 id="生成sercret-text"><a href="#生成sercret-text" class="headerlink" title="生成sercret text"></a>生成sercret text</h2><p>添加好后，先别急关掉，此时还需要生成一个sercret text，进入github的设置，进入Developer setting，选择Personal Access Token 点击 Generate new token</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051339773.png" alt="image-20220205133943847"></p><p>选择这两个</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051340362.png" alt="image-20220205134047182"></p><p>生成即可</p><h2 id="Jenkins配置github"><a href="#Jenkins配置github" class="headerlink" title="Jenkins配置github"></a>Jenkins配置github</h2><p>返回Jenkins，这里的名称可以随便写</p><p>API URL保持默认<a href="https://api.github.com就行/">https://api.github.com就行</a></p><p>这里需要添加凭据</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051316492.png" alt="image-20220205131650075"></p><p>点击高亮的Jenkins进入添加凭据界面</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051342576.png" alt="image-20220205134249370"></p><p>类型选择sercret text，把刚才生成的sercret text添加到Secret中，id可不写，描述可简单描述即可</p><p>填完后点击下面添加，此时凭据界面就会有刚才添加的sercret text了</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051345485.png" alt="image-20220205134501227"></p><p>最后保存</p><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>回到主界面，新建一个项目，<img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051345969.png" alt="image-20220205134552671"></p><p>名称自己填，项目类型选择第一个Freestyle project<img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051346408.png" alt="image-20220205134639318"></p><p>点击确定添加</p><h2 id="配置github仓库"><a href="#配置github仓库" class="headerlink" title="配置github仓库"></a>配置github仓库</h2><p>进入配置界面，选择Github项目，填写仓库地址</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051347122.png" alt="image-20220205134743946"></p><p>源码管理使用Git</p><p>输入仓库的Git地址，例如<code>git@github.com:HeJayce/HeJayce.github.io.git</code></p><p>此时需要添加git的私钥，如果服务器已经配置好，可以直接在<code>.ssh/</code>文件夹找到，复制私钥，点击添加凭据，与刚才类似，但这里类型需要选择SSH Username with private key，其他可以适当写写，但重要的是在下面把私钥复制进去</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051352246.png" alt="image-20220205135210530"></p><p>分支根据自己情况填写，源码库浏览器选择githubweb，URL填写仓库地址</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051403853.png" alt="image-20220205135326208"></p><p>其他安装下图选择即可</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051354450.png" alt="image-20220205135438447"></p><p>最后点击保存即可，此时返回项目界面，点击立即构建，Jenkins就会把仓库代码clone下来，当出现绿色对勾即表示正常，前面的叉都是踩的坑，搞到4点多，终于搞定了</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202051356625.png" alt="image-20220205135614058"></p><p>由于我的项目是静态网页，只需要在Nginx中配置下路径即可</p><pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx">server {        listen       80;        server_name  填你的公网ip;        location / {            root /var/lib/jenkins/workspace/jayce_blog;            index index.html;        }    }</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 部署 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> github </tag>
+            
+            <tag> 阿里云 </tag>
+            
+            <tag> Jenkins </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用typora+阿里云oss打造博客写作平台</title>
+      <link href="//post/typora-oss.html"/>
+      <url>//post/typora-oss.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用typora-阿里云oss-打造博客写作平台"><a href="#使用typora-阿里云oss-打造博客写作平台" class="headerlink" title="使用typora+阿里云oss 打造博客写作平台"></a>使用typora+阿里云oss 打造博客写作平台</h1><h2 id="背景简介"><a href="#背景简介" class="headerlink" title="背景简介"></a>背景简介</h2><p>我使用typora+markdown作为日常笔记的重要工具，但markdown最大的痛点是图片需要单独存放，并不能像word那样保存为一个文件，而遇到分享文件，或者整片复制的情况时，就会出现不能正常显示图片的问题。</p><h2 id="方案介绍"><a href="#方案介绍" class="headerlink" title="方案介绍"></a>方案介绍</h2><p>利用阿里云oss，将涉及到的图片存放在云端，图片的url将是公网地址，不再局限于本机。使用onedrive可以对md文件进行同步，onedrive支持windows，ios，macos，Android同步，同步速度中规中矩。</p><h2 id="阿里云oss"><a href="#阿里云oss" class="headerlink" title="阿里云oss"></a>阿里云oss</h2><p>对象存储oss是阿里云提供的一种云端存储方案，它与网盘最大的区别是，它可以使用url进行查看，而且操作方便，价格实惠</p><p>阿里云oss价格参考</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202108191438597.png" alt="image-20210819143824267"></p><p>选择最便宜40G，存放图片完全够用。</p><p>类似的存储在不同平台也有很多，只是名字不一样而已，核心功能都一样</p><p>例如腾讯云cos</p><h2 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h2><h3 id="oss准备"><a href="#oss准备" class="headerlink" title="oss准备"></a>oss准备</h3><ol><li><p>到<a href="https://www.aliyun.com/product/oss/">阿里云oss产品官网</a>购买oss服务，根据自身需求购买相应的内存及性能</p></li><li><p>创建Bucket，Bucket相当于仓库，是你将来要存放数据的地方</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202108191445966.png" alt="image-20210819144518089"></p></li></ol><p>创建Bucket </p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202022133051.png" alt="image-20210819144620800"></p><p>我使用的图床软件是PicGo， 下载安装这里不多赘述，现在需要将oss的信息添加到PicGo 中，废话不多，直接上配置，打开配置文件，在阿里云的配置区域里，填写自己所买的accessKeyId和accessKeySecret，以及创建的bucket。</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202022133067.png" alt="image-20220202210957291"></p><p>记得在设置下面勾选阿里云oss</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202022111401.png" alt="image-20220202211152739"></p><pre class="line-numbers language-none"><code class="language-none">"aliyun": {    "accessKeyId": "*******",    "accessKeySecret": "********",    "area": "oss-cn-hangzhou",    "bucket": "jaycehe",    "customUrl": "",    "options": "",    "path": "markdown/"  },</code></pre><p>其次是<code>typora</code>软件，虽然现在收费了，但支持多平台并且真的好用的编辑软件也找不出来了</p><p>想要配置图床，先在偏好设置-图像</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202022104031.png" alt="image-20220202210411391"></p><p>把PicGo的路径添加进去，点击验证图片上传选项验证oss是否能正常上传，一般上传正常就会返回成功值</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202022114037.png" alt="image-20220202211414361"></p><p>但一般会大大小小出现一些问题，随后会更新问题概述及解决方法，如果出现上传失败，请先检查oss配置，多半问题都出在PicGo的配置和 OSS配置上，自己排查不出来也可以联系我。</p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>如果想用oss代替本地图片，首先正常添加图片至markdown文件后，右键即可弹出上传图片选项，点击即可替换图片的本地路径为oss在线链接</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202022122264.png" alt="image-20220202212256962"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 部署 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 阿里云 </tag>
+            
+            <tag> Markdown </tag>
+            
+            <tag> OSS </tag>
+            
+            <tag> typora </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>阿里云等国内服务器github加速</title>
+      <link href="//post/ecs-github.html"/>
+      <url>//post/ecs-github.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="阿里云等国内服务器github加速"><a href="#阿里云等国内服务器github加速" class="headerlink" title="阿里云等国内服务器github加速"></a>阿里云等国内服务器github加速</h1><p>解决在阿里云等国内的服务器上从github上拉代码，但网络不通的情况。</p><p>准备一个v2ray节点</p><h3 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h3><h4 id="安装v2ray"><a href="#安装v2ray" class="headerlink" title="安装v2ray"></a>安装v2ray</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh  --user-agent="Mozilla/5.0"</code></pre><p>如果下载不下来，请通过ftp等方式上传</p><h4 id="运行下载的脚本"><a href="#运行下载的脚本" class="headerlink" title="运行下载的脚本"></a>运行下载的脚本</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">bash install-release.sh</code></pre><p>这个过程时间会有点长，但实测阿里云网络可以安装</p><h4 id="运行v2ray"><a href="#运行v2ray" class="headerlink" title="运行v2ray"></a>运行v2ray</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl start v2ray</code></pre><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202201292331756.png" alt="image-20220129233139100"></p><h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>在你的Windows 等v2ray客户端下，将配置文件config.json的内容复制到<code>/usr/local/etc/v2ray/config.json</code>下</p><p>   方法：</p><p>   <img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202201292333040.png" alt="image-20220129233337800"></p><h4 id="重启v2ray"><a href="#重启v2ray" class="headerlink" title="重启v2ray"></a>重启v2ray</h4><h4 id="使用下命名可测试节点"><a href="#使用下命名可测试节点" class="headerlink" title="使用下命名可测试节点"></a>使用下命名可测试节点</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">/usr/local/bin/v2ray -test -config /usr/local/etc/v2ray/config.json</code></pre><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202201292335792.png" alt="image-20220129233516568"></p><p>检查端口是否通畅</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">lsof -i:10809</code></pre><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202201292336185.png" alt="image-20220129233619810"></p><p><code>lsof</code>没有命令的可yum install lsof</p><h4 id="添加github代理"><a href="#添加github代理" class="headerlink" title="添加github代理"></a>添加github代理</h4>   <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git config --global http.proxy http://127.0.0.1:10809git config --global https.proxy http://127.0.0.1:10809</code></pre><p>此时再克隆代码速度飞快</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202201292339343.png" alt="image-20220129233925182"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 部署 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> linux </tag>
+            
+            <tag> github </tag>
+            
+            <tag> 阿里云 </tag>
+            
+            <tag> v2ray </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

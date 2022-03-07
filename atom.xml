@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jayce&#39;s Blog</title>
+  
+  <subtitle>Jayce的运维小站</subtitle>
+  <link href="http://hejayce.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://hejayce.github.io/"/>
+  <updated>2022-03-07T04:06:50.495Z</updated>
+  <id>http://hejayce.github.io/</id>
+  
+  <author>
+    <name>Jayce he</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在服务器部署jupyter notebook，实现服务器环境运算</title>
+    <link href="http://hejayce.github.io/post/jupyter-notebook.html"/>
+    <id>http://hejayce.github.io/post/jupyter-notebook.html</id>
+    <published>2022-02-15T16:38:48.000Z</published>
+    <updated>2022-03-07T04:06:50.495Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;在服务器部署jupyter-notebook，实现服务器环境运算&quot;&gt;&lt;a href=&quot;#在服务器部署jupyter-notebook，实现服务器环境运算&quot; class=&quot;headerlink&quot; title=&quot;在服务器部署jupyter</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="服务器" scheme="http://hejayce.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="python" scheme="http://hejayce.github.io/tags/python/"/>
+    
+    <category term="jupyter notebook" scheme="http://hejayce.github.io/tags/jupyter-notebook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>alias的详解与运维</title>
+    <link href="http://hejayce.github.io/post/alias.html"/>
+    <id>http://hejayce.github.io/post/alias.html</id>
+    <published>2022-02-13T16:35:16.000Z</published>
+    <updated>2022-03-07T04:06:50.492Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;alias的详解&quot;&gt;&lt;a href=&quot;#alias的详解&quot; class=&quot;headerlink&quot; title=&quot;alias的详解&quot;&gt;&lt;/a&gt;alias的详解&lt;/h1&gt;&lt;p&gt;alias 可以为命令指定别名，所谓别名可以省去一长串命令的麻烦&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="文章" scheme="http://hejayce.github.io/categories/%E6%96%87%E7%AB%A0/"/>
+    
+    
+    <category term="运维" scheme="http://hejayce.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="服务器" scheme="http://hejayce.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jenkins安装</title>
+    <link href="http://hejayce.github.io/post/jenkins-install.html"/>
+    <id>http://hejayce.github.io/post/jenkins-install.html</id>
+    <published>2022-02-05T06:16:50.000Z</published>
+    <updated>2022-03-07T04:06:50.494Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Jenkins-安装&quot;&gt;&lt;a href=&quot;#Jenkins-安装&quot; class=&quot;headerlink&quot; title=&quot;Jenkins 安装&quot;&gt;&lt;/a&gt;Jenkins</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
+    
+    <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+    <category term="Jenkins" scheme="http://hejayce.github.io/tags/Jenkins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在服务器部署Jenkins同步github代码</title>
+    <link href="http://hejayce.github.io/post/jenkins-github.html"/>
+    <id>http://hejayce.github.io/post/jenkins-github.html</id>
+    <published>2022-02-04T20:10:46.000Z</published>
+    <updated>2022-03-07T04:06:50.493Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;在服务器部署Jenkins同步github代码&quot;&gt;&lt;a href=&quot;#在服务器部署Jenkins同步github代码&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
+    
+    <category term="github" scheme="http://hejayce.github.io/tags/github/"/>
+    
+    <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+    <category term="Jenkins" scheme="http://hejayce.github.io/tags/Jenkins/"/>
+    
+    <category term="hexo" scheme="http://hejayce.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用typora+阿里云oss打造博客写作平台</title>
+    <link href="http://hejayce.github.io/post/typora-oss.html"/>
+    <id>http://hejayce.github.io/post/typora-oss.html</id>
+    <published>2022-02-02T13:29:17.000Z</published>
+    <updated>2022-03-07T04:06:50.495Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;使用typora-阿里云oss-打造博客写作平台&quot;&gt;&lt;a href=&quot;#使用typora-阿里云oss-打造博客写作平台&quot; class=&quot;headerlink&quot; title=&quot;使用typora+阿里云oss</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+    <category term="Markdown" scheme="http://hejayce.github.io/tags/Markdown/"/>
+    
+    <category term="OSS" scheme="http://hejayce.github.io/tags/OSS/"/>
+    
+    <category term="typora" scheme="http://hejayce.github.io/tags/typora/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云等国内服务器github加速</title>
+    <link href="http://hejayce.github.io/post/ecs-github.html"/>
+    <id>http://hejayce.github.io/post/ecs-github.html</id>
+    <published>2022-01-31T07:24:52.000Z</published>
+    <updated>2022-03-07T04:06:50.493Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;阿里云等国内服务器github加速&quot;&gt;&lt;a href=&quot;#阿里云等国内服务器github加速&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="运维" scheme="http://hejayce.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="服务器" scheme="http://hejayce.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
+    
+    <category term="github" scheme="http://hejayce.github.io/tags/github/"/>
+    
+    <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+    <category term="v2ray" scheme="http://hejayce.github.io/tags/v2ray/"/>
+    
+  </entry>
+  
+</feed>
