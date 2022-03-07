@@ -5,7 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Jenkins安装, Jayce&#39;s Blog">
-    <meta name="description" content="Jenkins 安装">
+    <meta name="description" content="Jenkins 安装安装JDK下载jdk进入JDK下载官网 下载JDK
+这里选择下载131版本，如果版本较新也没问题，老版本下载链接 
+在服务器下创建安装的文件夹，在usr文件夹下创建java文件夹
+mkdir -p /usr/java
+将">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -458,7 +462,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3
+                    181
                 </div>
                 
 
@@ -483,7 +487,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Jenkins-安装"><a href="#Jenkins-安装" class="headerlink" title="Jenkins 安装"></a>Jenkins 安装</h1>
+                <h1 id="Jenkins-安装"><a href="#Jenkins-安装" class="headerlink" title="Jenkins 安装"></a>Jenkins 安装</h1><h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><h3 id="下载jdk"><a href="#下载jdk" class="headerlink" title="下载jdk"></a>下载jdk</h3><p>进入<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/#java8">JDK下载官网</a> 下载JDK</p>
+<p>这里选择下载131版本，如果版本较新也没问题，<a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html">老版本下载链接</a> </p>
+<p>在服务器下创建安装的文件夹，在<code>usr</code>文件夹下创建java文件夹</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir -p /usr/java</code></pre>
+<p>将下载好的JDK解压至该文件夹</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tar -zvxf jdk-8u131-linux-x64.tar.gz -C /usr/java</code></pre>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>与windows类似，Linux下配置环境变量只需修改配置文件即可</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim /etc/profile</code></pre>
+<p>在文件下添加：</p>
+<pre class="line-numbers language-none"><code class="language-none">#java
+export JAVA_HOME=/usr/java/jdk1.8.0_131
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</code></pre>
+<p>执行<code>source /etc/profile</code>生效</p>
+<p>执行<code>java -version</code> 如果返回版本号则安装成功</p>
+<h2 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h2>
                 
             </div>
             <hr/>
