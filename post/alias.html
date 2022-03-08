@@ -456,14 +456,14 @@ alia">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-07
+                    2022-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    233
+                    377
                 </div>
                 
 
@@ -507,7 +507,19 @@ alias install='sudo apt-get	install'</code></pre>
 <li>切换命令所在目录，使用<code>./cmd</code></li>
 <li>在命令前使用反斜线<code>\</code></li>
 </ol>
-<p>别名</p>
+<h2 id="别名永久生效"><a href="#别名永久生效" class="headerlink" title="别名永久生效"></a>别名永久生效</h2><p>我们通过 alias 命令设置的别名，仅限于在当前的 Shell 中使用，如果系统重启了，那么新设置的别名就失效了。</p>
+<p>如果想让别名永久有效的话，就需要把所有的别名设置方案加入到（$HOME）目录下的 .alias 文件中（如果系统中没有这个文件，你可以创建一个），然后在 .bashrc 文件中增加这样一段代码：</p>
+<pre class="line-numbers language-none"><code class="language-none"># Aliases
+if [ -f ~/.alias ]; then
+  . ~/.alias
+fi</code></pre>
+
+<p>.alias文件：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim .alias
+######
+alias tf='tail -f'  #动态查看文件变化</code></pre>
+
+<p>执行<code>source ~/.bashrc</code></p>
 
                 
             </div>
