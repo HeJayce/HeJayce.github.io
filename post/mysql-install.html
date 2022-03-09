@@ -4,13 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="alias的详解与运维, Jayce&#39;s Blog">
-    <meta name="description" content="alias的详解alias 可以为命令指定别名，所谓别名可以省去一长串命令的麻烦
-查看别名直接使用命令alias可以查看所有的别名，如果想看某一命令，在alias后跟命令即可
+    <meta name="keywords" content="mysql 在ubuntu和centos上的安装, Jayce&#39;s Blog">
+    <meta name="description" content="mysql 在ubuntu和centos上的安装ubuntu系统：Ubuntu16.04
+apt-get update
+apt-get install mysql-server
 
-创建别名例如：
-alias newcmd=&#39;cmd&#39;
-alia">
+需要注意的是，在安装mysql 后是不可以使用navicat">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +22,7 @@ alia">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>alias的详解与运维 | Jayce&#39;s Blog</title>
+    <title>mysql 在ubuntu和centos上的安装 | Jayce&#39;s Blog</title>
     <link rel="icon" type="image/png" href="http://jaycehe.oss-accelerate.aliyuncs.com/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/awesome/css/all.min.css">
@@ -295,12 +294,12 @@ alia">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">alias的详解与运维</h1>
+                    <h1 class="description center-align post-title">mysql 在ubuntu和centos上的安装</h1>
                 </div>
             </div>
         </div>
@@ -414,33 +413,12 @@ alia">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                                <span class="chip bg-color">运维</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                <span class="chip bg-color">服务器</span>
-                            </a>
-                        
-                            <a href="/tags/linux/">
-                                <span class="chip bg-color">linux</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%96%87%E7%AB%A0/" class="post-category">
-                                文章
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -449,21 +427,21 @@ alia">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-14
+                    2022-03-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-08
+                    2022-03-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    377
+                    344
                 </div>
                 
 
@@ -488,38 +466,51 @@ alia">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="alias的详解"><a href="#alias的详解" class="headerlink" title="alias的详解"></a>alias的详解</h1><p>alias 可以为命令指定别名，所谓别名可以省去一长串命令的麻烦</p>
-<h2 id="查看别名"><a href="#查看别名" class="headerlink" title="查看别名"></a>查看别名</h2><p>直接使用命令<code>alias</code>可以查看所有的别名，如果想看某一命令，在alias后跟命令即可</p>
-<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202141523138.png" alt="image-20220214152355809"></p>
-<h2 id="创建别名"><a href="#创建别名" class="headerlink" title="创建别名"></a>创建别名</h2><p>例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">alias newcmd='cmd'
-alias install='sudo apt-get	install'</code></pre>
+                <h1 id="mysql-在ubuntu和centos上的安装"><a href="#mysql-在ubuntu和centos上的安装" class="headerlink" title="mysql 在ubuntu和centos上的安装"></a>mysql 在ubuntu和centos上的安装</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><p>系统：Ubuntu16.04</p>
+<pre class="line-numbers language-none"><code class="language-none">apt-get update
+apt-get install mysql-server</code></pre>
 
-<p>上述方式一旦关闭终端，设置的别名就失效了</p>
-<p>可以将命令放入 <del>/.bashrc 中，当每个进程生成时，都要执行`</del>/.bashrc`中的命令</p>
-<h2 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h2><p><code>unalias</code> 命令可以将之前的别名删除</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">unalias vi</code></pre>
+<p>需要注意的是，在安装mysql 后是不可以使用navicat等远程工具进行连接的</p>
+<p>默认安装后，3306端口只绑定给了localhost，所以外网是无法访问的</p>
+<p>解决方法：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre>
 
-<p>使用<code>-a</code>参数可以清除所有的别名</p>
-<h2 id="不使用别名"><a href="#不使用别名" class="headerlink" title="不使用别名"></a>不使用别名</h2><p>当我们为命令加上日常参数后，但有时需要使用原始的命令时，有三种方法可以调用原始命令</p>
-<ol>
-<li>使用命令的绝对路径</li>
-<li>切换命令所在目录，使用<code>./cmd</code></li>
-<li>在命令前使用反斜线<code>\</code></li>
-</ol>
-<h2 id="别名永久生效"><a href="#别名永久生效" class="headerlink" title="别名永久生效"></a>别名永久生效</h2><p>我们通过 alias 命令设置的别名，仅限于在当前的 Shell 中使用，如果系统重启了，那么新设置的别名就失效了。</p>
-<p>如果想让别名永久有效的话，就需要把所有的别名设置方案加入到（$HOME）目录下的 .alias 文件中（如果系统中没有这个文件，你可以创建一个），然后在 .bashrc 文件中增加这样一段代码：</p>
-<pre class="line-numbers language-none"><code class="language-none"># Aliases
-if [ -f ~/.alias ]; then
-  . ~/.alias
-fi</code></pre>
+<p>将bind-address   = 127.0.0.1注释掉</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203091514554.png" alt="image-20210721175850771"></p>
+<p>重启即可</p>
+<pre class="line-numbers language-none"><code class="language-none">systemctl restart mysql 
+service mysql restart</code></pre>
 
-<p>.alias文件：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim .alias
-######
-alias tf='tail -f'  #动态查看文件变化</code></pre>
+<p> 接着授予权限：</p>
+<h2 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h2><p>系统：centos7</p>
+<p>下载mysql5.7的本地仓库文件</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</code></pre>
 
-<p>执行<code>source ~/.bashrc</code></p>
+<p>将仓库信息添加至yum</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install mysql57-community-release-el7-10.noarch.rpm</code></pre>
+
+<p>接着在通过yum进行安装</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install mysql-community-server --nogpgcheck</code></pre>
+
+<p>此时mysql会取代mariadb</p>
+<p>启动mysql服务</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl start mysqld
+systemctl status mysqld</code></pre>
+
+<p>此时的登陆密码存放在文件里，查看密码，用该初始化密码登录</p>
+<pre class="line-numbers language-none"><code class="language-none">grep "A temporary password is generated" /var/log/mysqld.log|awk '{print $11}'</code></pre>
+
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203091514491.png" alt="image-20220309150733851"></p>
+<p>使用命令登录数据库后，修改该默认密码，否则无法使用</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER USER 'root'@'localhost' IDENTIFIED BY '$Password';</code></pre>
+
+<p>其中，新密码必须使用大写，小写，数字和特殊字符组成</p>
+<p>开启远程登录</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;
+flush privileges; </code></pre>
+
+<p>其中%代表所有ip，password替换为数据库密码。</p>
+<p>centos一键部署脚本：<a target="_blank" rel="noopener" href="https://github.com/HeJayce/linux-and-shell/blob/main/mysql_install.sh">Rate limit · GitHub</a>，初来乍到，有错请指教，默认密码为<code>Abc123!@#</code></p>
 
                 
             </div>
@@ -546,7 +537,7 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://HeJayce.github.io/post/alias.html">http://HeJayce.github.io/post/alias.html</a>
+                    <a href="http://HeJayce.github.io/post/mysql-install.html">http://HeJayce.github.io/post/mysql-install.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,19 +574,7 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                                    <span class="chip bg-color">运维</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                    <span class="chip bg-color">服务器</span>
-                                </a>
-                            
-                                <a href="/tags/linux/">
-                                    <span class="chip bg-color">linux</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1033,9 +1012,48 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/post/mysql-install.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/3.jpg" class="responsive-img" alt="mysql 在ubuntu和centos上的安装">
+                        
+                        <span class="card-title">mysql 在ubuntu和centos上的安装</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Jayce he
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/post/jupyter-notebook.html">
                     <div class="card-image">
@@ -1053,9 +1071,9 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1081,63 +1099,6 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                     
                     <a href="/tags/jupyter-notebook/">
                         <span class="chip bg-color">jupyter notebook</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/post/jenkins-install.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/18.jpg" class="responsive-img" alt="Jenkins安装">
-                        
-                        <span class="card-title">Jenkins安装</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
-                    </a>
-                    
-                    <a href="/tags/Jenkins/">
-                        <span class="chip bg-color">Jenkins</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                        <span class="chip bg-color">阿里云</span>
                     </a>
                     
                 </div>

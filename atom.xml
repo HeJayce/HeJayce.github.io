@@ -6,7 +6,7 @@
   <link href="http://hejayce.github.io/atom.xml" rel="self"/>
   
   <link href="http://hejayce.github.io/"/>
-  <updated>2022-03-07T04:06:50.495Z</updated>
+  <updated>2022-03-09T07:22:12.783Z</updated>
   <id>http://hejayce.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql 在ubuntu和centos上的安装</title>
+    <link href="http://hejayce.github.io/post/mysql-install.html"/>
+    <id>http://hejayce.github.io/post/mysql-install.html</id>
+    <published>2022-03-09T07:14:07.000Z</published>
+    <updated>2022-03-09T07:22:12.783Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mysql-在ubuntu和centos上的安装&quot;&gt;&lt;a href=&quot;#mysql-在ubuntu和centos上的安装&quot; class=&quot;headerlink&quot; title=&quot;mysql 在ubuntu和centos上的安装&quot;&gt;&lt;/a&gt;mysql</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>在服务器部署jupyter notebook，实现服务器环境运算</title>
@@ -98,9 +119,9 @@
     
     <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
     
-    <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
-    
     <category term="Jenkins" scheme="http://hejayce.github.io/tags/Jenkins/"/>
+    
+    <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
   </entry>
   
@@ -127,11 +148,11 @@
     
     <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
     
+    <category term="Jenkins" scheme="http://hejayce.github.io/tags/Jenkins/"/>
+    
     <category term="github" scheme="http://hejayce.github.io/tags/github/"/>
     
     <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
-    
-    <category term="Jenkins" scheme="http://hejayce.github.io/tags/Jenkins/"/>
     
     <category term="hexo" scheme="http://hejayce.github.io/tags/hexo/"/>
     
