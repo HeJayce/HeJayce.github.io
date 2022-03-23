@@ -64,7 +64,7 @@
       <link href="//post/alias.html"/>
       <url>//post/alias.html</url>
       
-        <content type="html"><![CDATA[<h1 id="alias的详解"><a href="#alias的详解" class="headerlink" title="alias的详解"></a>alias的详解</h1><p>alias 可以为命令指定别名，所谓别名可以省去一长串命令的麻烦</p><h2 id="查看别名"><a href="#查看别名" class="headerlink" title="查看别名"></a>查看别名</h2><p>直接使用命令<code>alias</code>可以查看所有的别名，如果想看某一命令，在alias后跟命令即可</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202141523138.png" alt="image-20220214152355809"></p><h2 id="创建别名"><a href="#创建别名" class="headerlink" title="创建别名"></a>创建别名</h2><p>例如：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">alias newcmd='cmd'alias install='sudo apt-getinstall'</code></pre><p>上述方式一旦关闭终端，设置的别名就失效了</p><p>可以将命令放入 <del>/.bashrc 中，当每个进程生成时，都要执行`</del>/.bashrc`中的命令</p><h2 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h2><p><code>unalias</code> 命令可以将之前的别名删除</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">unalias vi</code></pre><p>使用<code>-a</code>参数可以清除所有的别名</p><h2 id="不使用别名"><a href="#不使用别名" class="headerlink" title="不使用别名"></a>不使用别名</h2><p>当我们为命令加上日常参数后，但有时需要使用原始的命令时，有三种方法可以调用原始命令</p><ol><li>使用命令的绝对路径</li><li>切换命令所在目录，使用<code>./cmd</code></li><li>在命令前使用反斜线<code>\</code></li></ol><h2 id="别名永久生效"><a href="#别名永久生效" class="headerlink" title="别名永久生效"></a>别名永久生效</h2><p>我们通过 alias 命令设置的别名，仅限于在当前的 Shell 中使用，如果系统重启了，那么新设置的别名就失效了。</p><p>如果想让别名永久有效的话，就需要把所有的别名设置方案加入到（$HOME）目录下的 .alias 文件中（如果系统中没有这个文件，你可以创建一个），然后在 .bashrc 文件中增加这样一段代码：</p><pre class="line-numbers language-none"><code class="language-none"># Aliasesif [ -f ~/.alias ]; then  . ~/.aliasfi</code></pre><p>.alias文件：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim .alias######alias tf='tail -f'  #动态查看文件变化</code></pre><p>执行<code>source ~/.bashrc</code></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="alias的详解"><a href="#alias的详解" class="headerlink" title="alias的详解"></a>alias的详解</h1><p>alias 可以为命令指定别名，所谓别名可以省去一长串命令的麻烦</p><h2 id="查看别名"><a href="#查看别名" class="headerlink" title="查看别名"></a>查看别名</h2><p>直接使用命令<code>alias</code>可以查看所有的别名，如果想看某一命令，在alias后跟命令即可</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202202141523138.png" alt="image-20220214152355809"></p><h2 id="创建别名"><a href="#创建别名" class="headerlink" title="创建别名"></a>创建别名</h2><p>例如：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">alias newcmd='cmd'alias install='sudo apt-getinstall'</code></pre><p>上述方式一旦关闭终端，设置的别名就失效了</p><p>可以将命令放入 <del>/.bashrc 中，当每个进程生成时，都要执行`</del>/.bashrc`中的命令</p><h2 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h2><p><code>unalias</code> 命令可以将之前的别名删除</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">unalias vi</code></pre><p>使用<code>-a</code>参数可以清除所有的别名</p><h2 id="不使用别名"><a href="#不使用别名" class="headerlink" title="不使用别名"></a>不使用别名</h2><p>当我们为命令加上日常参数后，但有时需要使用原始的命令时，有三种方法可以调用原始命令</p><ol><li>使用命令的绝对路径</li><li>切换命令所在目录，使用<code>./cmd</code></li><li>在命令前使用反斜线<code>\</code></li></ol><h2 id="别名永久生效"><a href="#别名永久生效" class="headerlink" title="别名永久生效"></a>别名永久生效</h2><p>我们通过 alias 命令设置的别名，仅限于在当前的 Shell 中使用，如果系统重启了，那么新设置的别名就失效了。</p><p>如果想让别名永久有效的话，就需要把所有的别名设置方案加入到（$HOME）目录下的 .alias 文件中（如果系统中没有这个文件，你可以创建一个），然后在 .bashrc 文件中增加这样一段代码：</p><pre class="line-numbers language-none"><code class="language-none"># Aliasesif [ -f ~/.alias ]; then  . ~/.aliasfi</code></pre><p>.alias文件：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim .alias######alias tf='tail -f'  #动态查看文件变化</code></pre><p>执行<code>source ~/.bashrc</code></p><h2 id="安全删除"><a href="#安全删除" class="headerlink" title="安全删除"></a>安全删除</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">alias rm='saferm(){ /bin/cp -a $@ ~/backup;rm $@; };saferm $@'</code></pre>]]></content>
       
       
       <categories>
@@ -107,9 +107,9 @@
             
             <tag> linux </tag>
             
-            <tag> 阿里云 </tag>
-            
             <tag> Jenkins </tag>
+            
+            <tag> 阿里云 </tag>
             
         </tags>
       
@@ -136,11 +136,11 @@
             
             <tag> linux </tag>
             
-            <tag> github </tag>
+            <tag> Jenkins </tag>
             
             <tag> 阿里云 </tag>
             
-            <tag> Jenkins </tag>
+            <tag> github </tag>
             
             <tag> hexo </tag>
             
@@ -204,9 +204,9 @@
             
             <tag> linux </tag>
             
-            <tag> github </tag>
-            
             <tag> 阿里云 </tag>
+            
+            <tag> github </tag>
             
             <tag> v2ray </tag>
             
