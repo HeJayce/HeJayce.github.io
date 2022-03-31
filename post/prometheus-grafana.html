@@ -4,12 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mysql 在ubuntu和centos上的安装, Jayce&#39;s Blog">
-    <meta name="description" content="mysql 在ubuntu和centos上的安装ubuntu系统：Ubuntu16.04
-apt-get update
-apt-get install mysql-server
-
-需要注意的是，在安装mysql 后是不可以使用navicat">
+    <meta name="keywords" content="使用typora+阿里云oss打造博客写作平台, Jayce&#39;s Blog">
+    <meta name="description" content="使用grafana可视化仪表监控服务器数据和nginx吞吐">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +18,7 @@ apt-get install mysql-server
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mysql 在ubuntu和centos上的安装 | Jayce&#39;s Blog</title>
+    <title>使用typora+阿里云oss打造博客写作平台 | Jayce&#39;s Blog</title>
     <link rel="icon" type="image/png" href="http://jaycehe.oss-accelerate.aliyuncs.com/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/awesome/css/all.min.css">
@@ -294,12 +290,12 @@ apt-get install mysql-server
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mysql 在ubuntu和centos上的安装</h1>
+                    <h1 class="description center-align post-title">使用typora+阿里云oss打造博客写作平台</h1>
                 </div>
             </div>
         </div>
@@ -415,12 +411,20 @@ apt-get install mysql-server
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                <span class="chip bg-color">服务器</span>
+                            <a href="/tags/Prometheus/">
+                                <span class="chip bg-color">Prometheus</span>
                             </a>
                         
-                            <a href="/tags/mysql/">
-                                <span class="chip bg-color">mysql</span>
+                            <a href="/tags/grafana/">
+                                <span class="chip bg-color">grafana</span>
+                            </a>
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">
+                                <span class="chip bg-color">可视化</span>
                             </a>
                         
                     </div>
@@ -444,7 +448,7 @@ apt-get install mysql-server
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-09
+                    2022-02-02
                 </div>
                 
 
@@ -458,7 +462,7 @@ apt-get install mysql-server
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    343
+                    1
                 </div>
                 
 
@@ -483,52 +487,7 @@ apt-get install mysql-server
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="mysql-在ubuntu和centos上的安装"><a href="#mysql-在ubuntu和centos上的安装" class="headerlink" title="mysql 在ubuntu和centos上的安装"></a>mysql 在ubuntu和centos上的安装</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><p>系统：Ubuntu16.04</p>
-<pre class="line-numbers language-none"><code class="language-none">apt-get update
-apt-get install mysql-server</code></pre>
-
-<p>需要注意的是，在安装mysql 后是不可以使用navicat等远程工具进行连接的</p>
-<p>默认安装后，3306端口只绑定给了localhost，所以外网是无法访问的</p>
-<p>解决方法：</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre>
-
-<p>将bind-address   = 127.0.0.1注释掉</p>
-<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203091514554.png" alt="image-20210721175850771"></p>
-<p>重启即可</p>
-<pre class="line-numbers language-none"><code class="language-none">systemctl restart mysql 
-service mysql restart</code></pre>
-
-<p> 接着授予权限：</p>
-<h2 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h2><p>系统：centos7</p>
-<p>下载mysql5.7的本地仓库文件</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</code></pre>
-
-<p>将仓库信息添加至yum</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install mysql57-community-release-el7-10.noarch.rpm</code></pre>
-
-<p>接着在通过yum进行安装</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install mysql-community-server --nogpgcheck</code></pre>
-
-<p>此时mysql会取代mariadb</p>
-<p>启动mysql服务</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl start mysqld
-systemctl status mysqld</code></pre>
-
-<p>此时的登陆密码存放在文件里，查看密码，用该初始化密码登录</p>
-<pre class="line-numbers language-none"><code class="language-none">grep "A temporary password is generated" /var/log/mysqld.log|awk '{print $11}'</code></pre>
-
-<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203091514491.png" alt="image-20220309150733851"></p>
-<p>使用命令登录数据库后，修改该默认密码，否则无法使用</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER USER 'root'@'localhost' IDENTIFIED BY '$Password';</code></pre>
-
-<p>其中，新密码必须使用大写，小写，数字和特殊字符组成</p>
-<p>开启远程登录</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;
-flush privileges; </code></pre>
-
-<p>其中%代表所有ip，password替换为数据库密码。</p>
-<h2 id="centos一键部署脚本"><a href="#centos一键部署脚本" class="headerlink" title="centos一键部署脚本"></a>centos一键部署脚本</h2><p><strong><a target="_blank" rel="noopener" href="https://github.com/HeJayce/linux-and-shell/blob/main/mysql/mysql_install.sh">Rate limit · GitHub</a>，初来乍到，有错请指教，默认密码为<code>Abc123!@#</code></strong></p>
-
+                <h1 id="Prometheus-grafana"><a href="#Prometheus-grafana" class="headerlink" title="Prometheus_grafana"></a>Prometheus_grafana</h1>
                 
             </div>
             <hr/>
@@ -554,7 +513,7 @@ flush privileges; </code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://HeJayce.github.io/post/mysql-install.html">http://HeJayce.github.io/post/mysql-install.html</a>
+                    <a href="http://HeJayce.github.io/post/prometheus-grafana.html">http://HeJayce.github.io/post/prometheus-grafana.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -592,12 +551,20 @@ flush privileges; </code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                    <span class="chip bg-color">服务器</span>
+                                <a href="/tags/Prometheus/">
+                                    <span class="chip bg-color">Prometheus</span>
                                 </a>
                             
-                                <a href="/tags/mysql/">
-                                    <span class="chip bg-color">mysql</span>
+                                <a href="/tags/grafana/">
+                                    <span class="chip bg-color">grafana</span>
+                                </a>
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">
+                                    <span class="chip bg-color">可视化</span>
                                 </a>
                             
                         </div>
@@ -1037,30 +1004,29 @@ flush privileges; </code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/post/mysql-install.html">
+                <a href="/post/jenkins-github.html">
                     <div class="card-image">
                         
                         
-                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/3.jpg" class="responsive-img" alt="mysql 在ubuntu和centos上的安装">
+                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/22.jpg" class="responsive-img" alt="在服务器部署Jenkins同步github代码">
                         
-                        <span class="card-title">mysql 在ubuntu和centos上的安装</span>
+                        <span class="card-title">在服务器部署Jenkins同步github代码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在服务器部署Jenkins同步github代码
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1073,16 +1039,27 @@ flush privileges; </code></pre>
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">服务器</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
-                    <a href="/tags/mysql/">
-                        <span class="chip bg-color">mysql</span>
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
+                        <span class="chip bg-color">阿里云</span>
+                    </a>
+                    
+                    <a href="/tags/Jenkins/">
+                        <span class="chip bg-color">Jenkins</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>
@@ -1096,24 +1073,24 @@ flush privileges; </code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/jupyter-notebook.html">
+                <a href="/post/typora-oss.html">
                     <div class="card-image">
                         
                         
-                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/5.jpg" class="responsive-img" alt="在服务器部署jupyter notebook，实现服务器环境运算">
+                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/1.jpg" class="responsive-img" alt="使用typora+阿里云oss打造博客写作平台">
                         
-                        <span class="card-title">在服务器部署jupyter notebook，实现服务器环境运算</span>
+                        <span class="card-title">使用typora+阿里云oss打造博客写作平台</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在github，markdown，web等文件中使用oss取代本地图片文件
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-02
                             </span>
                         <span class="publish-author">
                             
@@ -1130,16 +1107,20 @@ flush privileges; </code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">服务器</span>
+                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
+                        <span class="chip bg-color">阿里云</span>
                     </a>
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
-                    <a href="/tags/jupyter-notebook/">
-                        <span class="chip bg-color">jupyter notebook</span>
+                    <a href="/tags/OSS/">
+                        <span class="chip bg-color">OSS</span>
+                    </a>
+                    
+                    <a href="/tags/typora/">
+                        <span class="chip bg-color">typora</span>
                     </a>
                     
                 </div>

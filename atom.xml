@@ -6,7 +6,7 @@
   <link href="http://hejayce.github.io/atom.xml" rel="self"/>
   
   <link href="http://hejayce.github.io/"/>
-  <updated>2022-03-09T08:35:52.105Z</updated>
+  <updated>2022-03-31T02:26:26.776Z</updated>
   <id>http://hejayce.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://hejayce.github.io/post/mysql-install.html"/>
     <id>http://hejayce.github.io/post/mysql-install.html</id>
     <published>2022-03-09T07:14:07.000Z</published>
-    <updated>2022-03-09T08:35:52.105Z</updated>
+    <updated>2022-03-31T02:26:26.776Z</updated>
     
     
       
@@ -166,10 +166,41 @@
   
   <entry>
     <title>使用typora+阿里云oss打造博客写作平台</title>
+    <link href="http://hejayce.github.io/post/prometheus-grafana.html"/>
+    <id>http://hejayce.github.io/post/prometheus-grafana.html</id>
+    <published>2022-02-02T13:29:17.000Z</published>
+    <updated>2022-03-31T00:58:02.542Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Prometheus-grafana&quot;&gt;&lt;a href=&quot;#Prometheus-grafana&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="Prometheus" scheme="http://hejayce.github.io/tags/Prometheus/"/>
+    
+    <category term="grafana" scheme="http://hejayce.github.io/tags/grafana/"/>
+    
+    <category term="Linux" scheme="http://hejayce.github.io/tags/Linux/"/>
+    
+    <category term="可视化" scheme="http://hejayce.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用typora+阿里云oss打造博客写作平台</title>
     <link href="http://hejayce.github.io/post/typora-oss.html"/>
     <id>http://hejayce.github.io/post/typora-oss.html</id>
     <published>2022-02-02T13:29:17.000Z</published>
-    <updated>2022-03-07T06:55:28.708Z</updated>
+    <updated>2022-03-30T08:47:49.563Z</updated>
     
     
       

@@ -8,7 +8,7 @@
       <link href="//post/mysql-install.html"/>
       <url>//post/mysql-install.html</url>
       
-        <content type="html"><![CDATA[<h1 id="mysql-在ubuntu和centos上的安装"><a href="#mysql-在ubuntu和centos上的安装" class="headerlink" title="mysql 在ubuntu和centos上的安装"></a>mysql 在ubuntu和centos上的安装</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><p>系统：Ubuntu16.04</p><pre class="line-numbers language-none"><code class="language-none">apt-get updateapt-get install mysql-server</code></pre><p>需要注意的是，在安装mysql 后是不可以使用navicat等远程工具进行连接的</p><p>默认安装后，3306端口只绑定给了localhost，所以外网是无法访问的</p><p>解决方法：</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre><p>将bind-address   = 127.0.0.1注释掉</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203091514554.png" alt="image-20210721175850771"></p><p>重启即可</p><pre class="line-numbers language-none"><code class="language-none">systemctl restart mysql service mysql restart</code></pre><p> 接着授予权限：</p><h2 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h2><p>系统：centos7</p><p>下载mysql5.7的本地仓库文件</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</code></pre><p>将仓库信息添加至yum</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install mysql57-community-release-el7-10.noarch.rpm</code></pre><p>接着在通过yum进行安装</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install mysql-community-server --nogpgcheck</code></pre><p>此时mysql会取代mariadb</p><p>启动mysql服务</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl start mysqldsystemctl status mysqld</code></pre><p>此时的登陆密码存放在文件里，查看密码，用该初始化密码登录</p><pre class="line-numbers language-none"><code class="language-none">grep "A temporary password is generated" /var/log/mysqld.log|awk '{print $11}'</code></pre><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203091514491.png" alt="image-20220309150733851"></p><p>使用命令登录数据库后，修改该默认密码，否则无法使用</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER USER 'root'@'localhost' IDENTIFIED BY '$Password';</code></pre><p>其中，新密码必须使用大写，小写，数字和特殊字符组成</p><p>开启远程登录</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;flush privileges; </code></pre><p>其中%代表所有ip，password替换为数据库密码。</p><p>centos一键部署脚本：<a href="https://github.com/HeJayce/linux-and-shell/blob/main/mysql_install.sh">Rate limit · GitHub</a>，初来乍到，有错请指教，默认密码为<code>Abc123!@#</code></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="mysql-在ubuntu和centos上的安装"><a href="#mysql-在ubuntu和centos上的安装" class="headerlink" title="mysql 在ubuntu和centos上的安装"></a>mysql 在ubuntu和centos上的安装</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><p>系统：Ubuntu16.04</p><pre class="line-numbers language-none"><code class="language-none">apt-get updateapt-get install mysql-server</code></pre><p>需要注意的是，在安装mysql 后是不可以使用navicat等远程工具进行连接的</p><p>默认安装后，3306端口只绑定给了localhost，所以外网是无法访问的</p><p>解决方法：</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre><p>将bind-address   = 127.0.0.1注释掉</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203091514554.png" alt="image-20210721175850771"></p><p>重启即可</p><pre class="line-numbers language-none"><code class="language-none">systemctl restart mysql service mysql restart</code></pre><p> 接着授予权限：</p><h2 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h2><p>系统：centos7</p><p>下载mysql5.7的本地仓库文件</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</code></pre><p>将仓库信息添加至yum</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install mysql57-community-release-el7-10.noarch.rpm</code></pre><p>接着在通过yum进行安装</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install mysql-community-server --nogpgcheck</code></pre><p>此时mysql会取代mariadb</p><p>启动mysql服务</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl start mysqldsystemctl status mysqld</code></pre><p>此时的登陆密码存放在文件里，查看密码，用该初始化密码登录</p><pre class="line-numbers language-none"><code class="language-none">grep "A temporary password is generated" /var/log/mysqld.log|awk '{print $11}'</code></pre><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203091514491.png" alt="image-20220309150733851"></p><p>使用命令登录数据库后，修改该默认密码，否则无法使用</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER USER 'root'@'localhost' IDENTIFIED BY '$Password';</code></pre><p>其中，新密码必须使用大写，小写，数字和特殊字符组成</p><p>开启远程登录</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;flush privileges; </code></pre><p>其中%代表所有ip，password替换为数据库密码。</p><h2 id="centos一键部署脚本"><a href="#centos一键部署脚本" class="headerlink" title="centos一键部署脚本"></a>centos一键部署脚本</h2><p><strong><a href="https://github.com/HeJayce/linux-and-shell/blob/main/mysql/mysql_install.sh">Rate limit · GitHub</a>，初来乍到，有错请指教，默认密码为<code>Abc123!@#</code></strong></p>]]></content>
       
       
       <categories>
@@ -143,6 +143,37 @@
             <tag> Jenkins </tag>
             
             <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用typora+阿里云oss打造博客写作平台</title>
+      <link href="//post/prometheus-grafana.html"/>
+      <url>//post/prometheus-grafana.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Prometheus-grafana"><a href="#Prometheus-grafana" class="headerlink" title="Prometheus_grafana"></a>Prometheus_grafana</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 部署 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Prometheus </tag>
+            
+            <tag> grafana </tag>
+            
+            <tag> Linux </tag>
+            
+            <tag> 可视化 </tag>
             
         </tags>
       
