@@ -121,6 +121,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -207,6 +218,17 @@
 			    <i class="fa-fw fas fa-comments"></i>
 			
 			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
 		</a>
           
         </li>
@@ -536,7 +558,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2021-03","2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03"]
+            data: ["2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04"]
         },
         yAxis: {
             type: 'value',
@@ -546,7 +568,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,1,6,1],
+                data: [0,0,0,0,0,0,0,0,0,1,6,1,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -588,7 +610,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"文章","value":1},{"name":"部署","value":7}],
+                data: [{"name":"部署","value":7},{"name":"文章","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -795,24 +817,6 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                <span class="chip center-align waves-effect waves-light chip-default">运维</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                <span class="chip center-align waves-effect waves-light chip-default">服务器</span>
-            </a>
-            
-            
-            
-            <a href="/tags/linux/">
-                <span class="chip center-align waves-effect waves-light chip-default">linux</span>
-            </a>
-            
-            
-            
             <a href="/tags/Prometheus/">
                 <span class="chip center-align waves-effect waves-light chip-default">Prometheus</span>
             </a>
@@ -837,14 +841,20 @@
             
             
             
-            <a href="/tags/python/">
-                <span class="chip center-align waves-effect waves-light chip-default">python</span>
+            <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                <span class="chip center-align waves-effect waves-light chip-default">运维</span>
             </a>
             
             
             
-            <a href="/tags/jupyter-notebook/">
-                <span class="chip center-align waves-effect waves-light chip-default">jupyter notebook</span>
+            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                <span class="chip center-align waves-effect waves-light chip-default">服务器</span>
+            </a>
+            
+            
+            
+            <a href="/tags/linux/">
+                <span class="chip center-align waves-effect waves-light chip-default">linux</span>
             </a>
             
             
@@ -863,6 +873,18 @@
             
             <a href="/tags/v2ray/">
                 <span class="chip center-align waves-effect waves-light chip-default">v2ray</span>
+            </a>
+            
+            
+            
+            <a href="/tags/python/">
+                <span class="chip center-align waves-effect waves-light chip-default">python</span>
+            </a>
+            
+            
+            
+            <a href="/tags/jupyter-notebook/">
+                <span class="chip center-align waves-effect waves-light chip-default">jupyter notebook</span>
             </a>
             
             
@@ -1295,6 +1317,16 @@ $(function () {
     
 
     <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
     <!-- Baidu Push -->
 
