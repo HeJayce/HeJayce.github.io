@@ -6,7 +6,7 @@
   <link href="http://hejayce.github.io/atom.xml" rel="self"/>
   
   <link href="http://hejayce.github.io/"/>
-  <updated>2022-04-07T07:04:10.172Z</updated>
+  <updated>2022-04-08T06:51:24.749Z</updated>
   <id>http://hejayce.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>服务器简单的监控脚本</title>
+    <link href="http://hejayce.github.io/post/watchdog.html"/>
+    <id>http://hejayce.github.io/post/watchdog.html</id>
+    <published>2022-04-08T03:08:14.000Z</published>
+    <updated>2022-04-08T06:51:24.749Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;服务器简单的监控脚本监控docker等进程&quot;&gt;&lt;a href=&quot;#服务器简单的监控脚本监控docker等进程&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="http://hejayce.github.io/tags/Linux/"/>
+    
+    <category term="服务器" scheme="http://hejayce.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="shell" scheme="http://hejayce.github.io/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>KeepAlive详解</title>
@@ -46,7 +73,7 @@
     <link href="http://hejayce.github.io/post/mysql-install.html"/>
     <id>http://hejayce.github.io/post/mysql-install.html</id>
     <published>2022-03-09T07:14:07.000Z</published>
-    <updated>2022-04-08T01:44:53.621Z</updated>
+    <updated>2022-04-08T02:24:08.631Z</updated>
     
     
       
@@ -73,7 +100,7 @@
     <link href="http://hejayce.github.io/post/jupyter-notebook.html"/>
     <id>http://hejayce.github.io/post/jupyter-notebook.html</id>
     <published>2022-02-15T16:38:48.000Z</published>
-    <updated>2022-04-08T01:56:01.122Z</updated>
+    <updated>2022-04-08T02:24:10.798Z</updated>
     
     
       
@@ -132,7 +159,7 @@
     <link href="http://hejayce.github.io/post/jenkins-install.html"/>
     <id>http://hejayce.github.io/post/jenkins-install.html</id>
     <published>2022-02-05T06:16:50.000Z</published>
-    <updated>2022-04-08T01:58:14.675Z</updated>
+    <updated>2022-04-08T02:24:09.375Z</updated>
     
     
       
@@ -148,9 +175,9 @@
     <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
     
     
-    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
-    
     <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
     
     <category term="Jenkins" scheme="http://hejayce.github.io/tags/Jenkins/"/>
     
@@ -161,7 +188,7 @@
     <link href="http://hejayce.github.io/post/jenkins-github.html"/>
     <id>http://hejayce.github.io/post/jenkins-github.html</id>
     <published>2022-02-04T20:10:46.000Z</published>
-    <updated>2022-04-08T01:58:47.599Z</updated>
+    <updated>2022-04-08T02:24:10.762Z</updated>
     
     
       
@@ -177,11 +204,11 @@
     <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
     
     
-    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
-    
     <category term="github" scheme="http://hejayce.github.io/tags/github/"/>
     
     <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
     
     <category term="Jenkins" scheme="http://hejayce.github.io/tags/Jenkins/"/>
     
@@ -190,11 +217,11 @@
   </entry>
   
   <entry>
-    <title>使用grafana可视化仪表监控服务器数据和nginx吞吐</title>
+    <title>使用typora+阿里云oss打造博客写作平台</title>
     <link href="http://hejayce.github.io/post/prometheus-grafana.html"/>
     <id>http://hejayce.github.io/post/prometheus-grafana.html</id>
     <published>2022-02-02T13:29:17.000Z</published>
-    <updated>2022-04-08T01:41:39.057Z</updated>
+    <updated>2022-04-08T03:05:09.182Z</updated>
     
     
       
@@ -225,7 +252,7 @@
     <link href="http://hejayce.github.io/post/typora-oss.html"/>
     <id>http://hejayce.github.io/post/typora-oss.html</id>
     <published>2022-02-02T13:29:17.000Z</published>
-    <updated>2022-04-08T01:46:02.108Z</updated>
+    <updated>2022-04-08T02:24:10.095Z</updated>
     
     
       
@@ -276,13 +303,13 @@
     
     <category term="服务器" scheme="http://hejayce.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
-    
     <category term="github" scheme="http://hejayce.github.io/tags/github/"/>
     
     <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
     <category term="v2ray" scheme="http://hejayce.github.io/tags/v2ray/"/>
+    
+    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
     
   </entry>
   

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="使用grafana可视化仪表监控服务器数据和nginx吞吐, Jayce&#39;s Blog">
+    <meta name="keywords" content="使用typora+阿里云oss打造博客写作平台, Jayce&#39;s Blog">
     <meta name="description" content="使用grafana可视化仪表监控服务器数据和nginx吞吐">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>使用grafana可视化仪表监控服务器数据和nginx吞吐 | Jayce&#39;s Blog</title>
+    <title>使用typora+阿里云oss打造博客写作平台 | Jayce&#39;s Blog</title>
     <link rel="icon" type="image/png" href="http://jaycehe.oss-accelerate.aliyuncs.com/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/awesome/css/all.min.css">
@@ -290,12 +290,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204080939199.svg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用grafana可视化仪表监控服务器数据和nginx吞吐</h1>
+                    <h1 class="description center-align post-title">使用typora+阿里云oss打造博客写作平台</h1>
                 </div>
             </div>
         </div>
@@ -462,14 +462,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    852
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -487,10 +487,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用grafana可视化仪表监控服务器数据和nginx吞吐"><a href="#使用grafana可视化仪表监控服务器数据和nginx吞吐" class="headerlink" title="使用grafana可视化仪表监控服务器数据和nginx吞吐"></a>使用grafana可视化仪表监控服务器数据和nginx吞吐</h1><p>Prometheus 服务端负责数据的收集，然后将数据推送至grafana进行前台展示，而如何用Prometheus 采集到服务器和Nginx的数据呢，这里就需要再引入两个工具，服务器数据采用NodeExporter进行采集，Nginx数据通过nginx-module-vts插件进行采集。</p>
+                <h1 id="使用grafana可视化仪表监控服务器数据和nginx吞吐"><a href="#使用grafana可视化仪表监控服务器数据和nginx吞吐" class="headerlink" title="使用grafana可视化仪表监控服务器数据和nginx吞吐"></a>使用grafana可视化仪表监控服务器数据和nginx吞吐</h1><h2 id="架构简介"><a href="#架构简介" class="headerlink" title="架构简介"></a>架构简介</h2><p>Prometheus 服务端负责数据的收集，然后将数据推送至grafana进行前台展示，而如何用Prometheus 采集到服务器和Nginx的数据呢，这里就需要再引入两个工具，服务器数据采用NodeExporter进行采集，Nginx数据通过nginx-module-vts插件进行采集。</p>
 <p>为了服务器环境的整洁，此次监控都将采用docker容器，docker即简单又不影响服务器环境，越来越受欢迎。</p>
 <p>需要在docker上安装的有<br>prometheus    拉取并存储数据 ，node-exporter 收集内核公开的硬件和操作系统指标 grafana  将取出的数据展示可视化<br>具体流程为 node-exporter对服务器进行取数，nginx-module-vts对nginx进行取数，prometheus进行数据统一管理，由prometheus 推送至grafana进行数据展示<br>效果图：</p>
-<p>监控服务器<br>安装prometheus<br>直接拉取prometheus的镜像</p>
+<h3 id="监控服务器"><a href="#监控服务器" class="headerlink" title="监控服务器"></a>监控服务器</h3><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/image-20220404145449706.png" alt="image-20220404145449706"></p>
+<h3 id="监控nginx"><a href="#监控nginx" class="headerlink" title="监控nginx"></a>监控nginx</h3><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/image-20220404145734567.png" alt="image-20220404145734567"></p>
+<h2 id="安装prometheus"><a href="#安装prometheus" class="headerlink" title="安装prometheus"></a>安装prometheus</h2><p>直接拉取prometheus的镜像</p>
 <pre class="line-numbers language-none"><code class="language-none">docker pull prom/prometheus</code></pre>
 
 <p>运行prometheus</p>
@@ -507,26 +509,23 @@ docker rm  prometheus</code></pre>
 
 <p>注意9090端口在安全组和防火墙开通</p>
 <p>然后访问<code>ip:9090</code>看看是否成功</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081058933.png" alt="image-20220408105846841"></p>
 <p>这里我用域名代替ip，以实际网络环境为准</p>
 <p>查看docker运行的服务：</p>
 <pre class="line-numbers language-none"><code class="language-none">docker ps -a</code></pre>
 
-
-
-
-
-<p>安装node-exporter</p>
-<pre class="line-numbers language-none"><code class="language-none">docker pull prom/node-exporter</code></pre>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/image-20220404144850405.png" alt="image-20220404144850405"></p>
+<h2 id="安装node-exporter"><a href="#安装node-exporter" class="headerlink" title="安装node-exporter"></a>安装node-exporter</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker pull prom/node-exporter</code></pre>
 
 
 
 <p> 运行</p>
-<pre class="line-numbers language-none"><code class="language-none">docker run -d --name node-exporter -p 9100:9100 -v "/proc:/host/proc:ro" -v "/sys:/host/sys:ro" -v "/:/rootfs:ro" --net="host" prom/node-exporter</code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -d --name node-exporter -p 9100:9100 -v "/proc:/host/proc:ro" -v "/sys:/host/sys:ro" -v "/:/rootfs:ro" --net="host" prom/node-exporter</code></pre>
 
 <p>修改prometheus配置文件，让node-exporter数据连接prometheus，</p>
 <pre class="line-numbers language-none"><code class="language-none">vim prometheus/prometheus.yml</code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">scrape_configs:
+<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties">scrape_configs:
   - job_name: "prometheus"
     static_configs:
       - targets: ['172.26.134.10:9090']
@@ -540,23 +539,24 @@ docker rm  prometheus</code></pre>
 
 <p>targets：选择填prometheus的ip和端口，建议选择localhost或内网地址。job_name：起个名字</p>
 <p>保存退出，重启prometheus</p>
-<pre class="line-numbers language-none"><code class="language-none">docker restart prometheus</code></pre>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker restart prometheus</code></pre>
 
 <p>打开浏览器：</p>
-<p>安装grafana</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker pull grafana/grafana</code></pre>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/image-20220404145831640.png" alt="image-20220404145831640"></p>
+<h2 id="安装grafana"><a href="#安装grafana" class="headerlink" title="安装grafana"></a>安装grafana</h2><p>拉取镜像</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker pull grafana/grafana</code></pre>
 
-<p># 拉取镜像</p>
-<p>mkdir grafana</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir grafana</code></pre>
+
 <p>创建grafana目录</p>
 <p>启动镜像</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -d --name=grafana -p 3000:3000 -v $PWD/grafana:/var/lib/grafana grafana/grafana</code></pre>
 
 <p>打开浏览器</p>
-<p>监控nginx</p>
-<p>监控nginx需要使用nginx-module-vts插件，而nginx-module-vts插件的添加又需要重新编译nginx，此方法适用于编译安装而非yum安装</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/image-20220404150145690.png" alt="image-20220404150145690"></p>
+<h2 id="监控nginx配置"><a href="#监控nginx配置" class="headerlink" title="监控nginx配置"></a>监控nginx配置</h2><p>监控nginx需要使用nginx-module-vts插件，而nginx-module-vts插件的添加又需要重新编译nginx，此方法适用于编译安装而非yum安装</p>
 <p>安装nginx-module-vts</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone git://github.com/vozlt/nginx-module-vts.git</code></pre>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git clone git://github.com/vozlt/nginx-module-vts.git</code></pre>
 
 <p>这里会在当前目录下将nginx-module-vts克隆下来，没有git请自行百度安装</p>
 <p>进入nginx原始的目录，准备编译</p>
@@ -570,18 +570,26 @@ docker rm  prometheus</code></pre>
 <p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204021355092.png" alt="image-20220402135521016"></p>
 <p>此时打开nginx配置文件，添加监控接口</p>
 <p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204021357475.png" alt="image-20220402135729259"></p>
-<pre class="line-numbers language-none"><code class="language-none">location /status {
+<pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx">location /status {
         vhost_traffic_status_display;
         vhost_traffic_status_display_format html;
 }</code></pre>
 
 <p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204021358160.png" alt="image-20220402135813113"></p>
+<p>修改prometheus配置文件，添加nginx模块</p>
+<pre class="line-numbers language-none"><code class="language-none">- job_name: 'nginx'
+    static_configs:
+    - targets: ['172.26.134.10:9013']
+      labels:
+         instance: nginx</code></pre>
+
+<p>保存并重启</p>
 <p>此时打开公网/内网地址，<code>/status</code>下即可显示nginx数据了</p>
 <p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204021412387.png" alt="image-20220402141230288"></p>
 <p><code>/status/format/prometheus</code> :</p>
 <p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204021414243.png" alt="image-20220402141427152"></p>
 <p>用nginx将上面的地址转换为prometheus的地址：</p>
-<pre class="line-numbers language-none"><code class="language-none">server {
+<pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx">server {
         listen       9013 ;
         server_name  172.26.134.10;
 location /status {
@@ -600,10 +608,47 @@ location /metrics{
      labels:
         instance: nginx</code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">docker restart prometheus</code></pre>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker restart prometheus</code></pre>
 
 <p>此时访问IP:9013/metrics ，就可以变成prometheus需要的类型了</p>
 <p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204021417501.png" alt="image-20220402141739403"></p>
+<h2 id="配置grafana"><a href="#配置grafana" class="headerlink" title="配置grafana"></a>配置grafana</h2><p>有了数据源，接下来就是配置可视化仪表了</p>
+<p>打开grafana登录页面，默认用户名密码都是admin</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081036547.png" alt="image-20220408103615852"></p>
+<p>登录后会自动提示修改密码，也可以跳过</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081036130.png" alt="image-20220408103651978"></p>
+<blockquote>
+<p>忘记密码操作：</p>
+<p><code>find / -name "grafana.db"</code></p>
+<p><code>sqlite3  grafana.db</code></p>
+<p><code>.tables</code> **</p>
+<p> <code>select * from user;</code> **</p>
+<p><code>update user set password = '59acf18b94d7eb0694c61e60ce44c110c7a683ac6a8f09580d626f90f4a242000746579358d77dd9e570e83fa24faa88a8a6', salt = 'F3FAxVm33R' where login = 'admin';</code></p>
+<p><code>.exit</code></p>
+<p>重启grafana</p>
+<p>密码和用户名都重置为admin</p>
+</blockquote>
+<p>修改即可</p>
+<h4 id="配置数据源"><a href="#配置数据源" class="headerlink" title="配置数据源"></a>配置数据源</h4><p>进入主界面找到下图所示data sources</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081038259.png" alt="image-20220408103844156"></p>
+<p>点击右边蓝色 add data source</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081039713.png" alt="image-20220408103949639"></p>
+<p>选择第一个Prometheus源</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081040727.png" alt="image-20220408104007625"></p>
+<p>填入<code>ip:9090</code>，其他可以不用管，点击最后的保存并测试</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081044265.png" alt="image-20220408104436874"></p>
+<p>正确即出现下图标识：</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081047438.png" alt="image-20220408104713340"></p>
+<h4 id="配置可视化"><a href="#配置可视化" class="headerlink" title="配置可视化"></a>配置可视化</h4><p>导入一个模板，模板可以在此网站挑选<a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/">Dashboards | Grafana Labs</a></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081048748.png" alt="image-20220408104801670"></p>
+<p>选择好后，将模板代号填入即可</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081055144.png" alt="image-20220408105512736"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081055551.png" alt="image-20220408105531459"></p>
+<p>导入成功后，配置好的模板会自动识别数据源，将数据进行展示，如果个别模块没有数据，可以手动配置数据</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081056466.png" alt="image-20220408105653310"></p>
+<p>可在edit模块，选择数据源以及需要展示的数据</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081057411.png" alt="image-20220408105740337"></p>
+<p>nginx同理，但组件需要手动配置数据</p>
 
                 
             </div>
@@ -1158,16 +1203,16 @@ location /metrics{
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
-                    </a>
-                    
                     <a href="/tags/github/">
                         <span class="chip bg-color">github</span>
                     </a>
                     
                     <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
                         <span class="chip bg-color">阿里云</span>
+                    </a>
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                     <a href="/tags/Jenkins/">

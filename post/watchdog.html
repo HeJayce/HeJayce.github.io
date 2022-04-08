@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Jenkins安装, Jayce&#39;s Blog">
-    <meta name="description" content="Jenkins 安装安装JDK下载jdk进入JDK下载官网 下载JDK
-这里选择下载131版本，如果版本较新也没问题，老版本下载链接 
-在服务器下创建安装的文件夹，在usr文件夹下创建java文件夹
-mkdir -p /usr/java
-将">
+    <meta name="keywords" content="服务器简单的监控脚本, Jayce&#39;s Blog">
+    <meta name="description" content="服务器简单的监控脚本监控docker等进程脚本实现监控docker 运行的各个服务和其他重要程序，当某项服务挂了，可发邮件给管理者，并自动重启
+自动发送邮件安装maix
+
+关闭默认邮件服务器（centos7）
+systemctl stop ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +22,7 @@ mkdir -p /usr/java
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Jenkins安装 | Jayce&#39;s Blog</title>
+    <title>服务器简单的监控脚本 | Jayce&#39;s Blog</title>
     <link rel="icon" type="image/png" href="http://jaycehe.oss-accelerate.aliyuncs.com/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/awesome/css/all.min.css">
@@ -294,12 +294,12 @@ mkdir -p /usr/java
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204080957906.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Jenkins安装</h1>
+                    <h1 class="description center-align post-title">服务器简单的监控脚本</h1>
                 </div>
             </div>
         </div>
@@ -415,31 +415,22 @@ mkdir -p /usr/java
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                                <span class="chip bg-color">阿里云</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
-                            <a href="/tags/linux/">
-                                <span class="chip bg-color">linux</span>
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                <span class="chip bg-color">服务器</span>
                             </a>
                         
-                            <a href="/tags/Jenkins/">
-                                <span class="chip bg-color">Jenkins</span>
+                            <a href="/tags/shell/">
+                                <span class="chip bg-color">shell</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                部署
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -448,7 +439,7 @@ mkdir -p /usr/java
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-05
+                    2022-04-08
                 </div>
                 
 
@@ -462,7 +453,7 @@ mkdir -p /usr/java
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    397
+                    448
                 </div>
                 
 
@@ -487,52 +478,50 @@ mkdir -p /usr/java
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Jenkins-安装"><a href="#Jenkins-安装" class="headerlink" title="Jenkins 安装"></a>Jenkins 安装</h1><h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><h3 id="下载jdk"><a href="#下载jdk" class="headerlink" title="下载jdk"></a>下载jdk</h3><p>进入<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/#java8">JDK下载官网</a> 下载JDK</p>
-<p>这里选择下载131版本，如果版本较新也没问题，<a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html">老版本下载链接</a> </p>
-<p>在服务器下创建安装的文件夹，在<code>usr</code>文件夹下创建java文件夹</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir -p /usr/java</code></pre>
-<p>将下载好的JDK解压至该文件夹</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tar -zvxf jdk-8u131-linux-x64.tar.gz -C /usr/java</code></pre>
-<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>与windows类似，Linux下配置环境变量只需修改配置文件即可</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim /etc/profile</code></pre>
-<p>在文件下添加：</p>
-<pre class="line-numbers language-none"><code class="language-none">#java
-export JAVA_HOME=/usr/java/jdk1.8.0_131
-export PATH=$JAVA_HOME/bin:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</code></pre>
-<p>执行<code>source /etc/profile</code>生效</p>
-<p>执行<code>java -version</code> 如果返回版本号则安装成功</p>
-<h2 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h2><h3 id="yum源导入"><a href="#yum源导入" class="headerlink" title="yum源导入"></a>yum源导入</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#添加Yum源
-wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo</code></pre>
-<p>如果该步骤无法下载，报错ERROR: cannot verify pkg.jenkins.io’s certificate, issued by ‘/C=US/O=Let’s Encrypt/CN=R3’:</p>
-<p>这是因为wget命令下载不安全的https 域名下的内容，此时需要安装ca-certificates</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum install -y ca-certificates</code></pre>
+                <h2 id="服务器简单的监控脚本监控docker等进程"><a href="#服务器简单的监控脚本监控docker等进程" class="headerlink" title="服务器简单的监控脚本监控docker等进程"></a>服务器简单的监控脚本监控docker等进程</h2><p>脚本实现监控docker 运行的各个服务和其他重要程序，当某项服务挂了，可发邮件给管理者，并自动重启</p>
+<h2 id="自动发送邮件"><a href="#自动发送邮件" class="headerlink" title="自动发送邮件"></a>自动发送邮件</h2><p>安装maix</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081115382.png" alt="image-20220408111516967"></p>
+<p>关闭默认邮件服务器（centos7）</p>
+<pre class="line-numbers language-none"><code class="language-none">systemctl stop postfix
+systemctl stop sendmail</code></pre>
 
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#导入密钥
-rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key</code></pre>
+<p>编辑配置文件  <code>/etc/mail.rc</code>，添加下面内容</p>
+<pre class="line-numbers language-none"><code class="language-none">set from=notice@jayce.icu
+set smtp=smtps://smtp.exmail.qq.com:465
+set smtp-auth-user=notice@jayce.icu
+set smtp-auth-password=*******
+set smtp-auth=login
+set ssl-verify=ignore
+set nss-config-dir=/etc/pki/nssdb</code></pre>
 
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum install -y jenkins</code></pre>
+<p>set from  发送邮件的邮箱<br>set smtp  邮箱的stmp服务器地址<br>set smtp-auth-user   登录名<br>set smtp-auth-password  登录名<br>set smtp-auth=login  登录验证<br>set ssl-verify=ignore  忽略ssl证书 <em>重要</em><br>set nss-config-dir=/etc/pki/nssdb  ssl证书目录</p>
+<p>具体的邮箱服务器地址，端口，登录密码等以实际邮箱情况为准，有些密码需要授权</p>
+<p>阿里云服务器为了防止垃圾短信，默认关闭25号端口，需要在安全组规则开通465端口</p>
+<p>配置成功后测试一下：</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081327730.png" alt="image-20220408132759402"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081328786.png" alt="image-20220408132818714"></p>
+<h2 id="监控docker服务"><a href="#监控docker服务" class="headerlink" title="监控docker服务"></a>监控docker服务</h2><p>获取docker的状态</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker ps -a</code></pre>
 
-<p>如果缺少daemonize，则同样yum安装daemonize</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>访问IP+8080 端口即可访问Jenkins界面</p>
-<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203081427668.png" alt="image-20220308142711995"></p>
-<p>如果不能访问请检查防火墙，添加8080端口</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">firewall-cmd --add-port=8080/tcp --permanent
-firewall-cmd --reload</code></pre>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081334165.png" alt="image-20220408133446902"></p>
+<p>从status可知具体的状态，从此可进行判断进程状态，先来一个判断是否exit的</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker ps -a |grep Exited</code></pre>
 
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081336789.png" alt="image-20220408133617687"></p>
+<p>当此命令有返回时，即有服务退出了，利用此特性，可以将退出的进程发送邮件给管理者</p>
+<p>取出状态为Exited的服务名：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker_images_status_exited=$(docker ps -a | grep Exited | awk '{print $NF}')</code></pre>
 
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081340268.png" alt="image-20220408134055200"></p>
+<p>发送邮件：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">if [ "$docker_images_status_exited" ]; then
+  echo  $(date +%Y-%m-%-d-%H:%M:%S) $docker_images_status_exited $status &gt;&gt; /root/logs/docker.log
+  echo  $(date +%Y-%m-%-d-%H:%M:%S) $docker_images_status_exited $status | mailx -s "docker 异常" he@jayce.icu 2&gt;&gt; /dev/null
+fi</code></pre>
 
-<p>第一次打开需要解锁Jenkins，查看web端提示的密码文件</p>
-<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203081429423.png" alt="image-20220308142939118"></p>
-<p>将此行密码复制进去即可</p>
-<p>接着选择安装推荐的插件</p>
-<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203081430531.png" alt="image-20220308143042461"></p>
-<p>等待即可</p>
-<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203081431177.png" alt="image-20220308143106111"></p>
-<p>创建管理员</p>
-<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203081445918.png" alt="image-20220308144503922"></p>
-<p>URL可自愿修改</p>
-<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203081458412.png" alt="image-20220308144542253"></p>
+<p>如果需要自动启动，将  <code>docker start $docker_images_status_exited</code>放入<code>if</code>中即可</p>
+<p>实际运行：</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081344811.png" alt="image-20220408134442666"></p>
 
                 
             </div>
@@ -559,7 +548,7 @@ firewall-cmd --reload</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://HeJayce.github.io/post/jenkins-install.html">http://HeJayce.github.io/post/jenkins-install.html</a>
+                    <a href="http://HeJayce.github.io/post/watchdog.html">http://HeJayce.github.io/post/watchdog.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,16 +586,16 @@ firewall-cmd --reload</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                                    <span class="chip bg-color">阿里云</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
-                                <a href="/tags/linux/">
-                                    <span class="chip bg-color">linux</span>
+                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                    <span class="chip bg-color">服务器</span>
                                 </a>
                             
-                                <a href="/tags/Jenkins/">
-                                    <span class="chip bg-color">Jenkins</span>
+                                <a href="/tags/shell/">
+                                    <span class="chip bg-color">shell</span>
                                 </a>
                             
                         </div>
@@ -1046,17 +1035,18 @@ firewall-cmd --reload</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/post/alias.html">
+                <a href="/post/watchdog.html">
                     <div class="card-image">
                         
                         
-                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/7.jpg" class="responsive-img" alt="alias的详解与运维">
+                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/13.jpg" class="responsive-img" alt="服务器简单的监控脚本">
                         
-                        <span class="card-title">alias的详解与运维</span>
+                        <span class="card-title">服务器简单的监控脚本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1066,34 +1056,31 @@ firewall-cmd --reload</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%96%87%E7%AB%A0/" class="post-category">
-                                    文章
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Jayce he
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                        <span class="chip bg-color">运维</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                     <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
                         <span class="chip bg-color">服务器</span>
                     </a>
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/shell/">
+                        <span class="chip bg-color">shell</span>
                     </a>
                     
                 </div>
@@ -1107,30 +1094,31 @@ firewall-cmd --reload</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/jenkins-github.html">
+                <a href="/post/keepalive.html">
                     <div class="card-image">
                         
-                        <img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204080957906.jpeg" class="responsive-img" alt="在服务器部署Jenkins同步github代码">
                         
-                        <span class="card-title">在服务器部署Jenkins同步github代码</span>
+                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/13.jpg" class="responsive-img" alt="KeepAlive详解">
+                        
+                        <span class="card-title">KeepAlive详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在服务器部署Jenkins同步github代码
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
+                            <a href="/categories/%E8%BD%AC%E8%BD%BD/" class="post-category">
+                                    转载
                                 </a>
                             
                             
@@ -1140,24 +1128,8 @@ firewall-cmd --reload</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                        <span class="chip bg-color">阿里云</span>
-                    </a>
-                    
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
-                    </a>
-                    
-                    <a href="/tags/Jenkins/">
-                        <span class="chip bg-color">Jenkins</span>
-                    </a>
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">网络</span>
                     </a>
                     
                 </div>
