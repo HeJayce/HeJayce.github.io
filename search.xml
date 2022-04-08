@@ -130,9 +130,9 @@
       
         <tags>
             
-            <tag> 阿里云 </tag>
-            
             <tag> linux </tag>
+            
+            <tag> 阿里云 </tag>
             
             <tag> Jenkins </tag>
             
@@ -159,11 +159,11 @@
       
         <tags>
             
+            <tag> linux </tag>
+            
             <tag> github </tag>
             
             <tag> 阿里云 </tag>
-            
-            <tag> linux </tag>
             
             <tag> Jenkins </tag>
             
@@ -176,7 +176,7 @@
     
     
     <entry>
-      <title>使用typora+阿里云oss打造博客写作平台</title>
+      <title>使用grafana可视化仪表监控服务器数据和nginx吞吐</title>
       <link href="//post/prometheus-grafana.html"/>
       <url>//post/prometheus-grafana.html</url>
       
@@ -258,13 +258,13 @@
             
             <tag> 服务器 </tag>
             
+            <tag> linux </tag>
+            
             <tag> github </tag>
             
             <tag> 阿里云 </tag>
             
             <tag> v2ray </tag>
-            
-            <tag> linux </tag>
             
         </tags>
       
