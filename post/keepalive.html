@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="message-board, Jayce&#39;s Blog">
-    <meta name="description" content="Jayce&#39;s Blog">
+    <meta name="keywords" content="KeepAlive详解, Jayce&#39;s Blog">
+    <meta name="description" content="KeepAlive详解转载地址：KeepAlive详解 - 简书 (jianshu.com) 实际作者不详
+首先，我们要明确我们谈的是TCP的 KeepAlive 还是HTTP的 Keep-Alive。TCP的KeepAlive和HTTP的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>message-board | Jayce&#39;s Blog</title>
+    <title>KeepAlive详解 | Jayce&#39;s Blog</title>
     <link rel="icon" type="image/png" href="http://jaycehe.oss-accelerate.aliyuncs.com/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/awesome/css/all.min.css">
@@ -290,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">message-board</h1>
+                    <h1 class="description center-align post-title">KeepAlive详解</h1>
                 </div>
             </div>
         </div>
@@ -409,12 +410,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">网络</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%BD%AC%E8%BD%BD/" class="post-category">
+                                转载
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -423,28 +437,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-01
+                    2022-04-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-07
+                    2022-04-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    9 分
                 </div>
                 
 
@@ -462,7 +476,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="KeepAlive详解"><a href="#KeepAlive详解" class="headerlink" title="KeepAlive详解"></a>KeepAlive详解</h1><p>转载地址：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9fe2c140fa52">KeepAlive详解 - 简书 (jianshu.com)</a> 实际作者不详</p>
+<p>首先，我们要明确我们谈的是<strong>TCP</strong>的 <strong><code>KeepAlive</code></strong> 还是<strong>HTTP</strong>的 <strong><code>Keep-Alive</code><strong>。TCP的KeepAlive和HTTP的Keep-Alive</strong>是完全不同的概念，不能混为一谈</strong>。实际上HTTP的KeepAlive写法是<code>Keep-Alive</code>，跟TCP的<code>KeepAlive</code>写法上也有不同。</p>
+<ul>
+<li>TCP的<strong>keepalive</strong>是侧重在保持客户端和服务端的连接，一方会不定期发送心跳包给另一方，当一方端掉的时候，没有断掉的定时发送几次<strong>心跳包</strong>，如果间隔发送几次，对方都返回的是RST，而不是ACK，那么就释放当前链接。设想一下，如果tcp层没有keepalive的机制，一旦一方断开连接却没有发送FIN给另外一方的话，那么另外一方会一直以为这个连接还是存活的，几天，几月。那么这对服务器资源的影响是很大的。</li>
+<li>HTTP的<strong>keep-alive</strong>一般我们都会带上中间的<strong>横杠</strong>，普通的http连接是客户端连接上服务端，然后结束请求后，由客户端或者服务端进行http连接的关闭。下次再发送请求的时候，客户端再发起一个连接，传送数据，关闭连接。这么个流程反复。但是一旦客户端发送connection:keep-alive头给服务端，且服务端也接受这个keep-alive的话，两边对上暗号，这个连接就可以复用了，一个http处理完之后，另外一个http数据直接从这个连接走了。减少新建和断开TCP连接的消耗。</li>
+</ul>
+<p>二者的作用简单来说：</p>
+<blockquote>
+<p>HTTP协议的Keep-Alive意图在于短时间内连接复用，希望可以短时间内在同一个连接上进行多次请求/响应。</p>
+<p>TCP的KeepAlive机制意图在于保活、心跳，检测连接错误。当一个TCP连接两端长时间没有数据传输时(通常默认配置是2小时)，发送keepalive探针，探测链接是否存活。</p>
+</blockquote>
+<p><strong>总之，记住HTTP的Keep-Alive和TCP的KeepAlive不是一回事。</strong></p>
+<p>tcp的keepalive是在ESTABLISH状态的时候，双方如何检测连接的可用行。而http的keep-alive说的是如何避免进行重复的TCP三次握手和四次挥手的环节。</p>
+<hr>
+<h3 id="TCP的KeepAlive"><a href="#TCP的KeepAlive" class="headerlink" title="TCP的KeepAlive"></a>TCP的KeepAlive</h3><h5 id="1-为什么要有KeepAlive？"><a href="#1-为什么要有KeepAlive？" class="headerlink" title="1.为什么要有KeepAlive？"></a>1.为什么要有KeepAlive？</h5><p>在谈KeepAlive之前，我们先来了解下简单TCP知识(知识很简单，高手直接忽略)。首先要明确的是<strong>在TCP层是没有“请求”一说的</strong>，经常听到在TCP层发送一个请求，这种说法是错误的。</p>
+<p>TCP是一种通信的方式，<strong>“请求”一词是事务上的概念</strong>，HTTP协议是一种事务协议，如果说发送一个HTTP请求，这种说法就没有问题。也经常听到面试官反馈有些面试运维的同学，基本的TCP三次握手的概念不清楚，面试官问TCP是如何建立链接，面试者上来就说，假如我是客户端我发送一个请求给服务端，服务端发送一个请求给我。。。</p>
+<p>这种一听就知道对TCP基本概念不清楚。下面是我通过wireshark抓取的一个TCP建立握手的过程。（命令行基本上用TCPdump,后面我们还会用这张图说明问题）:</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204071449977.webp" alt="img"></p>
+<p>TCP抓包</p>
+<p>现在我看只要看前3行，这就是TCP三次握手的完整建立过程，第一个报文SYN从发起方发出，第二个报文SYN,ACK是从被连接方发出，第三个报文ACK确认对方的SYN，ACK已经收到，如下图：</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204071449953.webp" alt="img"></p>
+<p>TCP建立连接过程</p>
+<p><strong>但是数据实际上并没有传输</strong>，请求是有数据的，<strong>第四个报文才是数据传输开始的过程</strong>，细心的读者应该能够发现wireshark把第四个报文解析成HTTP协议，HTTP协议的GET方法和URI也解析出来，所以说TCP层是没有请求的概念，HTTP协议是事务性协议才有请求的概念，TCP报文承载HTTP协议的请求(Request)和响应(Response)。</p>
+<p>现在才是开始说明为什么要有KeepAlive。链接建立之后，如果应用程序或者上层协议一直不发送数据，或者隔很长时间才发送一次数据，当链接很久没有数据报文传输时如何去确定对方还在线，到底是掉线了还是确实没有数据传输，链接还需不需要保持，这种情况在TCP协议设计中是需要考虑到的。</p>
+<p>TCP协议通过一种巧妙的方式去解决这个问题，当超过一段时间之后，TCP自动发送一个数据为空的报文给对方，如果对方回应了这个报文，说明对方还在线，链接可以继续保持，如果对方没有报文返回，并且重试了多次之后则认为链接丢失，没有必要保持链接。</p>
+<h5 id="2-怎么开启KeepAlive？"><a href="#2-怎么开启KeepAlive？" class="headerlink" title="2.怎么开启KeepAlive？"></a>2.怎么开启KeepAlive？</h5><p>KeepAlive并不是默认开启的，在Linux系统上没有一个全局的选项去开启TCP的KeepAlive。需要开启KeepAlive的应用必须在TCP的socket中单独开启。Linux Kernel有三个选项影响到KeepAlive的行为：</p>
+<blockquote>
+<ul>
+<li>tcp_keepalive_time 7200// 距离上次传送数据多少时间未收到新报文判断为开始检测，单位秒，默认7200s</li>
+<li>tcp_keepalive_intvl 75// 检测开始每多少时间发送心跳包，单位秒，默认75s</li>
+<li>tcp_keepalive_probes 9// 发送几次心跳包对方未响应则close连接，默认9次</li>
+</ul>
+</blockquote>
+<p>TCP socket也有三个选项和内核对应，通过setsockopt系统调用针对单独的socket进行设置：</p>
+<blockquote>
+<ul>
+<li>TCPKEEPCNT: 覆盖 tcpkeepaliveprobes</li>
+<li>TCPKEEPIDLE: 覆盖 tcpkeepalivetime</li>
+<li>TCPKEEPINTVL: 覆盖 tcpkeepalive_intvl</li>
+</ul>
+</blockquote>
+<p>举个例子，以我的系统默认设置为例，kernel默认设置的tcpkeepalivetime是7200s, 如果我在应用程序中针对socket开启了KeepAlive,然后设置的TCP_KEEPIDLE为60，那么TCP协议栈在发现TCP链接空闲了60s没有数据传输的时候就会发送第一个探测报文。</p>
+<h5 id="3-需要注意，KeepAlive的不足和局限性"><a href="#3-需要注意，KeepAlive的不足和局限性" class="headerlink" title="3. 需要注意，KeepAlive的不足和局限性"></a>3. 需要注意，KeepAlive的不足和局限性</h5><p>其实，tcp自带的keepalive还是有些不足之处的。</p>
+<p><strong>keepalive只能检测连接是否存活，不能检测连接是否可用。</strong>例如，某一方发生了死锁，无法在连接上进行任何读写操作，但是操作系统仍然可以响应网络层keepalive包。</p>
+<p>TCP keepalive 机制依赖于操作系统的实现,灵活性不够，默认关闭，且默认的 keepalive 心跳时间是 两个小时, 时间较长。</p>
+<p>代理(如socks proxy)、或者负载均衡器，会让tcp keep-alive失效</p>
+<p>基于此，我们旺旺需要加上应用层的心跳。这个需要自己实现，这里就不展开了。</p>
+<hr>
+<h3 id="HTTP的Keep-Alive"><a href="#HTTP的Keep-Alive" class="headerlink" title="HTTP的Keep-Alive"></a>HTTP的Keep-Alive</h3><h5 id="1-HTTP为什么需要Keep-Alive？"><a href="#1-HTTP为什么需要Keep-Alive？" class="headerlink" title="1. HTTP为什么需要Keep-Alive？"></a>1. HTTP为什么需要Keep-Alive？</h5><p>通常一个网页可能会有很多组成部分，除了文本内容，还会有诸如：js、css、图片等静态资源，有时还会异步发起AJAX请求。只有所有的资源都加载完毕后，我们看到网页完整的内容。然而，一个网页中，可能引入了几十个js、css文件，上百张图片，如果每请求一个资源，就创建一个连接，然后关闭，代价实在太大了。</p>
+<p>基于此背景，我们希望连接能够在<strong>短时间内</strong>得到复用，在加载同一个网页中的内容时，尽量的复用连接，这就是HTTP协议中keep-alive属性的作用。</p>
+<blockquote>
+<ul>
+<li>HTTP的Keep-Alive是<strong>HTTP1.1</strong>中<strong>默认开启</strong>的功能。通过headers设置”Connection: close “关闭</li>
+<li>在HTTP1.0中是<strong>默认关闭</strong>的。通过headers设置”Connection: Keep-Alive”开启。</li>
+</ul>
+</blockquote>
+<p>对于客户端来说，不论是浏览器，还是手机App，或者我们直接在Java代码中使用HttpUrlConnection，只是负责在请求头中设置Keep-Alive。Keep-Alive属性保持连接的<strong>时间长短是由服务端决定的</strong>，通常配置都是在<strong>几十秒左右。</strong></p>
+<p>TCP连接建立之后，HTTP协议使用TCP传输HTTP协议的请求(Request)和响应(Response)数据，一次完整的HTTP事务如下图：</p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204071449946.webp" alt="img"></p>
+<p>HTTP请求</p>
+<p>这张图我简化了HTTP(Req)和HTTP(Resp)，实际上的请求和响应需要多个TCP报文。<br>从图中可以发现一个完整的HTTP事务，有链接的建立，请求的发送，响应接收，断开链接这四个过程，早期通过HTTP协议传输的数据以文本为主，一个请求可能就把所有要返回的数据取到，但是，现在要展现一张完整的页面需要很多个请求才能完成，如图片.JS.CSS等，如果每一个HTTP请求都需要新建并断开一个TCP，这个开销是完全没有必要的。</p>
+<p>开启HTTP Keep-Alive之后，能复用已有的TCP链接，当前一个请求已经响应完毕，服务器端没有立即关闭TCP链接，而是等待一段时间接收浏览器端可能发送过来的第二个请求，通常浏览器在第一个请求返回之后会立即发送第二个请求，如果某一时刻只能有一个链接，同一个TCP链接处理的请求越多，开启KeepAlive能节省的TCP建立和关闭的消耗就越多。</p>
+<p>当然通常会启用多个链接去从服务器器上请求资源，但是开启了Keep-Alive之后，仍然能加快资源的加载速度。HTTP/1.1之后默认开启Keep-Alive, 在HTTP的头域中增加Connection选项。当设置为<code>Connection:keep-alive</code>表示开启，设置为<code>Connection:close</code>表示关闭。</p>
+<p>如果tcp keepalive没有开启，那么开启http的keep-Alive是不是也没有用。 因为tcp连接都已经关闭了？</p>
+<p>不是。TCP有一个保活计数器，当该时间段内没收到新数据，将自动断开连接，TCP keepalive就是为了刷新对方的保活计数器的。http的keepalive是为了复用一个tcp，避免多次握手。当保活计数器时间段内有收到数据，tcp就不会断开；如果没有收到数据，tcp断开也是应该的，因为占着资源，不发数据，还不如等你要发数据了重新建立一次连接来的好。</p>
+
                 
             </div>
             <hr/>
@@ -478,7 +557,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Jayce he</a>
+                    <a href="/about" rel="external nofollow noreferrer">不详</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -488,7 +567,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://HeJayce.github.io/message-board/index.html">http://HeJayce.github.io/message-board/index.html</a>
+                    <a href="http://HeJayce.github.io/post/keepalive.html">http://HeJayce.github.io/post/keepalive.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -501,7 +580,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Jayce he</a>
+                    <a href="/about" target="_blank">不详</a>
                     !
                 </span>
             </div>
@@ -525,7 +604,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">网络</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -968,13 +1051,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/message-board/index.html">
+                <a href="/post/keepalive.html">
                     <div class="card-image">
                         
                         
-                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/0.jpg" class="responsive-img" alt="message-board">
+                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/13.jpg" class="responsive-img" alt="KeepAlive详解">
                         
-                        <span class="card-title">message-board</span>
+                        <span class="card-title">KeepAlive详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -985,17 +1068,29 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jayce he
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AC%E8%BD%BD/" class="post-category">
+                                    转载
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">网络</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1003,16 +1098,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/message-board/index.html">
+                <a href="/post/mysql-install.html">
                     <div class="card-image">
                         
                         
-                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/0.jpg" class="responsive-img" alt="message-board">
+                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/3.jpg" class="responsive-img" alt="mysql 在ubuntu和centos上的安装">
                         
-                        <span class="card-title">message-board</span>
+                        <span class="card-title">mysql 在ubuntu和centos上的安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1023,17 +1118,32 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jayce he
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                    部署
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">服务器</span>
+                    </a>
+                    
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
