@@ -6,7 +6,7 @@
   <link href="http://hejayce.github.io/atom.xml" rel="self"/>
   
   <link href="http://hejayce.github.io/"/>
-  <updated>2022-04-08T06:51:24.749Z</updated>
+  <updated>2022-04-25T07:48:49.321Z</updated>
   <id>http://hejayce.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>grafana_not_allow</title>
+    <link href="http://hejayce.github.io/post/grafana-not-allow.html"/>
+    <id>http://hejayce.github.io/post/grafana-not-allow.html</id>
+    <published>2022-04-25T07:48:00.000Z</published>
+    <updated>2022-04-25T07:48:49.321Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;grafana</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>服务器简单的监控脚本</title>
     <link href="http://hejayce.github.io/post/watchdog.html"/>
     <id>http://hejayce.github.io/post/watchdog.html</id>
     <published>2022-04-08T03:08:14.000Z</published>
-    <updated>2022-04-08T06:51:24.749Z</updated>
+    <updated>2022-04-08T07:58:00.723Z</updated>
     
     
       
@@ -35,9 +56,9 @@
     
     
     
-    <category term="Linux" scheme="http://hejayce.github.io/tags/Linux/"/>
-    
     <category term="服务器" scheme="http://hejayce.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Linux" scheme="http://hejayce.github.io/tags/Linux/"/>
     
     <category term="shell" scheme="http://hejayce.github.io/tags/shell/"/>
     
@@ -100,7 +121,7 @@
     <link href="http://hejayce.github.io/post/jupyter-notebook.html"/>
     <id>http://hejayce.github.io/post/jupyter-notebook.html</id>
     <published>2022-02-15T16:38:48.000Z</published>
-    <updated>2022-04-08T02:24:10.798Z</updated>
+    <updated>2022-04-21T07:57:41.812Z</updated>
     
     
       
@@ -175,9 +196,9 @@
     <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
     
     
-    <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
-    
     <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
+    
+    <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
     <category term="Jenkins" scheme="http://hejayce.github.io/tags/Jenkins/"/>
     
@@ -204,11 +225,11 @@
     <category term="部署" scheme="http://hejayce.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
     
     
+    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
+    
     <category term="github" scheme="http://hejayce.github.io/tags/github/"/>
     
     <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
-    
-    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
     
     <category term="Jenkins" scheme="http://hejayce.github.io/tags/Jenkins/"/>
     
@@ -221,7 +242,7 @@
     <link href="http://hejayce.github.io/post/prometheus-grafana.html"/>
     <id>http://hejayce.github.io/post/prometheus-grafana.html</id>
     <published>2022-02-02T13:29:17.000Z</published>
-    <updated>2022-04-08T03:05:09.182Z</updated>
+    <updated>2022-04-21T07:57:41.809Z</updated>
     
     
       
@@ -303,13 +324,13 @@
     
     <category term="服务器" scheme="http://hejayce.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
+    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
+    
     <category term="github" scheme="http://hejayce.github.io/tags/github/"/>
     
     <category term="阿里云" scheme="http://hejayce.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
     <category term="v2ray" scheme="http://hejayce.github.io/tags/v2ray/"/>
-    
-    <category term="linux" scheme="http://hejayce.github.io/tags/linux/"/>
     
   </entry>
   

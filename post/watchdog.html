@@ -125,6 +125,17 @@ systemctl stop ">
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -211,6 +222,17 @@ systemctl stop ">
 			    <i class="fa-fw fas fa-comments"></i>
 			
 			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
 		</a>
           
         </li>
@@ -415,12 +437,12 @@ systemctl stop ">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
-                            </a>
-                        
                             <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
                                 <span class="chip bg-color">服务器</span>
+                            </a>
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                             <a href="/tags/shell/">
@@ -482,7 +504,7 @@ systemctl stop ">
 <h2 id="自动发送邮件"><a href="#自动发送邮件" class="headerlink" title="自动发送邮件"></a>自动发送邮件</h2><p>安装maix</p>
 <p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204081115382.png" alt="image-20220408111516967"></p>
 <p>关闭默认邮件服务器（centos7）</p>
-<pre class="line-numbers language-none"><code class="language-none">systemctl stop postfix
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl stop postfix
 systemctl stop sendmail</code></pre>
 
 <p>编辑配置文件  <code>/etc/mail.rc</code>，添加下面内容</p>
@@ -586,12 +608,12 @@ fi</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
                                     <span class="chip bg-color">服务器</span>
+                                </a>
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                                 <a href="/tags/shell/">
@@ -1035,18 +1057,17 @@ fi</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/post/watchdog.html">
+                <a href="/post/grafana-not-allow.html">
                     <div class="card-image">
                         
                         
-                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/13.jpg" class="responsive-img" alt="服务器简单的监控脚本">
+                        <img src="http://jaycehe.oss-accelerate.aliyuncs.com/featureimages/18.jpg" class="responsive-img" alt="grafana_not_allow">
                         
-                        <span class="card-title">服务器简单的监控脚本</span>
+                        <span class="card-title">grafana_not_allow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1056,9 +1077,9 @@ fi</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1066,23 +1087,6 @@ fi</code></pre>
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">服务器</span>
-                    </a>
-                    
-                    <a href="/tags/shell/">
-                        <span class="chip bg-color">shell</span>
-                    </a>
-                    
                 </div>
                 
             </div>
