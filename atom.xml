@@ -6,7 +6,7 @@
   <link href="http://hejayce.github.io/atom.xml" rel="self"/>
   
   <link href="http://hejayce.github.io/"/>
-  <updated>2022-04-25T07:48:49.321Z</updated>
+  <updated>2022-04-26T09:02:38.023Z</updated>
   <id>http://hejayce.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo_install</title>
+    <link href="http://hejayce.github.io/post/hexo-install.html"/>
+    <id>http://hejayce.github.io/post/hexo-install.html</id>
+    <published>2022-04-25T08:36:01.000Z</published>
+    <updated>2022-04-26T09:02:38.023Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;使用hexo框架搭建个人博客已有2个多月，是时候写一篇部署步骤以及踩坑总结了&lt;br&gt;为什么使用hexo&lt;/p&gt;
+&lt;p&gt;安装环境&lt;/p&gt;
+&lt;p&gt;模板选择&lt;/p&gt;
+&lt;p&gt;关于markdown&lt;/p&gt;
+&lt;p&gt;服务器部署&lt;/p&gt;
+&lt;p&gt;https&lt;/p&gt;
+&lt;p&gt;设置https可以到</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>grafana_not_allow</title>

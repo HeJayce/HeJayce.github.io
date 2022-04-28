@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>hexo_install</title>
+      <link href="//post/hexo-install.html"/>
+      <url>//post/hexo-install.html</url>
+      
+        <content type="html"><![CDATA[<p>使用hexo框架搭建个人博客已有2个多月，是时候写一篇部署步骤以及踩坑总结了<br>为什么使用hexo</p><p>安装环境</p><p>模板选择</p><p>关于markdown</p><p>服务器部署</p><p>https</p><p>设置https可以到阿里云申请免费的证书，每人有20个额度</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204261132101.png" alt="image-20220426113211531"></p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204261133715.png" alt="image-20220426113304547"></p><p>购买完成后，进入ssl证书管理台，选择免费证书</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204261134061.png" alt="image-20220426113400984"></p><p>点击创建证书，会在列表里新建一个待申请证书，点击右边证书申请，填写你的域名以及信息，CSR选择系统生成</p><p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204261137893.png" alt="image-20220426113751817"></p><p>个性化改装</p><p>代码部署同步</p><p>git 分支</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>grafana_not_allow</title>
       <link href="//post/grafana-not-allow.html"/>
       <url>//post/grafana-not-allow.html</url>
