@@ -1,0 +1,2907 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="linux学习笔记, Jayce">
+    <meta name="description" content="linux学习笔记">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="baidu-site-verification" content="code-WVnSn80aQ2" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6KL9T97JW"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-Q6KL9T97JW');
+</script>
+<script async defer data-website-id="10bdd701-05ac-4f44-bddd-18c87dbcfb54" src="https://umami.jayce.icu/umami.js"></script>
+
+
+    <title>linux学习笔记 | 菜狗的生活记录</title>
+    <link rel="icon" type="image/png" href="https://oss.jayce.icu/medias/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/jquery/jquery-3.6.0.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="菜狗的生活记录" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://oss.jayce.icu/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">菜狗的生活记录</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>相关链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://oss.jayce.icu/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">菜狗的生活记录</div>
+        <div class="logo-desc">
+            
+            只要一个人还有所追求，他就没有老。直到后悔取代了梦想，他才算老。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			相关链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/HeJayce" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Follow Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #1d39f3;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/HeJayce" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Follow Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://oss.jayce.icu/markdown/202208161455851.svg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">linux学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-11-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    29 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p><strong>不要再服务器访问高峰运行高负载命令</strong></p>
+<p><strong>远程配置防火墙时不要把自己踢出防火墙</strong></p>
+<p><strong>合理分配权限</strong></p>
+<p><strong>定时备份数据和日志</strong></p>
+<hr>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>软连接：类似于快捷方式  </p>
+<p>硬链接：类似于拷贝，相比于cp -p  两个文件可以同时更新</p>
+<p>删除源文件后，软连接不可访问，硬链接可以继续访问</p>
+<p>硬链接不可以操作目录</p>
+<p>如何判断是否是硬链接：</p>
+<p>​    查看i节点，一个i节点会映射到多个文件 </p>
+<hr>
+<h3 id="目录作用"><a href="#目录作用" class="headerlink" title="目录作用"></a>目录作用</h3><table>
+<thead>
+<tr>
+<th>目录名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bin</td>
+<td>存放系统命令</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>保存和系统环境设置相关的命令</td>
+</tr>
+<tr>
+<td>/usr/bin</td>
+<td>存放系统命令，区别是单用户模式下不能执行</td>
+</tr>
+<tr>
+<td>/usr/sbin</td>
+<td>存放根文件系统不必要的系统管理命令</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>系统启动目录</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>设备文件</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>配置文件</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>家目录</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>系统调用函数库保存位置</td>
+</tr>
+<tr>
+<td>/lost+found</td>
+<td>根分区备份恢复目录</td>
+</tr>
+<tr>
+<td>/media</td>
+<td>挂载目录，系统建议只挂载媒体设备</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>挂载目录，硬盘，U盘</td>
+</tr>
+<tr>
+<td>/misc</td>
+<td>挂载目录，建议挂载NFS服务</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td>第三方安装软件保存位置</td>
+</tr>
+<tr>
+<td>/prco</td>
+<td>虚拟文件系统，数据不会存在硬盘中</td>
+</tr>
+<tr>
+<td>/sys</td>
+<td>和prco相似，主要保存内核信息</td>
+</tr>
+<tr>
+<td>/root</td>
+<td></td>
+</tr>
+<tr>
+<td>/srv</td>
+<td>服务数据目录</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>临时目录，存放临时文件</td>
+</tr>
+<tr>
+<td>/usr</td>
+<td>系统软件资源目录</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>动态数据保存位置</td>
+</tr>
+</tbody></table>
+<p>挂载目录类似于Windows的盘符</p>
+<h3 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h3><h4 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">scp [-1246BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
+[-l limit] [-o ssh_option] [-P port] [-S program]
+[[user@]host1:]file1 [...] [[user@]host2:]file2</code></pre>
+
+<p>简易</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">scp file root@ip:folder 
+#或者 
+scp file root@ip:file 
+#或者 
+scp file ip:folder 
+#或者 
+scp file ip:file </code></pre>
+
+<p>指定了远程的目录，文件名字不变，指定文件名，则传输后重命名</p>
+<p>传输文件夹使用 -r 参数，文件夹会传输到指定的目录下，而不是重命名</p>
+<p>例如</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">scp -r /root/shell 172.0.0.1:/root/linux/ </code></pre>
+
+<p>将本地 shell目录复制到远程 linux目录下 <code>/root/linux/shell</code></p>
+<p>相关参数：</p>
+<p><code>-P</code>   指定端口号</p>
+<p><code>-i</code>  使用密钥文件登录</p>
+<pre class="line-numbers language-none"><code class="language-none">scp  -i key.pem  /root/file  ip:dic </code></pre>
+
+
+
+<hr>
+<h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><ol>
+<li><p>物理终端</p>
+<p>直接接入本机</p>
+</li>
+<li><p>虚拟终端</p>
+<p>在物理终端商软件虚拟实现的终端，centos6 有默认6个虚拟终端</p>
+<p>Ctrl + Alt + Fn （n = 1-6）</p>
+<p>设备文件路径：/dev/tty#</p>
+</li>
+<li><p>模拟终端</p>
+<p>图形界面打开的命令行、ssh、telnet</p>
+<p>设备文件路径：/dev/pts/# 无穷个</p>
+</li>
+</ol>
+<p>查看终端设备<code>tty</code></p>
+<hr>
+<h2 id="命令提示符"><a href="#命令提示符" class="headerlink" title="命令提示符"></a>命令提示符</h2><pre class="line-numbers language-none"><code class="language-none">prompt</code></pre>
+
+<p>[root@localhost ~]#</p>
+<p> [root@localhost ~] : PS1</p>
+<p> prompt:</p>
+<p> 管理员：#</p>
+<p> 普通用户：$</p>
+<hr>
+<h2 id="系统分区"><a href="#系统分区" class="headerlink" title="系统分区"></a>系统分区</h2><h3 id="主分区"><a href="#主分区" class="headerlink" title="主分区"></a>主分区</h3><p>最多只能有4个</p>
+<h3 id="扩展分区"><a href="#扩展分区" class="headerlink" title="扩展分区"></a>扩展分区</h3><p>当主分区不够时，拿出一个分区做扩展分区</p>
+<p>扩展分区最多只能有1个</p>
+<p>主分区加扩展分区最多有4个</p>
+<p>不能写入数据，不能格式化，只能包含逻辑分区</p>
+<h3 id="逻辑分区"><a href="#逻辑分区" class="headerlink" title="逻辑分区"></a>逻辑分区</h3><p>可以写入数据，</p>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>高级格式化，又称逻辑格式化，它指根据用户选定的文件系统（FAT32，NTFS，EXT2，3，4）</p>
+<p>linux默认EXT4格式会把分区变成一个一个等大小的数据块，每个数据块为4kb</p>
+<p>文件有一个inode号，文件读取通过这个编号去硬盘分区数据块后找</p>
+<hr>
+<h2 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h2><hr>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><p>文件权限：r读，w写，x执行</p>
+<p>rw- r– r–</p>
+<p>u    g   o  </p>
+<p>u所有者 g所属组 o 其他人</p>
+<p>权限够用就行，除了可执行文件（脚本等），不需要执行权限</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>权限</th>
+<th>对文件含义</th>
+<th>对目录含义</th>
+<th>文件操作</th>
+<th>目录操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>读</td>
+<td>查看文件内容</td>
+<td>列出目录内容</td>
+<td>cat、tail、less..</td>
+<td>ls</td>
+</tr>
+<tr>
+<td>w</td>
+<td>写</td>
+<td>修改文件</td>
+<td>目录中创建、删除文件</td>
+<td>vim</td>
+<td>touch 、mkdir、rm</td>
+</tr>
+<tr>
+<td>x</td>
+<td>执行</td>
+<td>进入目录，执行文件</td>
+<td>进入目录</td>
+<td>bash等</td>
+<td>cd</td>
+</tr>
+</tbody></table>
+<p>对文件的删除权限其实要看所属目录的权限是否有写权限</p>
+<hr>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>输入命令，回车:</p>
+<p> shell程序找到键入命令所对应的可执行程序或代码，并由其分析后提交给内核分配资源将其运行起来。表现为一个或多个进程。</p>
+<p>在shell中可执行的命令有两类:</p>
+<p> 内建命令:由shell自带的，而且通过某命令形式提供;</p>
+<p> 外部命令:在当前系统的某文件系统路径下有对应的可执行程序文件:</p>
+<p> which, whereis</p>
+<p>区别内部或外部命令:</p>
+<p> <code>type COMMAND</code></p>
+<p>shell 程序可搜寻的执行文件的路径定义在PATH环境变量中：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">ehco $PATH	</code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://camo.githubusercontent.com/72c3852f5994102902bc5cb38228ed4e502a885f25393052592d5dccf242b8de/68747470733a2f2f6a6179636568652e6f73732d636e2d68616e677a686f752e616c6979756e63732e636f6d2f696d6167652d32303231313230343233333535373937332e706e67"><img src="https://oss.jayce.icu/markdown/202201062321146.png" alt="image-20211204233557973"></a></p>
+<p>自左至右依次查询，查到停止</p>
+<p>shell搜寻代外部命令的路径结果会缓存至kv（key-value）存储中：</p>
+<p>可用命令<code>hash</code>命令查看</p>
+<p><a target="_blank" rel="noopener" href="https://camo.githubusercontent.com/d8a9732dce4431d1d85d8d7a018a54a899b541cbc78c7d0041ca23e07609f8ba/68747470733a2f2f6a6179636568652e6f73732d636e2d68616e677a686f752e616c6979756e63732e636f6d2f696d6167652d32303231313230343233343235393435322e706e67"><img src="https://oss.jayce.icu/markdown/202201062322340.png" alt="image-20211204234259452"></a></p>
+<p><strong>缓存副作用：</strong></p>
+<p>如果命令位置发生了转移，系统还是会按缓存路径运行，导致命令失效</p>
+<pre class="line-numbers language-none"><code class="language-none">mv /bin/ls /usr/bin/ls
+ls
+# -bash: /bin/ls: NO such file or directory</code></pre>
+
+<p>清除缓存：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">hash -d [command] #删除一个命令缓存
+hash -r  #删除所有缓存</code></pre>
+
+<hr>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><h3 id="linux-amp-macos"><a href="#linux-amp-macos" class="headerlink" title="linux&amp;macos"></a>linux&amp;macos</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">ssh username@ip </code></pre>
+
+<p>-p：指定端口</p>
+<p>使用私钥登陆：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">ssh -i ~/.ssh/jayce username@ip</code></pre>
+
+<p>文件</p>
+<hr>
+<h2 id="关机与重启"><a href="#关机与重启" class="headerlink" title="关机与重启"></a>关机与重启</h2><h3 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a><code>shutdown</code></h3><p>立即关机：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">shutdown -h now</code></pre>
+
+<p>延迟一分钟关机</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">shutdown -h 1</code></pre>
+
+<h3 id="halt"><a href="#halt" class="headerlink" title="halt"></a><code>halt</code></h3><p>直接关机</p>
+<h3 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a><code>reboot</code></h3><p>重启系统</p>
+<h3 id="sync"><a href="#sync" class="headerlink" title="sync"></a><code>sync</code></h3><p>将内存的数据同步到磁盘</p>
+<p>作用：关机和重启之前执行。放止数据丢失</p>
+<hr>
+<h2 id="登陆和注销"><a href="#登陆和注销" class="headerlink" title="登陆和注销"></a>登陆和注销</h2><p>登陆少用root账号登陆，可避免操作失误。</p>
+<p>可使用普通用户登陆，再用<code>su -用户名</code>切换系统管理员身份</p>
+<h3 id="logout"><a href="#logout" class="headerlink" title="logout"></a><code>logout</code></h3><p>注销</p>
+<p>logout在图形运行级别无效，在运行级别3下有效</p>
+<hr>
+<h2 id="运行级别"><a href="#运行级别" class="headerlink" title="运行级别"></a>运行级别</h2><p>linux有7个运行级别</p>
+<p>0：关机</p>
+<p>1：单用户（可找回密码，不需要密码）</p>
+<p>2：多用户无网络</p>
+<p>3：多用户有网络</p>
+<p>4：保留</p>
+<p>5：图形界面</p>
+<p>6：重启</p>
+<p>常用的是3和5</p>
+<p>运行级别配置文件：/etc/inittab (centos7以前)</p>
+<p>在配置文件中修改运行级别</p>
+<hr>
+<h3 id="切换指定运行级别"><a href="#切换指定运行级别" class="headerlink" title="切换指定运行级别"></a>切换指定运行级别</h3><p>基本语法</p>
+<p>init [012356]</p>
+<hr>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h3><p>系统可以对有共性的多个用户进行统一的管理</p>
+<p>每个用户至少属于一个组</p>
+<p>比如root属于root组</p>
+<h3 id="增加删除组"><a href="#增加删除组" class="headerlink" title="增加删除组"></a>增加删除组</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">groupadd
+groupdel</code></pre>
+
+<h3 id="家目录"><a href="#家目录" class="headerlink" title="家目录"></a>家目录</h3><p>home目录下有各个用户的家目录</p>
+<p>当用户登陆时，会自动进入自己的家目录</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">/home/jayce</code></pre>
+
+<h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">useradd
+useradd -d /home/jayce -m jayce</code></pre>
+
+<p>-d ： 指定用户目录</p>
+<p>-m ： 如果目录为空，则新建</p>
+<p>-g：指定用户组</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">passwd</code></pre>
+
+<p>设置密码</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">passwd jayce</code></pre>
+
+<p>在创建好用户后要设置密码</p>
+<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">userdel</code></pre>
+
+<p>默认加用户名是不会删除其所有文件的</p>
+<p>-f ：强制删除，即时已经登陆</p>
+<p>-r：连同相关用户文件一起删除</p>
+<p><strong>另一种方法：</strong></p>
+<p>进入<code>/etc/passwd</code>中，删除用户记录</p>
+<p>⚠️不安全</p>
+<h3 id="修改用户的组"><a href="#修改用户的组" class="headerlink" title="修改用户的组"></a>修改用户的组</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">usermod
+usermod -g usergroup username</code></pre>
+
+<h3 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">id username</code></pre>
+
+<h3 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">su - username</code></pre>
+
+<p>从高权限到低权限不需要密码</p>
+<p>返回root用<code>exit</code></p>
+<h4 id="查看当前用户"><a href="#查看当前用户" class="headerlink" title="查看当前用户"></a>查看当前用户</h4><p><code>who am i</code> = <code>whoami</code></p>
+<h3 id="用户信息存放"><a href="#用户信息存放" class="headerlink" title="用户信息存放"></a>用户信息存放</h3><ul>
+<li><h2 id="用户配置文件：-etc-passwd"><a href="#用户配置文件：-etc-passwd" class="headerlink" title="用户配置文件：/etc/passwd"></a>用户配置文件：/etc/passwd</h2><ul>
+<li>用户名:密码(加密在shadow):用户id:组id::家目录:对应的shell</li>
+</ul>
+</li>
+<li>组配置文件：/etc/group<ul>
+<li>组名:口令:组id:列表(看不到)</li>
+</ul>
+</li>
+<li>口令配置文件：/etc/shadow<ul>
+<li>加密文件存放密码</li>
+</ul>
+</li>
+</ul>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="man"><a href="#man" class="headerlink" title="man"></a><code>man</code></h3><p> 查看指令手册</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">/usr/share/man</code></pre>
+
+<p>man1—man9</p>
+<p>有多个man的目的是为了区分权限</p>
+<p> <code>man1</code> 用户命令</p>
+<p> <code>man2</code> 系统调用</p>
+<p> <code>man3</code> c库调用</p>
+<p> <code>man4</code> 设备及特殊文件</p>
+<p> <code>man5</code> 配置文件格式</p>
+<p> <code>man6</code> 游戏</p>
+<p> <code>man7</code> 杂项</p>
+<p> <code>man8</code> 管理类命令</p>
+<p>有些关键字在不止一个章节中</p>
+<p>指导章节：man # [COMMAND]</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">man`命令配置文件`/etc/man.config</code></pre>
+
+<p> <code>MANPATH /.../.../...</code></p>
+<h4 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h4><p>Space，向文件尾翻屏:</p>
+<p>b，向文件首部翻屏:</p>
+<p>d，向文件尾部翻半屏:</p>
+<p>u，向文件首部翻半屏:</p>
+<p>RETURN，向文件尾部翻一行</p>
+<p>y ，向文件首部翻一行</p>
+<p>q ，退出</p>
+<h3 id="p"><a href="#p" class="headerlink" title="p"></a><code>p</code></h3><h3 id="wd"><a href="#wd" class="headerlink" title="wd"></a><code>wd</code></h3><p> 查看当前位置的绝对路径</p>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a><code>ls</code></h3><p><code> -a</code> 显示所有文件包括隐藏</p>
+<p><code>-l</code>以列表的形式</p>
+<p>​    <img src="https://oss.jayce.icu/markdown/202201062242168.png" alt="image-20220106224229321"></p>
+<p>​    d：目录   -：文件   l：软连接</p>
+<p><code>-h</code> humman人性化，字节大小带上单位</p>
+<p><code>-d</code> 显示目录本身</p>
+<p><img src="https://oss.jayce.icu/markdown/202201062251334.png" alt="image-20220106225118919"></p>
+<p><code>-i</code> 查询文件号</p>
+<h3 id="ln"><a href="#ln" class="headerlink" title="ln"></a><code>ln</code></h3><p>创建链接</p>
+<p>软连接：类似于快捷方式  </p>
+<p>硬链接：类似于拷贝，相比于cp -p  两个文件可以同时更新</p>
+<p>删除源文件后，软连接不可访问，硬链接可以继续访问</p>
+<p><code>-s</code>   soft 软连接</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">ln `-s` [源文件] [目标文件]</code></pre>
+
+
+
+
+
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a><code>mkdir</code></h3><p> 创建目录</p>
+<p> -p 创建多级目录</p>
+<h3 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a><code>rmdir</code></h3><p>删除空目录</p>
+<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a><code>rm</code></h3><p><code>-r</code>递归删除</p>
+<p><code>-f </code>强制删除</p>
+<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a><code>cp</code></h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">cp 	1.txt /home</code></pre>
+
+<p> <code>-r</code> 递归复制</p>
+<p><code>-p</code> 保留文件属性，不会更改修改文件时间</p>
+<p> <code>\cp</code>强制覆盖复制，不需要单独确认</p>
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a><code>mv</code></h3><p> 移动或重命名</p>
+<p> 移动：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mv /home/pig.txt /root</code></pre>
+
+<p> 重命名：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mv oldname newname</code></pre>
+
+
+
+<h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a><code>touch</code></h3><p>新建文件 如果文件名中间需要空格，则必须用双引号</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">touch "program files"</code></pre>
+
+<p>但尽量不要用空格作为文件名，很麻烦</p>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a><code>cat</code></h3><p> 查看文件内容</p>
+<p> -n 显示行号</p>
+<p>​    与cat相反的显示方法：<code>tac</code></p>
+<p>​    <img src="https://oss.jayce.icu/markdown/202201091022043.png" alt="image-20220109102201471"></p>
+<p> 配合 | more 按页显示文本内容</p>
+<h3 id="more"><a href="#more" class="headerlink" title="more"></a><code>more</code></h3><ul>
+<li>space 向下翻页</li>
+<li>enter 向下翻行</li>
+<li>q 退出</li>
+<li>ctrl F 向下滚一屏</li>
+<li>ctrl B 返回上一屏</li>
+<li>= 输出当前行号</li>
+<li>:f 输出文件名和当前行号</li>
+</ul>
+<h3 id="less"><a href="#less" class="headerlink" title="less"></a><code>less</code></h3><p>功能与more类似，但比more强大</p>
+<p>less在显示文件内容时，根据显示需要进行加载内容，对大型文件有较高效率</p>
+<ul>
+<li>space 向下翻页</li>
+<li>enter 向下翻行</li>
+<li>q 退出</li>
+<li>pageup</li>
+<li>pagedown</li>
+<li>/字串 向下搜寻【字串】功能：n：向下查找：N：向上查找</li>
+<li>?字串 向上搜寻【字串】功能：n：向上查找：N：向下查找</li>
+</ul>
+<h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a><code>chmod</code></h3><p>语法：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">chmod [{ugoa}{+-=}{rwx}][文件/目录]
+chmod [mode=421][文件/目录]
+chmod -R 递归修改</code></pre>
+
+<p>u(所有者) g(所属组) o(其他人) a(所有人)</p>
+<p>+(增加) -(减少) =(赋予)</p>
+<p>例如：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">chmod u+x,o-r start.sh
+chmod (-R) 765 start.sh</code></pre>
+
+<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a><code>echo</code></h3><p><code>&gt;</code>和<code>&gt;&gt;</code></p>
+<p><code>&gt;</code>输出重定向</p>
+<p><code>&gt;&gt;</code>追加</p>
+<h3 id="history"><a href="#history" class="headerlink" title="history"></a><code>history</code></h3><p>记录历史操作</p>
+<p>登陆shell时，会读取命令历史文件中记录下来的命令： ~/.bash_history</p>
+<p>登陆进shell后，新执行的命令只会记录在缓存中</p>
+<p>登出shell后，会被追加至记录里</p>
+<ul>
+<li><code>-a </code>更新历史记录文件</li>
+<li><code>-d</code> 删除历史记录命令 <code>history -d 100</code></li>
+<li><code>-c</code> 清空命令历史记录</li>
+</ul>
+<p>快捷操作：</p>
+<p><code>!100</code> 运行第100行历史记录的命令</p>
+<p><code>!string</code> 调用历史中最近一个以string开头的命令</p>
+<p><code>!!</code> 重复运行上一条命令</p>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a><code>find</code></h3><p>find命令是根据文件的属性进行查找</p>
+<ul>
+<li>文件名(-name)</li>
+<li>文件大小(-size)</li>
+<li>所有者(-user)</li>
+<li>所属组(-group)</li>
+<li>是否为空(-empty)</li>
+<li>时间，time为日期（天），min为分钟，<strong>只有这两种</strong><pre><code>atime：访问时间（access time），指的是文件最后被读取的时间,可    以使用touch命令更改为当前时间；
+ctime：变更时间（change time），指的是文件本身最后被变更的时    间，变更动作可以使chmod、chgrp、mv等等；
+mtime：修改时间（modify time），指的是文件内容最后被修改的时间，修改动作可以使echo重定向、vi等等；
+</code></pre>
+</li>
+</ul>
+<h4 id="文件名查找"><a href="#文件名查找" class="headerlink" title="文件名查找"></a>文件名查找</h4><ol>
+<li><p><code>find / -name httpd.conf</code>　　</p>
+<p>在根目录下查找文件httpd.conf，表示在整个硬盘查找</p>
+</li>
+<li><p><code>find /etc -name httpd.conf　</code>　</p>
+<p>在/etc目录下文件httpd.conf</p>
+</li>
+<li><p><code>find /etc -name '</code>*srm*<code>'　</code>　</p>
+<p>使用通配符*(0或者任意多个)。表示在/etc目录下查找文件名中含有字符串‘srm’的文件*</p>
+</li>
+<li><p><code>find . -name 'srm*'</code>　</p>
+<p>表示当前目录下查找文件名开头是字符串‘srm’的文件</p>
+</li>
+</ol>
+<h4 id="文件特征查找"><a href="#文件特征查找" class="headerlink" title="文件特征查找"></a>文件特征查找</h4><ol>
+<li><p><code>find / -amin -10 </code>　</p>
+<p>查找在系统中最后10分钟访问的文件(access time)</p>
+</li>
+<li><p><code>find / -atime -2　</code>　</p>
+<p>查找在系统中最后48小时访问的文件</p>
+</li>
+<li><p><code>find / -empty </code></p>
+<p>查找在系统中为空的文件或者文件夹</p>
+</li>
+<li><p><code>find / -group cat </code>　</p>
+<p>查找在系统中属于 group为cat的文件</p>
+</li>
+<li><p><code>find / -mmin -5 </code></p>
+<p>查找在系统中最后5分钟里修改过的文件(modify time)</p>
+</li>
+<li><p><code>find / -mtime -1 </code>　</p>
+<p>查找在系统中最后24小时里修改过的文件</p>
+</li>
+<li><p><code>find / -user jayce </code>　</p>
+<p>查找在系统中属于jayce这个用户的文件</p>
+</li>
+<li><p><code>find / -size +10000c</code>　</p>
+<p>查找出大于10000000字节的文件</p>
+<p>(c:字节，w:双字，k:KB，M:MB，G:GB)</p>
+</li>
+<li><p><code>find / -size -1000k</code> 　</p>
+<p>查找出小于1000KB的文件</p>
+</li>
+</ol>
+<h4 id="混合查找方式"><a href="#混合查找方式" class="headerlink" title="混合查找方式"></a>混合查找方式</h4><p>​    参数有：<code>!</code>，<code>-and(-a)</code>，<code>-or(-o)</code>。</p>
+<ol>
+<li><p><code>find /tmp -size +10000c -and -mtime +2</code> 　</p>
+<p>在/tmp目录下查找大于10000字节并在最后2分钟内修改的文件</p>
+</li>
+<li><p><code>find / -user fred -or -user jayce </code>　　</p>
+<p>在<code>/</code>目录下查找用户是fred或者jayce的文件文件</p>
+</li>
+<li><p><code>find /tmp ! -user jayce</code>　　</p>
+<p>在<code>/tmp</code>目录中查找所有不属于jayce用户的文件</p>
+</li>
+</ol>
+<h3 id="which"><a href="#which" class="headerlink" title="which"></a><code>which</code></h3><p>查看可执行文件的位置 ，只有设置了环境变量的程序才可以用</p>
+<h3 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a><code>whereis</code></h3><p> 寻找特定文件，只能用于查找二进制文件、源代码文件和man手册页</p>
+<h3 id="locate"><a href="#locate" class="headerlink" title="locate"></a><code>locate</code></h3><p>配合数据库查看文件位置 ,详情：locate -h查看帮助信息</p>
+<h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a><code>cut</code></h3><p>显示每行内容</p>
+<p>由此可以实现提取每一行的第n个字符</p>
+<p>参数：</p>
+<ul>
+<li><p>-b  以字节为单位进行分割</p>
+</li>
+<li><p>-c  以字符为单位进行分割</p>
+</li>
+<li><p>-d  自定义分隔符</p>
+</li>
+<li><p>-f  与-d一起使用，指定显示哪个区域</p>
+<p>实例：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">cut -d "%" -f 1</code></pre>
+
+<p>以%为分隔符，截取百分号前面的数值 -f 取截取后的第一行</p>
+</li>
+</ul>
+<h3 id="alias"><a href="#alias" class="headerlink" title="alias"></a><code>alias</code></h3><p>alias 可以为命令指定别名，所谓别名可以省去一长串命令的麻烦</p>
+<h4 id="查看别名"><a href="#查看别名" class="headerlink" title="查看别名"></a>查看别名</h4><p>直接使用命令<code>alias</code>可以查看所有的别名，如果想看某一命令，在alias后跟命令即可</p>
+<p><a target="_blank" rel="noopener" href="https://camo.githubusercontent.com/091bb781563ad6dfdefbd2a1dbf0c6836ac731ccce984e47230f15be1207a65d/68747470733a2f2f6a6179636568652e6f73732d636e2d68616e677a686f752e616c6979756e63732e636f6d2f6d61726b646f776e2f3230323230323134313532333133382e706e67"><img src="https://oss.jayce.icu/markdown/202203171533539.png" alt="image-20220214152355809"></a></p>
+<h4 id="创建别名"><a href="#创建别名" class="headerlink" title="创建别名"></a>创建别名</h4><p>例如：</p>
+<pre class="line-numbers language-none"><code class="language-none">alias newcmd='cmd'
+alias install='sudo apt-get	install'</code></pre>
+
+<p>上述方式一旦关闭终端，设置的别名就失效了</p>
+<p>可以将命令放入 <del>/.bashrc 中，当每个进程生成时，都要执行`</del>/.bashrc`中的命令</p>
+<h4 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h4><p><code>unalias</code> 命令可以将之前的别名删除</p>
+<pre class="line-numbers language-none"><code class="language-none">unalias vi</code></pre>
+
+<p>使用<code>-a</code>参数可以清除所有的别名</p>
+<h4 id="不使用别名"><a href="#不使用别名" class="headerlink" title="不使用别名"></a>不使用别名</h4><p>当我们为命令加上日常参数后，但有时需要使用原始的命令时，有三种方法可以调用原始命令</p>
+<ol>
+<li>使用命令的绝对路径</li>
+<li>切换命令所在目录，使用<code>./cmd</code></li>
+<li>在命令前使用反斜线<code>\</code></li>
+</ol>
+<h4 id="别名永久生效"><a href="#别名永久生效" class="headerlink" title="别名永久生效"></a>别名永久生效</h4><p>我们通过 alias 命令设置的别名，仅限于在当前的 Shell 中使用，如果系统重启了，那么新设置的别名就失效了。</p>
+<p>如果想让别名永久有效的话，就需要把所有的别名设置方案加入到（$HOME）目录下的 .alias 文件中（如果系统中没有这个文件，你可以创建一个），然后在 .bashrc 文件中增加这样一段代码：</p>
+<pre class="line-numbers language-none"><code class="language-none"># Aliases
+if [ -f ~/.alias ]; then
+  . ~/.alias
+fi</code></pre>
+
+<p>.alias文件：</p>
+<pre class="line-numbers language-none"><code class="language-none">vim .alias
+######
+alias tf='tail -f'  #动态查看文件变化</code></pre>
+
+<p>执行<code>source ~/.bashrc</code></p>
+<h3 id="top"><a href="#top" class="headerlink" title="top"></a><code>top</code></h3><p>Linux top命令用于实时显示 process 的动态。</p>
+<h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a><strong>参数说明</strong></h4><ul>
+<li><p>d : 改变显示的更新速度，或是在交谈式指令列( interactive command)按 s</p>
+</li>
+<li><p>q : 没有任何延迟的显示速度，如果使用者是有 superuser 的权限，则 top 将会以最高的优先序执行</p>
+</li>
+<li><p>c : 切换显示模式，共有两种模式，一是只显示执行档的名称，另一种是显示完整的路径与名称</p>
+</li>
+<li><p>S : 累积模式，会将己完成或消失的子进程 ( dead child process ) 的 CPU time 累积起来</p>
+</li>
+<li><p>s : 安全模式，将交谈式指令取消, 避免潜在的危机</p>
+</li>
+<li><p>i : 不显示任何闲置 (idle) 或无用 (zombie) 的进程</p>
+</li>
+<li><p>n : 更新的次数，完成后将会退出 top  <strong><code>top -n 3</code></strong></p>
+</li>
+<li><p>b : 批次档模式，搭配 “n” 参数一起使用，可以用来将 top 的结果输出到档案内</p>
+<ul>
+<li><p>输出到文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">top -n 1 -b &gt; top.txt</code></pre></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://oss.jayce.icu/markdown/202203171611873.png" alt="image-20220317161136480"></p>
+<h4 id="各行解析"><a href="#各行解析" class="headerlink" title="各行解析"></a>各行解析</h4><blockquote>
+<p><strong>top - 16:11:14 up 40 days, 15:34,  1 user,  load average: 0.01, 0.03, 0.05</strong><br><strong>Tasks:  94 total,   1 running,  93 sleeping,   0 stopped,   0 zombie</strong><br><strong>%Cpu(s):  0.0 us,  3.2 sy,  0.0 ni, 96.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st</strong><br><strong>KiB Mem :  1776196 total,    72544 free,  1545768 used,   157884 buff/cache</strong><br><strong>KiB Swap:        0 total,        0 free,        0 used.    79840 avail Mem</strong></p>
+</blockquote>
+<p>第一行</p>
+<table>
+<thead>
+<tr>
+<th align="left">内容</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">16:11:14</td>
+<td align="left">表示当前时间</td>
+</tr>
+<tr>
+<td align="left">up 40days，15:34</td>
+<td align="left">系统运行时间 不指定格式为时：分</td>
+</tr>
+<tr>
+<td align="left">1 users</td>
+<td align="left">当前登录用户数</td>
+</tr>
+<tr>
+<td align="left">load average: 0.01, 0.03, 0.05</td>
+<td align="left">系统负载，即任务队列的平均长度。 三个数值分别为 1分钟、5分钟、15分钟前到现在的平均值。<strong>如果这个数除以逻辑CPU的数量，结果高于5的时候就表明系统在超负荷运转了</strong></td>
+</tr>
+</tbody></table>
+<p>第二行</p>
+<table>
+<thead>
+<tr>
+<th align="left">内容</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">94 total</td>
+<td align="left">进程总数</td>
+</tr>
+<tr>
+<td align="left">1 running</td>
+<td align="left">正在运行的进程数</td>
+</tr>
+<tr>
+<td align="left">93 sleeping</td>
+<td align="left">睡眠的进程数</td>
+</tr>
+<tr>
+<td align="left">0 stopped</td>
+<td align="left">停止的进程数</td>
+</tr>
+<tr>
+<td align="left">0 zombie</td>
+<td align="left">僵尸进程数</td>
+</tr>
+</tbody></table>
+<p>第三行</p>
+<p>%Cpu(s):  0.0 us,  3.2 sy,  0.0 ni, 96.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st</p>
+<table>
+<thead>
+<tr>
+<th align="left">内容</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0.0 us</td>
+<td align="left">用户空间占用CPU百分比</td>
+</tr>
+<tr>
+<td align="left">3.2 sy</td>
+<td align="left">内核空间占用CPU百分比</td>
+</tr>
+<tr>
+<td align="left">0.0 ni</td>
+<td align="left">用户进程空间内改变过优先级的进程占用CPU百分比</td>
+</tr>
+<tr>
+<td align="left">96.8 id</td>
+<td align="left">空闲CPU百分比</td>
+</tr>
+<tr>
+<td align="left">0.0 wa</td>
+<td align="left">等待输入输出的CPU时间百分比</td>
+</tr>
+<tr>
+<td align="left">0.0 hi</td>
+<td align="left">硬中断（Hardware IRQ）占用CPU的百分比</td>
+</tr>
+<tr>
+<td align="left">0.0 si</td>
+<td align="left">软中断（Software Interrupts）占用CPU的百分比</td>
+</tr>
+<tr>
+<td align="left">0.0 st</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>第四行</p>
+<p>KiB Mem :  1776196 total,    72544 free,  1545768 used,   157884 buff/cache</p>
+<table>
+<thead>
+<tr>
+<th align="left">内容</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">KiB Mem :  1776196 total</td>
+<td align="left">物理内存总</td>
+</tr>
+<tr>
+<td align="left">72544 free</td>
+<td align="left">空闲内存总量</td>
+</tr>
+<tr>
+<td align="left">1545768 used</td>
+<td align="left">使用的物理内存总量</td>
+</tr>
+<tr>
+<td align="left">157884 buff/cache</td>
+<td align="left">用作内核缓存的内存量</td>
+</tr>
+</tbody></table>
+<p>第五行</p>
+<p>KiB Swap:        0 total,        0 free,        0 used.    79840 avail Mem</p>
+<table>
+<thead>
+<tr>
+<th align="left">内容</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">KiB Swap:        0 total</td>
+<td align="left">交换区总量</td>
+</tr>
+<tr>
+<td align="left">0 free</td>
+<td align="left">空闲交换区总量</td>
+</tr>
+<tr>
+<td align="left">0 used</td>
+<td align="left">使用的交换区总量</td>
+</tr>
+<tr>
+<td align="left">79840 avail Mem</td>
+<td align="left">代表可用于进程下一次分配的物理内存数量</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PR</td>
+<td>优先级</td>
+</tr>
+<tr>
+<td>NI</td>
+<td>nice值。负值表示高优先级，正值表示低优先级</td>
+</tr>
+<tr>
+<td>VIRT</td>
+<td>进程使用的虚拟内存总量，单位kb。VIRT=SWAP+RES</td>
+</tr>
+<tr>
+<td>RES</td>
+<td>进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA</td>
+</tr>
+<tr>
+<td>SHR</td>
+<td>共享内存大小，单位kb</td>
+</tr>
+<tr>
+<td>S</td>
+<td>进程状态。D=不可中断的睡眠状态 R=运行 S=睡眠 T=跟踪/停止 Z=僵尸进程</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>上次更新到现在的CPU时间占用百分比</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>进程使用的物理内存百分比</td>
+</tr>
+<tr>
+<td>TIME+</td>
+<td>进程使用的CPU时间总计，单位1/100秒</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>命令名/命令行</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a><code>sort</code></h3><p>对文本内容排序，以行为单位，默认以第一列ASCII 码的次序排列</p>
+<p>重点参数说明</p>
+<ul>
+<li><p><code>-b</code> 忽略每行前面开始出的空格字符。</p>
+</li>
+<li><p><code>-r</code> 以相反的顺序来排序。</p>
+</li>
+<li><p><code>-k n</code>    按指定的<strong>列</strong>进行排序。</p>
+</li>
+<li><p><code>-u</code>去重</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">sort a.txt
+sort testfile -k 2</code></pre></li>
+</ul>
+<p>注意，sort排序后需要重定向输出</p>
+<h4 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a><code>uniq</code></h4><p>排序后去重</p>
+<h3 id="iconv"><a href="#iconv" class="headerlink" title="iconv"></a><span id="#iconv"><code>iconv</code></span></h3><p>对于给定文件把它的内容从一种编码转换成另一种编码。 </p>
+<p>-f </p>
+<pre class="line-numbers language-none"><code class="language-none">iconv -c -t utf-8 test.txt -o tmp.txt</code></pre>
+
+
+
+<h3 id="tee"><a href="#tee" class="headerlink" title="tee"></a><code>tee</code></h3><p>既可以重定向到文件，还可以建立副本传向后续的stdin</p>
+<p>（即打印输出又写入文件）</p>
+<p>-a 选项为追加内容，类似&gt;&gt;</p>
+<h3 id="comm"><a href="#comm" class="headerlink" title="comm"></a><code>comm</code></h3><p>Linux comm 命令用于比较两个已排过序的文件。</p>
+<ul>
+<li>-1 不显示只在第 1 个文件里出现过的列。</li>
+<li>-2 不显示只在第 2 个文件里出现过的列。</li>
+<li>-3 不显示交集列。</li>
+</ul>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">comm a.txt b.txt</code></pre>
+
+
+
+<h3 id="curl"><a href="#curl" class="headerlink" title="curl"></a><code>curl</code></h3><p>支持http https ftp等众多请求</p>
+<p>直接curl + 地址 ，可输出网页源码</p>
+<p>保存网页源码：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">curl -o linux.html https://jayce.icu
+curl https://jayce.icu &gt;&gt; jayce.html</code></pre>
+
+<p>下载网页文件（不如用wget）</p>
+<pre class="line-numbers language-none"><code class="language-none">curl -O https://jayce.icu/hello.sh</code></pre>
+
+<p>使用代理服务器：</p>
+<pre class="line-numbers language-none"><code class="language-none">curl -x 127.0.0.1:10809 https://jayce.icu</code></pre>
+
+
+
+
+
+<h2 id="Linux三剑客"><a href="#Linux三剑客" class="headerlink" title="Linux三剑客"></a>Linux三剑客</h2><h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a><code>grep</code></h3><h4 id="主要参数"><a href="#主要参数" class="headerlink" title="主要参数"></a>主要参数</h4><p>[options]主要参数：</p>
+<p>​    <code>-c</code>：只输出匹配行的计数。(count)</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">grep -c ftp /etc/passwd</code></pre>
+
+<p><img src="https://oss.jayce.icu/markdown/202201111617840.png" alt="image-20220111161732807"></p>
+<p>​    <code>-i</code>：不区分大小写 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">grep -i FTP /etc/passwd</code></pre>
+
+<p><img src="https://oss.jayce.icu/markdown/202201111617063.png" alt="image-20220111161753629"></p>
+<p>​    <code>-h</code>：查询多文件时不显示文件名。</p>
+<p><img src="https://oss.jayce.icu/markdown/202201111626834.png" alt="image-20220111162602191"></p>
+<p>​    <code>-l</code>：查询多文件时只输出包含匹配字符的文件名。</p>
+<p><img src="https://oss.jayce.icu/markdown/202201111626791.png" alt="image-20220111162624906"></p>
+<p>​    <code>-n</code>：显示匹配行及行号。</p>
+<p><img src="https://oss.jayce.icu/markdown/202201111626789.png" alt="image-20220111162658201"></p>
+<p>​    <code>-s</code>:   不显示不存在或无匹配文本的错误信息。</p>
+<p>​    <code>-v</code>：显示不包含匹配文本的所有行。</p>
+<h4 id="输出相邻行"><a href="#输出相邻行" class="headerlink" title="输出相邻行"></a>输出相邻行</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">grep -A 1 bash oss.sh
+grep -B 2 bash oss.sh
+grep -C 3 bash oss.sh</code></pre>
+
+<p><img src="https://oss.jayce.icu/markdown/202201111631651.png" alt="image-20220111163121166"></p>
+<p><img src="https://oss.jayce.icu/markdown/202201111633711.png" alt="image-20220111163355721"></p>
+<p><img src="https://oss.jayce.icu/markdown/202201111634820.png" alt="image-20220111163437416"></p>
+<p>总结：</p>
+<p><code>-A</code>选项，是 After 的缩写<strong>查看后面</strong></p>
+<p><code>-B</code>选项，是 Before 的缩写查看前面</p>
+<p><code>-C</code>选项，它是<code>-A</code>和<code>-B</code>选项的合体<strong>两边都看</strong></p>
+<h4 id="zgrep"><a href="#zgrep" class="headerlink" title="zgrep"></a>zgrep</h4><p>zgrep 和 grep 用法类似，不过操作的对象是压缩的内容。支持 bzip2，gzip，lzip， xz 等等。</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">zgrep "/api" access_log.gz access_log_1.gz</code></pre>
+
+
+
+
+
+
+
+
+
+<hr>
+<h3 id="awk"><a href="#awk" class="headerlink" title="awk"></a><code>awk</code></h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">awk '条件1{动作1} 条件2{动作2}..' filename </code></pre>
+
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">df -h|grep "vda1"|awk '{printf $5 "\t\n"}'|cut -d "%" -f 1</code></pre>
+
+<p>按照指定符号分割：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">awk -F "." '{print $1}'
+#复杂写法
+awk 'BEGIN{FS="|";OFS="|"}{print $1,$2,$3,$4}' informix.txt</code></pre>
+
+
+
+<h4 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h4><h5 id="BEGIN"><a href="#BEGIN" class="headerlink" title="BEGIN"></a>BEGIN</h5><p>在所有数据读取之前执行这条命令</p>
+<p>awk默认先读取第一行数据，如果</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">ps -ef|grep sshd|awk 'BEGIN{printf "输出进程号\n"} {print $2}'</code></pre>
+
+<p><img src="https://oss.jayce.icu/markdown/202201221720695.png" alt="image-20220122172009408"></p>
+<p>如果没有BEGIN，则输出为</p>
+<p><img src="https://oss.jayce.icu/markdown/202203171054281.png" alt="image-20220317105404238"></p>
+<p>由此可见，BEGIN后的第一行是默认直接读取一次，不影响后面。</p>
+<h5 id="END"><a href="#END" class="headerlink" title="END"></a>END</h5><p>与BEGIN类似，读取最后一行</p>
+<p>指定分隔符截取：</p>
+<p>FS：输入分隔符</p>
+<p>OFS：输出分隔符</p>
+<p><strong>多个分隔符：FS=“[,.]”  先以<code>,</code>分再以<code>.</code>分</strong></p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">awk 'BEGIN{FS="|";OFS="|"}{print $1,$2,$3,$4}' informix.txt</code></pre>
+
+<p><img src="https://oss.jayce.icu/markdown/202203171119258.png" alt="image-20220317111917170"></p>
+<p>取出IP：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ifconfig eth0|grep -w 'inet'|awk 'BEGIN{FS="[. ]"}{print $10$11$12$13}'</code></pre>
+
+
+
+<h3 id="sed"><a href="#sed" class="headerlink" title="sed"></a><code>sed</code></h3><p>sed利用脚本处理文本文件</p>
+<p>语法：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sed [选项][脚本命令]文本文件</code></pre>
+
+<h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-e 脚本命令</td>
+<td>该选项会将其后跟的脚本命令添加到已有的命令中。</td>
+</tr>
+<tr>
+<td>-f 脚本命令文件</td>
+<td>该选项会将其后文件中的脚本命令添加到已有的命令中。</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>默认情况下，sed 会在所有的脚本指定执行完毕后，会自动输出处理后的内容，而该选项会屏蔽启动输出，需使用 print 命令来完成输出。</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>此选项会直接修改源文件，要慎用。</td>
+</tr>
+</tbody></table>
+<h4 id="脚本命令"><a href="#脚本命令" class="headerlink" title="脚本命令"></a>脚本命令</h4><p>address 表示指定要操作的具体行</p>
+<p>pattern 指的是需要替换的内容</p>
+<p>replacement 指的是要替换的新内容</p>
+<p>flag标记如下：</p>
+<table>
+<thead>
+<tr>
+<th>flags 标记</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n</td>
+<td>1~512 之间的数字，表示指定要替换的字符串出现第几次时才进行替换，例如，一行中有 3 个 A，但用户只想替换第二个 A，这是就用到这个标记；</td>
+</tr>
+<tr>
+<td>g</td>
+<td>对数据中所有匹配到的内容进行替换，如果没有 g，则只会在第一次匹配成功时做替换操作。例如，一行数据中有 3 个 A，则只会替换第一个 A；</td>
+</tr>
+<tr>
+<td>p</td>
+<td>会打印与替换命令中指定的模式匹配的行。此标记通常与 -n 选项一起使用。</td>
+</tr>
+<tr>
+<td>w file</td>
+<td>将缓冲区中的内容写到指定的 file 文件中；</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>用正则表达式匹配的内容进行替换；</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配第 n 个子串，该子串之前在 pattern 中用 () 指定。</td>
+</tr>
+<tr>
+<td>\</td>
+<td>转义（转义替换部分包含：&amp;、\ 等）。</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><strong>a</strong> ：新增， 表示在指定行的<strong>后面</strong>附加一行</p>
+<p>实例：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[address]a（或 i）\新文本内容
+sed -e 4a\newLine mysql.txt</code></pre>
+
+<p><img src="https://oss.jayce.icu/markdown/202203171419483.png" alt="image-20220317141941485"></p>
+<p>但是如果该文件不够4行，则：</p>
+<p><img src="https://oss.jayce.icu/markdown/202203171421901.png" alt="image-20220317142110038"></p>
+</li>
+<li><p><strong>c</strong> ：替换整行</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">[address]c\用于替换的新文本
+sed '3c\changed line' a.txt</code></pre>
+
+<p><img src="https://oss.jayce.icu/markdown/202203171522091.png" alt="image-20220317152219121"></p>
+</li>
+<li><p><strong>d</strong> ：删除，因为是删除啊，所以 d 后面通常不接任何东东；</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[address]d
+sed 'd' a.txt		 #什么也不输出，证明成了空文件
+sed '3d' a.txt		 #删除第三行
+sed '2,3d' a.txt	 
+sed '/1/,/3/d' a.txt 
+sed '3,$d' a.txt     #删除第三行之后所有的内容</code></pre></li>
+</ul>
+<p>​     <strong>在默认情况下 sed 并不会修改原始文件</strong></p>
+<ul>
+<li><p><strong>i</strong> ：新增， i 命令表示在指定行的<strong>前面</strong>插入一行，用法同a。</p>
+</li>
+<li><p><strong>p</strong> ：打印，亦即将某个选择的数据印出。通常 p 会与参数 sed -n 一起运行～</p>
+</li>
+<li><p><strong>s</strong> ：取代，replace</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[address]s/pattern/replacement/flags
+sed '2s/first/second/2' a.txt</code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">sed 's/a/z/2' a.txt</code></pre>
+
+<p>使用数字 2 作为标记的结果就是，sed 编辑器只替换每行中第 2 次出现的匹配模式。如果需要替换所有的字符串，需要用g标记</p>
+<p>注意：在使用 s 脚本命令时，替换类似文件路径的字符串会比较麻烦，需要将路径中的正斜线进行转义，例如：</p>
+<pre class="line-numbers language-none"><code class="language-none">sed 's/\/bin\/bash/\/bin\/csh/' /etc/passwd</code></pre>
+
+<p>去除转义字符后，红线为格式</p>
+<p><code>sed 's<span style="color:red">/</span>/bin/bash<span style="color:red">/</span>/bin/csh<span style="color:red">/</span>' /etc/passwd</code></p>
+</li>
+<li><p><strong>y</strong>：y转换可以处理单个字符，对 inchars 和 outchars 值进行一对一的映射，为全局转换</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">[address]y/inchars/outchars/
+sed 'y/123/789/' loop.txt</code></pre>
+
+<p>命令将把1对应替换为7，2对应替换为8，3对应替换为9</p>
+</li>
+</ul>
+<p><img src="https://oss.jayce.icu/markdown/202203171528298.png" alt="image-20220317152759451"></p>
+<h2 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h2><h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>即进入vim时的模式，可以进行dd，i等操作</p>
+<p><img src="https://oss.jayce.icu/markdown/202203301444832.png" alt="image-20220330144425674"></p>
+<p>常用命令：</p>
+<ul>
+<li><code>i</code> 切换至输入模式</li>
+<li><code>x</code> 删除当前字符</li>
+<li><code>:</code> 切换底线命令模式</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>移动光标</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>H</td>
+<td><strong>屏幕</strong>的最上方一行的第一个字</td>
+</tr>
+<tr>
+<td>M</td>
+<td><strong>屏幕</strong>的中央一行的第一个字</td>
+</tr>
+<tr>
+<td>L</td>
+<td><strong>屏幕</strong>的最下方一行的第一个字</td>
+</tr>
+<tr>
+<td>G</td>
+<td><strong>档案</strong>的最后一行(常用)</td>
+</tr>
+<tr>
+<td>nG</td>
+<td>n 为数字。移动到这个档案的第 n 行</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>移动到这个<strong>档案</strong>的第一行，相当于 1G (常用)</td>
+</tr>
+<tr>
+<td>n<enter></enter></td>
+<td>n 为数字。光标向下移动 n 行(常用)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">搜索替换</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">/word</td>
+<td>向<strong>光标之下</strong>寻找一个名称为 word 的字符串</td>
+</tr>
+<tr>
+<td align="left">?word</td>
+<td>向<strong>光标之上</strong>寻找一个名称为 word 的字符串</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td>这个 n 是英文按键。代表重复前一个搜寻的动作。举例来说， 如果刚刚我们执行 /vbird 去向下搜寻 vbird 这个字符串，则按下 n 后，会向下继续搜寻下一个名称为 vbird 的字符串。如果是执行 ?vbird 的话，那么按下 n 则会向上继续搜寻名称为 vbird 的字符串！</td>
+</tr>
+<tr>
+<td align="left">N</td>
+<td>这个 N 是英文按键。与 n 刚好相反，为『反向』进行前一个搜寻动作。 例如 /vbird 后，按下 N 则表示『向上』搜寻 vbird 。</td>
+</tr>
+<tr>
+<td align="left">使用 /word 配合 n 及 N 是非常有帮助的！可以让你重复的找到一些你搜寻的关键词！</td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><code>:n1,n2s/word1/word2/g</code></td>
+<td>n1 与 n2 为数字。<br>在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为 word2 ！举例来说，在 100 到 200 行之间搜寻 vbird 并取代为 VBIRD 则： <code>:100,200s/vbird/VBIRD/g</code>(常用)</td>
+</tr>
+<tr>
+<td align="left"><code>:1,$s/word1/word2/g</code>或 <code>:%s/word1/word2/g</code></td>
+<td>从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！(常用)</td>
+</tr>
+<tr>
+<td align="left"><code>:1,$s/word1/word2/gc</code>或 <code>:%s/word1/word2/gc</code></td>
+<td>从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！<br><strong>且在取代前显示提示字符给用户确认 (confirm) 是否需要取代！(常用)</strong></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">删除、复制与粘贴</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>n</strong>x</td>
+<td>n 为数字，连续向后删除 n 个字符。举例来说，我要连续删除 10 个字符， 『10x』。</td>
+</tr>
+<tr>
+<td align="left">dd</td>
+<td>剪切游标所在的那一整行(常用)，用 p/P 可以粘贴。</td>
+</tr>
+<tr>
+<td align="left"><strong>n</strong>dd</td>
+<td>n 为数字。剪切光标所在的向下 n 行，例如 20dd 则是剪切 20 行(常用)，用 p/P 可以粘贴。</td>
+</tr>
+<tr>
+<td align="left">d<strong>n</strong>G</td>
+<td><strong>删除</strong>光标所在到第<strong>n</strong>行的所有数据</td>
+</tr>
+<tr>
+<td align="left">dG</td>
+<td><strong>删除</strong>光标所在到最后一行的所有数据</td>
+</tr>
+<tr>
+<td align="left">d$</td>
+<td><strong>删除</strong>游标所在处，到该行的最后一个字符</td>
+</tr>
+<tr>
+<td align="left">d0</td>
+<td>那个是数字的 0 ，删除游标所在处，到该行的最前面一个字符</td>
+</tr>
+<tr>
+<td align="left">yy</td>
+<td>复制游标所在的那一行(常用)</td>
+</tr>
+<tr>
+<td align="left">nyy</td>
+<td>n 为数字。复制光标所在的向下 n 行，例如 20yy 则是复制 20 行(常用)</td>
+</tr>
+<tr>
+<td align="left">y<strong>n</strong>G</td>
+<td>复制游标所在行到第一行的所有数据</td>
+</tr>
+<tr>
+<td align="left">yG</td>
+<td>复制游标所在行到最后一行的所有数据</td>
+</tr>
+<tr>
+<td align="left">y0</td>
+<td>复制光标所在的那个字符到该行行首的所有数据</td>
+</tr>
+<tr>
+<td align="left">y$</td>
+<td>复制光标所在的那个字符到该行行尾的所有数据</td>
+</tr>
+<tr>
+<td align="left">p, P</td>
+<td>p 为将已复制的数据在光标下一行贴上，P 则为贴在游标上一行！ 举例来说，我目前光标在第 20 行，且已经复制了 10 行数据。则按下 p 后， 那 10 行数据会贴在原本的 20 行之后，亦即由 21 行开始贴。但如果是按下 P 呢？ 那么原本的第 20 行会被推到变成 30 行。 (常用)</td>
+</tr>
+<tr>
+<td align="left">u</td>
+<td>复原前一个动作。(常用)</td>
+</tr>
+</tbody></table>
+<h3 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h3><h3 id="底线命令模式"><a href="#底线命令模式" class="headerlink" title="底线命令模式"></a>底线命令模式</h3><h4 id="保存与退出"><a href="#保存与退出" class="headerlink" title="保存与退出"></a>保存与退出</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>:w</code></td>
+<td>将编辑的数据写入硬盘档案中(常用)</td>
+</tr>
+<tr>
+<td><code>:w!</code></td>
+<td>若文件属性为『只读』时，强制写入该档案。</td>
+</tr>
+<tr>
+<td><code>:q</code></td>
+<td>离开 vi (常用)</td>
+</tr>
+<tr>
+<td><code>:q!</code></td>
+<td>! 为强制离开不储存档案。</td>
+</tr>
+<tr>
+<td><code>:wq</code></td>
+<td>储存后离开，wq! 则为强制储存后离开</td>
+</tr>
+<tr>
+<td><code>:w [filename]</code></td>
+<td>将编辑的数据储存成另一个文件<br>（类似另存新档）</td>
+</tr>
+<tr>
+<td><code>:r [filename]</code></td>
+<td>读入另一个档案的数据。<br>将 [filename]内容加到游标所在行后面</td>
+</tr>
+<tr>
+<td><code>:n1,n2 w [filename]</code></td>
+<td>将 n1 到 n2 的内容储存成 filename 这个档案。</td>
+</tr>
+<tr>
+<td><code>:! command</code></td>
+<td>暂时离开 vi 到终端执行 command 的显示结果！</td>
+</tr>
+</tbody></table>
+<h4 id="查看与设置编码"><a href="#查看与设置编码" class="headerlink" title="查看与设置编码"></a>查看与设置编码</h4><p>查看</p>
+<pre class="line-numbers language-none"><code class="language-none">:set fileencoding</code></pre>
+
+<p>设置</p>
+<pre class="line-numbers language-none"><code class="language-none">:set fileencoding=utf-8</code></pre>
+
+<p>如果不用vim，可以用专门转码的命令 iconv，导航👉<a href="#iconv">iconv</a> </p>
+<h4 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:set nu</td>
+<td>显示行号，设定之后，会在每一行的前缀显示该行的行号</td>
+</tr>
+<tr>
+<td>:set nonu</td>
+<td>与 set nu 相反，为取消行号！</td>
+</tr>
+</tbody></table>
+<h2 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h2><h3 id="连接-1"><a href="#连接-1" class="headerlink" title="连接"></a>连接</h3><p>ftp ip port</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ftp 192.168.1.1 21</code></pre>
+
+<p>文件的上传和下载都会在连接命令所在的目录下，即在<code>/usr/local</code>下执行ftp，则文件都下载到了<code>/usr/local</code></p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h4 id="get"><a href="#get" class="headerlink" title="get"></a>get</h4><p>将文件从远端主机中传送至本地主机中</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">get /usr/local/1.txt</code></pre>
+
+
+
+<h4 id="mget"><a href="#mget" class="headerlink" title="mget"></a>mget</h4><p>从远端主机接收一批文件至本地主机</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">cd /usr/your/
+mget *.*</code></pre>
+
+<p>在<code>mget</code>命令前先执行<code>:prompt off</code>，可去除每次提示</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Jayce he</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jayce.icu/post/linux.html">https://jayce.icu/post/linux.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Jayce he</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="google, qq, qzone, wechat, weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://oss.jayce.icu/medias/20220202_064923692_iOS.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://oss.jayce.icu/medias/20220202_064935425_iOS.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'elikcPxQfxkk7raFF3T9vQun-gzGzoHsz',
+        appKey: 'kGc9FGX0ftB3gABVnOhtXK76',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/post/shell.html">
+                    <div class="card-image">
+                        
+                        <img src="https://oss.jayce.icu/markdown/202208161457963.svg" class="responsive-img" alt="shell学习笔记">
+                        
+                        <span class="card-title">shell学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            shell学习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                    <a href="/tags/shell/">
+                        <span class="chip bg-color">shell</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/post/mysql.html">
+                    <div class="card-image">
+                        
+                        <img src="https://oss.jayce.icu/markdown/202208161458820.svg" class="responsive-img" alt="mysql学习笔记">
+                        
+                        <span class="card-title">mysql学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            mysql学习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="2898986440"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.2'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">Jayce he</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            <!--  -->
+            <!--  -->
+            <!-- <br> -->
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "2";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+                <span id="icp"><img src="http://jaycehe.oss-accelerate-overseas.aliyuncs.com/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">宁ICP备2022000171号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/HeJayce" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:hejayce@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/he_jayce" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/he_jayce" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=462585775" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 462585775" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?338366429089caf93de36cf9f14bb466";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+<!--    <div id="backTop" class="top-scroll" style="display: none;">-->
+<!--        <a class="btn-floating btn-large waves-effect waves-light" href="#!">-->
+<!--            <i class="fas fa-arrow-up"></i>-->
+<!--        </a>-->
+<!--    </div>-->
+
+    <!--腾讯兔小巢-->
+    
+        <div id="backTop" class="top-scroll" style="display: block; margin-bottom: 55px; ">
+<!--        <div style="position:fixed;bottom:125px;right:16px;cursor: pointer;">-->
+            <a title="提点意见？" target="_blank" rel="noopener" href="https://support.qq.com/products/384782"><i class="fa fa-comments fa-3x"  aria-hidden="true"></i></a>
+        </div>
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    <script type="text/javascript" src="https://clustrmaps.com/map_v2.js?d=d5CeduvYKlE4USjUleJEfquR4Rx7MQ146XsLZbM8AxU"></script>
+    
+
+</body>
+
+</html>
