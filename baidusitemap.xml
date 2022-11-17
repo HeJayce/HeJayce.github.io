@@ -9,19 +9,19 @@
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/typora-oss.html</loc>
-    <lastmod>2022-11-15</lastmod>
-  </url>
-  <url>
     <loc>https://jayce.icu//post/watchdog.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/mysql-install.html</loc>
+    <loc>https://jayce.icu//post/typora-oss.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
     <loc>https://jayce.icu//post/linux.html</loc>
+    <lastmod>2022-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://jayce.icu//post/mysql-install.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
@@ -41,7 +41,7 @@
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/ecs-github.html</loc>
+    <loc>https://jayce.icu//post/hexo-install.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
@@ -49,11 +49,11 @@
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/jenkins-github.html</loc>
+    <loc>https://jayce.icu//post/ecs-github.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/hexo-install.html</loc>
+    <loc>https://jayce.icu//post/jenkins-github.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
 </urlset> 
