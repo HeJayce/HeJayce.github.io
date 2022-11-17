@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jayce.icu//post/mysql.html</loc>
+    <lastmod>2022-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://jayce.icu//post/typora-oss.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
@@ -9,15 +13,7 @@
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/typora-oss.html</loc>
-    <lastmod>2022-11-15</lastmod>
-  </url>
-  <url>
     <loc>https://jayce.icu//post/watchdog.html</loc>
-    <lastmod>2022-11-15</lastmod>
-  </url>
-  <url>
-    <loc>https://jayce.icu//post/mysql-install.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
@@ -25,15 +21,19 @@
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
+    <loc>https://jayce.icu//post/mysql-install.html</loc>
+    <lastmod>2022-11-15</lastmod>
+  </url>
+  <url>
     <loc>https://jayce.icu//post/jenkins-install.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/jupyter-notebook.html</loc>
+    <loc>https://jayce.icu//post/keepalive.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/keepalive.html</loc>
+    <loc>https://jayce.icu//post/jupyter-notebook.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
@@ -49,11 +49,11 @@
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/hexo-install.html</loc>
+    <loc>https://jayce.icu//post/jenkins-github.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/jenkins-github.html</loc>
+    <loc>https://jayce.icu//post/hexo-install.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
 </urlset> 

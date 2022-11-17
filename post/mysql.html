@@ -4,8 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mysql学习笔记, Jayce">
-    <meta name="description" content="mysql学习笔记">
+    <meta name="keywords" content="mysql, Jayce">
+    <meta name="description" content="Mysql[TOC]
+Mysql运行原理bin目录
+mysqld：直接启动一个mysql服务器进程
+mysql_safe ：启动脚本，会间接调用mysqld，并持续监控服务器运行状态，当进程出现问题，可以帮助重启服务器，还可以输出错误日志。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +33,7 @@
 <script async defer data-website-id="10bdd701-05ac-4f44-bddd-18c87dbcfb54" src="https://umami.jayce.icu/umami.js"></script>
 
 
-    <title>mysql学习笔记 | 菜狗的生活记录</title>
+    <title>mysql | 菜狗的生活记录</title>
     <link rel="icon" type="image/png" href="https://oss.jayce.icu/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HeJayce/HeJayce.github.io/libs/awesome/css/all.min.css">
@@ -324,12 +327,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://oss.jayce.icu/markdown/202208161458820.svg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://oss.jayce.icu/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mysql学习笔记</h1>
+                    <h1 class="description center-align post-title">mysql</h1>
                 </div>
             </div>
         </div>
@@ -443,25 +446,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/mysql/">
-                                <span class="chip bg-color">mysql</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                笔记
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -477,21 +467,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-15
+                    2022-11-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    25 分
                 </div>
                 
 
@@ -510,7 +500,128 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><p>[TOC]</p>
-<h2 id="安装与连接"><a href="#安装与连接" class="headerlink" title="安装与连接"></a>安装与连接</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h4><p>系统：Ubuntu16.04</p>
+<h2 id="Mysql运行原理"><a href="#Mysql运行原理" class="headerlink" title="Mysql运行原理"></a>Mysql运行原理</h2><h3 id="bin目录"><a href="#bin目录" class="headerlink" title="bin目录"></a>bin目录</h3><p><img src="https://oss.jayce.icu/markdown/image-20221116143129853.png" alt="image-20221116143129853"></p>
+<p>mysqld：直接启动一个mysql服务器进程</p>
+<p>mysql_safe ：启动脚本，会间接调用mysqld，并持续监控服务器运行状态，当进程出现问题，可以帮助重启服务器，还可以输出错误日志。</p>
+<p>mysql.server：启动脚本，间接调用mysql_safe，可在后面加入start参数来启动服务器。</p>
+<p>mysqld_multi：启动脚本，可以启动和停止多个mysql进程</p>
+<h3 id="mysql连接"><a href="#mysql连接" class="headerlink" title="mysql连接"></a>mysql连接</h3><p>mysql采用tcp作为服务器与客户端的网络通信协议，mysql启动时会默认申请3306端口，等待客户端连接，如需更改，可以在启动时加上-P参数</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mysqld -P3307</code></pre>
+
+<p>登陆mysql</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mysql -h ip -P 3306 -uroot -p([密码)</code></pre>
+
+
+
+<h4 id="UNIX域套接字"><a href="#UNIX域套接字" class="headerlink" title="UNIX域套接字"></a>UNIX域套接字</h4><p>如果服务器和客户端都在类UNIX的同一台机器，可以使用<strong>UNIX域套接字</strong>进行通信</p>
+<p>mysql服务器程序默认监听的UNIX域套接字文件名称是<code>/tmp/mysql.sock</code></p>
+<p>如需更改，在启动服务器时，指定socket参数</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mysqld --socket=path</code></pre>
+
+<p>如果客服端想通过UNIX域套接字进行通讯，也需要显式指定UNIX域套接字文件名称</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mysql -hlocalhost  -uroot --socket=path  -p </code></pre>
+
+
+
+<h4 id="处理请求过程"><a href="#处理请求过程" class="headerlink" title="处理请求过程"></a>处理请求过程</h4><p><img src="https://oss.jayce.icu/markdown/image-20221116150854394.png" alt="image-20221116150854394"></p>
+<h5 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h5><p>每个客户端连接服务器时，服务器会创建一个线程，专门处理与这个客户端的交互。</p>
+<p>当客户端退出时，服务器不会立即销毁线程，而是缓存起来，在另一个新的客户端再连接时，把这个线程分配给新的客户端。</p>
+<p>从而不会去反复创建和销毁</p>
+<h5 id="解析与优化"><a href="#解析与优化" class="headerlink" title="解析与优化"></a>解析与优化</h5><h6 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h6><p>如果查询请求中出现重复的查询，mysql第一次会把查询结果和请求缓存起来，后续的重复请求会直接查询缓存中的请求和结果。</p>
+<p>但如果请求有所不同则不会识别，系统函数，自定义变量，系统表这类请求不会被缓存。</p>
+<p>mysql缓存系统会监控每张表，如果表数据或结构被修改，则删除缓存。</p>
+<h6 id="语法解析"><a href="#语法解析" class="headerlink" title="语法解析"></a>语法解析</h6><p>没有查询到缓存后，mysql会对查询语句分析，判断其是否正确，然后将需要查询的表和条件提取出来，放在mysql内部使用的一些数据结构上。</p>
+<h6 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h6><p>将语句进行优化，方法包括转换连接，表达式简化等。</p>
+<p>可以通过<code>EXPLAIN</code> 来查看查询计划。</p>
+<h5 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h5><p>常用的时InnoDB和MyISAM，InnoDB是mysql的默认引擎（5.5.5版本以后，之前为MyISAM）</p>
+<p>设置存储引擎</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">CREATE TABLE table_name(
+) ENGINE = MyISAM ;</code></pre>
+
+<p>修改存储引擎</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">ALTER TABLE table_name ENGINE = MyISAM ;</code></pre>
+
+
+
+<h4 id="连接白名单"><a href="#连接白名单" class="headerlink" title="连接白名单"></a>连接白名单</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">use mysql
+select user,host from user</code></pre>
+
+<p>看root用户的host是否为localhost</p>
+<p>如果为localhost，则只能本地登陆，所以要将localhost改为可以远程的ip</p>
+<p>如果是指定的IP，可以用：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'[允许的ip]' identified by '[密码]' with grant option;
+flush privileges; </code></pre>
+
+<p>通过所有IP</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'%' identified by 'root' with grant option;
+flush privileges;</code></pre>
+
+
+
+<h3 id="Mysql-配置与启动"><a href="#Mysql-配置与启动" class="headerlink" title="Mysql 配置与启动"></a>Mysql 配置与启动</h3><h4 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h4><p>选项名前加<code>--</code>  , 如果选项名是多个单词，可以用<code>-</code> 或<code>_</code>连接</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mysqld --skip-networking --default-strage-engine=MyISAM
+#选项名，= ， 选项值直接不能有空格</code></pre>
+
+<p>skip-networking  :   禁止使用TCP/IP 网络通信</p>
+<p>default-strage-engine :  设置默认引擎</p>
+<p>更多选项执行<code>mysql --help</code> 查看</p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>my.cof</p>
+<p>配置文件寻找排序</p>
+<p><code>/etc/my.cnf</code> &gt;  <code>/etc/mysql/my.cnf</code>&gt; <code>SYSCONFDIR/my.cnf</code>&gt; <code>$MYSQL_HOME/my.cnf</code></p>
+<p>SYSCONFDIR是使用CMake构建Mysql时指定的目录</p>
+<h5 id="配置文件格式"><a href="#配置文件格式" class="headerlink" title="配置文件格式"></a>配置文件格式</h5><pre class="line-numbers language-none"><code class="language-none">[server]
+option 1
+option 2 = value 2
+[mysqld]
+
+[client]
+
+[mysqladmin]
+</code></pre>
+
+<p>不同的选项组给不同的程序使用，除了[server]和[client] 分别作用与服务器和客户端</p>
+<p>mysqld_safe 和 mysql.server 都会读取[mysqld]。</p>
+<h5 id="配置文件优先级"><a href="#配置文件优先级" class="headerlink" title="配置文件优先级"></a>配置文件优先级</h5><p>mysql会按上面提到过的顺序搜索文件.</p>
+<p>但也可以使用<code>--defaults-file</code>指定配置文件,如果我呢见无法正常读取则会报错.</p>
+<p>也可以使用<code>--defaults-extra-file</code>指定<strong>额外的</strong>配置文件``</p>
+<p><strong>如果多个配置文件有相同启动项，则以最后一个为准</strong></p>
+<p> <strong>在同一个配置文件有相同启动项，则以最后一个出现组中的启动项为准</strong></p>
+<p><strong>命令行比配置文件优先级高</strong></p>
+<h3 id="系统变量"><a href="#系统变量" class="headerlink" title="系统变量"></a>系统变量</h3><p>查看系统变量:</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">show global|session variables like ''
+#此处选项名的各个单词之间必须要下划线_
+#不指定global|session ,默认session</code></pre>
+
+<p><img src="https://oss.jayce.icu/markdown/image-20221116163012969.png" alt="image-20221116163012969"></p>
+<p>修改系统变量:</p>
+<ol>
+<li><p>启动时加入参数</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mysqld --max-connections=1000</code></pre></li>
+<li><p>配置文件</p>
+<pre class="line-numbers language-none"><code class="language-none">[server]
+max-connections=1000</code></pre></li>
+<li><p>SET(服务运行时)</p>
+<ol>
+<li><p>GLOBAL 全局</p>
+</li>
+<li><p>SESSION 会话</p>
+</li>
+</ol>
+<p>服务器在启动时会把每个全局变量设置为默认</p>
+<p>语法</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">set [global|session]  option = value;
+set [@@(global|session).]  option = value;
+#举例
+set global default_strage_engine = MyISAM;
+set @@global.default_strage_engine = MyISAM;
+set default_strage_engine = MyISAM;  #不指定默认session</code></pre></li>
+</ol>
+<p><strong>注意❗:</strong></p>
+<p><strong>不是所有的系统变量都有global和session的作用范围，有些只有global，有些只有session，大部分都有</strong></p>
+<p><strong>有些系统变量只读，不可修改</strong></p>
+<p>状态变量</p>
+<p>show global status like ‘Max_used_connections’;</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h3><p>系统：Ubuntu16.04</p>
 <pre class="line-numbers language-none"><code class="language-none">apt-get update
 apt-get install mysql-server</code></pre>
 
@@ -520,13 +631,13 @@ apt-get install mysql-server</code></pre>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre>
 
 <p>将bind-address   = 127.0.0.1注释掉</p>
-<p><img src="https://oss.jayce.icu/markdown/202109171525629.png" alt="image-20210721175850771"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202109171525629.png" alt="image-20210721175850771"></p>
 <p>重启即可</p>
 <pre class="line-numbers language-none"><code class="language-none">systemctl restart mysql 
 service mysql restart</code></pre>
 
 <p> 接着授予权限：</p>
-<h4 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h4><p>系统：centos7</p>
+<h3 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h3><p>系统：centos7</p>
 <p>下载mysql5.7的本地仓库文件</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</code></pre>
 
@@ -544,7 +655,7 @@ systemctl status mysqld</code></pre>
 <p>此时的登陆密码存放在文件里，查看密码，用该初始化密码登录</p>
 <pre class="line-numbers language-none"><code class="language-none">grep "A temporary password is generated" /var/log/mysqld.log|awk '{print $11}'</code></pre>
 
-<p><img src="https://oss.jayce.icu/markdown/202203091507458.png" alt="image-20220309150733851"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203091507458.png" alt="image-20220309150733851"></p>
 <p>使用命令登录数据库后，修改该默认密码，否则无法使用</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER USER 'root'@'localhost' IDENTIFIED BY '$Password';</code></pre>
 
@@ -554,26 +665,6 @@ systemctl status mysqld</code></pre>
 flush privileges; </code></pre>
 
 <p>其中%代表所有ip，password替换为数据库密码。</p>
-<h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><p>登陆mysql</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mysql -h ip -P 3306 -uroot -p([密码)</code></pre>
-
-
-
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">use mysql
-select user,host from user</code></pre>
-
-<p>看root用户的host是否为localhost</p>
-<p>如果为localhost，则只能本地登陆，所以要将localhost改为可以远程的ip</p>
-<p>如果是指定的IP，可以用：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'[允许的ip]' identified by '[密码]' with grant option;
-flush privileges; </code></pre>
-
-<p>通过所有IP</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'%' identified by 'root' with grant option;
-flush privileges;</code></pre>
-
-
-
 <h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">creat user 'jayce'@'host' identified by 'password'</code></pre>
 
 <h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">alter user 'jayce'@'host' identified by 'password'</code></pre>
@@ -836,7 +927,7 @@ SELECT name FROM person_tbl WHERE name REGEXP '[*mar]';</code></pre>
 <blockquote>
 <p>加号可用于与字符匹配 1 次或多次。例如，<code>'bre+'</code> 匹配 bre 和 bree，但不匹配 br。</p>
 </blockquote>
-<p><img src="https://oss.jayce.icu/markdown/202203281709030.png" alt="image-20220328170923052"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203281709030.png" alt="image-20220328170923052"></p>
 <p>意思就是刚好匹配还不行，必须前面多一个</p>
 <table>
 <thead>
@@ -873,12 +964,12 @@ SELECT name FROM person_tbl WHERE name REGEXP '[*mar]';</code></pre>
 <p><code>[] </code>字符集合。匹配所包含的任意一个字符</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SELECT * FROM runoob_test_tbl WHERE runoob_author REGEXP '[OB]';</code></pre>
 
-<p><img src="https://oss.jayce.icu/markdown/202203281650265.png" alt="image-20220328165035427"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203281650265.png" alt="image-20220328165035427"></p>
 <p><code>[^...] </code>  负值字符集合。匹配未包含的任意字符。</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SELECT * FROM runoob_test_tbl WHERE runoob_author REGEXP '[^RUNOOB]';</code></pre>
 
 <p>结果：</p>
-<p><img src="https://oss.jayce.icu/markdown/202203281656914.png" alt="image-20220328165604954"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203281656914.png" alt="image-20220328165604954"></p>
 <p>结果发现RUNOOB并没有出现，原因是<code>[^RUNOOB]</code>过滤掉了<code>RUNOOB</code></p>
 <p><code>p1|p2|p3</code>    匹配 p1 或 p2 或 p3。例如，’z|food’ 能匹配 “z” 或 “food”。’(z|f)ood’ 则匹配 “zood” 或 “food”。</p>
 <table>
@@ -932,7 +1023,7 @@ SELECT name FROM person_tbl WHERE name REGEXP '[*mar]';</code></pre>
 <h4 id="正则表达式测试"><a href="#正则表达式测试" class="headerlink" title="正则表达式测试"></a>正则表达式测试</h4><p>可以在不使用数据库表的情况下用 SELECT 语句来测试正则表达式，REGEXP 检查总是<strong>返回0（没有匹配）或1（匹配）</strong>。可以用带文字串的 REGEXP 来测试表达式，并试验它们。</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SELECT 'Hern' REGEXP '[0-9]';</code></pre>
 
-<p><img src="https://oss.jayce.icu/markdown/202203281640805.png" alt="image-20220328164007959"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202203281640805.png" alt="image-20220328164007959"></p>
 <h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><h4 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h4><p>用于提取满足条件的记录</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SELECT [字段],[字段] FROM [表名] WHERE [字段] operator value;</code></pre>
 
@@ -1085,18 +1176,18 @@ SELECT column_name   "alias name" FROM table_name;</code></pre>
 <p>GROUP BY 关键字经常和聚合函数一起使用。</p>
 <p>聚合函数包括 COUNT()，SUM()，AVG()，MAX() 和 MIN()。</p>
 <h4 id="WITH-ROLLUP"><a href="#WITH-ROLLUP" class="headerlink" title="WITH ROLLUP"></a>WITH ROLLUP</h4><p>WITH POLLUP 关键字用来在所有记录的最后加上一条记录，这条记录是上面所有记录的总和，即统计记录数量。</p>
-<h3 id="连接-1"><a href="#连接-1" class="headerlink" title="连接"></a>连接</h3><p>（JOIN）</p>
+<h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><p>（JOIN）</p>
 <p>sql join用于将两个表结合起来</p>
 <p>下图展示了 LEFT JOIN、RIGHT JOIN、INNER JOIN、OUTER JOIN 相关的 7 种用法。</p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png"><img src="https://oss.jayce.icu/markdown/202109171525432.png" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png"><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202109171525432.png" alt="img"></a></p>
 <h4 id="INNER-JOIN"><a href="#INNER-JOIN" class="headerlink" title="INNER JOIN"></a>INNER JOIN</h4><p>在表中存在至少一个匹配</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SELECT column_name FROM table1 INNER JOIN table2 ON table1.column_name=table2.column_name;
 SELECT column_name FROM table1 JOIN table2 ON table1.column_name=table2.column_name;</code></pre>
 
 <p>INNER JOIN 与JOIN相同</p>
-<p><img src="https://oss.jayce.icu/markdown/202109171525690.png" alt="image-20210723094810785"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202109171525690.png" alt="image-20210723094810785"></p>
 <h4 id="LEFT-JOIN"><a href="#LEFT-JOIN" class="headerlink" title="LEFT JOIN"></a>LEFT JOIN</h4><p>从左表返回所有的行，如果右表没有匹配，结果为NULL</p>
-<p><img src="https://oss.jayce.icu/markdown/202109171525903.png" alt="image-20210725182757047"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202109171525903.png" alt="image-20210725182757047"></p>
 <h4 id="RIGHT-JOIN"><a href="#RIGHT-JOIN" class="headerlink" title="RIGHT JOIN"></a>RIGHT JOIN</h4><p>从右表返回所有的行，如果左表没有匹配，结果为NULL</p>
 <h4 id="FULL-OUTER-JOIN"><a href="#FULL-OUTER-JOIN" class="headerlink" title="FULL OUTER JOIN"></a>FULL OUTER JOIN</h4><p>只要左右表中存在一个表匹配，则返回行</p>
 <p>FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。</p>
@@ -1138,6 +1229,17 @@ SELECT * FROM (SELECT * FROM result) AS Temp;</code></pre>
 <pre class="line-numbers language-none"><code class="language-none">``</code></pre>
 
 
+
+<p>查看所有表大小和记录</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SELECT concat_ws('.',a.table_schema ,a.table_name),
+CONCAT(ROUND(table_rows)) AS 'Number of Rows',
+CONCAT(ROUND(data_length/(1024*1024),4),',') AS 'data_size',
+CONCAT(ROUND(index_length/(1024*1024),4),'M') AS 'index_size',
+CONCAT(ROUND((data_length+index_length)/(1024*1024),4),'M') AS'Total'
+FROM
+information_schema. TABLES a
+    WHERE
+a.table_schema = 'j'  order by CAST(Total AS SIGNED);</code></pre>
 
 
 
@@ -1291,11 +1393,56 @@ INSERT INTO Websites (name, country) SELECT app_name, country FROM apps;</code><
 <p>例子：</p>
 <p>创建关于销售员的职工表</p>
 <p>总职工：</p>
-<p><img src="https://oss.jayce.icu/markdown/202204121522617.png" alt="image-20220412152203540"></p>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204121522617.png" alt="image-20220412152203540"></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CREATE  VIEW sell AS  SELECT * FROM `EMP` WHERE JOB="销售员";</code></pre>
 
-<p><img src="https://oss.jayce.icu/markdown/202204121522615.png" alt="image-20220412152224544"></p>
-<h3 id="更新视图"><a href="#更新视图" class="headerlink" title="更新视图"></a>更新视图</h3><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2>
+<p><img src="https://jaycehe.oss-cn-hangzhou.aliyuncs.com/markdown/202204121522615.png" alt="image-20220412152224544"></p>
+<h3 id="更新视图"><a href="#更新视图" class="headerlink" title="更新视图"></a>更新视图</h3><pre class="line-numbers language-none"><code class="language-none">CREATE OR REPLACE VIEW view_name AS
+SELECT column_name(s)
+FROM table_name
+WHERE condition</code></pre>
+
+
+
+
+
+
+
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>索引是一张表，该表保存了主键与索引字段，并指向实体表的记录。类似于字典的目录。</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li><p>单列索引</p>
+<ul>
+<li><p>普通索引</p>
+<p>MySQL中基本索引类型，没有什么限制，允许在定义索引的列中插入重复值和空值，纯粹为了查询数据更快一 点。</p>
+</li>
+<li><p>唯一索引</p>
+<p>索引列中的值必须是唯一的，但是允许为空值。</p>
+</li>
+<li><p>主键索引</p>
+<p>是一种特殊的唯一索引，不允许有空值。（主键约束，就是一个主键索引）。</p>
+</li>
+</ul>
+</li>
+<li><p>组合索引</p>
+<p>在表中的多个字段组合上创建的索引，只有在查询条件中使用了这些字段的左边字段时，索引才会被使用，使用组合索引时遵循最左前缀集合。</p>
+</li>
+<li><p>全文索引</p>
+<p>只有在MyISAM引擎上才能使用，只能在CHAR,VARCHAR,TEXT类型字段上使用全文索引，介绍了要求，说说什么是全文索引，就是在一堆文字中，通过其中的某个关键字等，就能找到该字段所属的记录行。</p>
+</li>
+</ul>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><h4 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h4><ol>
+<li><p>直接创建</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CREATE INDEX indexName ON table_name (column_name)</code></pre></li>
+<li><p>修改表结构</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER table tableName ADD INDEX indexName(columnName)</code></pre></li>
+<li><p>创建表的时候直接指定</p>
+<pre class="line-numbers language-none"><code class="language-none">CREATE TABLE mytable(  
+	ID INT NOT NULL,   
+	username VARCHAR(16) NOT NULL,  
+INDEX [indexName] (username(length))  
+);  </code></pre></li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -1358,11 +1505,7 @@ INSERT INTO Websites (name, country) SELECT app_name, country FROM apps;</code><
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/mysql/">
-                                    <span class="chip bg-color">mysql</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1897,20 +2040,20 @@ INSERT INTO Websites (name, country) SELECT app_name, country FROM apps;</code><
                         <span class="chip bg-color">阿里云</span>
                     </a>
                     
-                    <a href="/tags/https/">
-                        <span class="chip bg-color">https</span>
-                    </a>
-                    
                     <a href="/tags/hexo/">
                         <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                     <a href="/tags/%E5%8D%9A%E5%AE%A2/">
                         <span class="chip bg-color">博客</span>
                     </a>
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/https/">
+                        <span class="chip bg-color">https</span>
                     </a>
                     
                 </div>
