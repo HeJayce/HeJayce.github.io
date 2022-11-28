@@ -1,4 +1,5 @@
 https://jayce.icu/post/vscode-wsl.html
+https://jayce.icu/post/shell.html
 https://jayce.icu/post/mysql.html
 https://jayce.icu/tags/index.html
 https://jayce.icu/message-board/index.html
@@ -6,7 +7,6 @@ https://jayce.icu/contact/index.html
 https://jayce.icu/friends/index.html
 https://jayce.icu/categories/index.html
 https://jayce.icu/about/index.html
-https://jayce.icu/post/shell.html
 https://jayce.icu/post/typora-oss.html
 https://jayce.icu/post/watchdog.html
 https://jayce.icu/post/linux.html
@@ -40,9 +40,9 @@ https://jayce.icu/tags/%E7%BD%91%E7%BB%9C/
 https://jayce.icu/tags/python/
 https://jayce.icu/tags/jupyter-notebook/
 https://jayce.icu/tags/mysql/
-https://jayce.icu/tags/shell/
 https://jayce.icu/tags/OSS/
 https://jayce.icu/tags/typora/
+https://jayce.icu/tags/shell/
 https://jayce.icu/tags/WSL/
 https://jayce.icu/tags/vscode/
 https://jayce.icu/tags/%E8%84%9A%E6%9C%AC/
