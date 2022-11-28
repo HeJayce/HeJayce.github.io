@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://jayce.icu//post/vscode-wsl.html</loc>
+    <lastmod>2022-11-28</lastmod>
+  </url>
+  <url>
     <loc>https://jayce.icu//post/mysql.html</loc>
     <lastmod>2022-11-16</lastmod>
   </url>
@@ -9,11 +13,11 @@
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/watchdog.html</loc>
+    <loc>https://jayce.icu//post/typora-oss.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/typora-oss.html</loc>
+    <loc>https://jayce.icu//post/watchdog.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
@@ -29,19 +33,15 @@
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/jupyter-notebook.html</loc>
-    <lastmod>2022-11-15</lastmod>
-  </url>
-  <url>
     <loc>https://jayce.icu//post/keepalive.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/prometheus-grafana.html</loc>
+    <loc>https://jayce.icu//post/jupyter-notebook.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
-    <loc>https://jayce.icu//post/hexo-install.html</loc>
+    <loc>https://jayce.icu//post/prometheus-grafana.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
@@ -50,6 +50,10 @@
   </url>
   <url>
     <loc>https://jayce.icu//post/ecs-github.html</loc>
+    <lastmod>2022-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://jayce.icu//post/hexo-install.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>

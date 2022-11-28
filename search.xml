@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>vscode_wsl</title>
+      <link href="//post/vscode-wsl.html"/>
+      <url>//post/vscode-wsl.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用vscode在linux环境编写shell和python脚本"><a href="#使用vscode在linux环境编写shell和python脚本" class="headerlink" title="使用vscode在linux环境编写shell和python脚本"></a>使用vscode在linux环境编写shell和python脚本</h1><p>对于经常编写脚本的人来说，编写shell一般都会在vim或记事本中，这样的方式没什么问题，但遇到需要测试的时候，就没有IDE那样的方便，而且使用IDE对shell的自动补全会让效率翻倍。<br>此文章将讲述如何在vscode中配置Linux运行环境，让你run code即可看到输出。</p><h2 id="安装vscode"><a href="#安装vscode" class="headerlink" title="安装vscode"></a>安装vscode</h2><p>安装vscode的方式在这就不做大篇的叙述了，百度vscode，下载安装包，点击下一步安装即可<br><a href="https://code.visualstudio.com/">下载地址点我</a>    </p><h2 id="安装WSL"><a href="#安装WSL" class="headerlink" title="安装WSL"></a>安装WSL</h2><p>简单讲下WSL，这里我们将使用WSL作为脚本的运行环境<br>WSL是一个在Windows 10\11上能够运行原生Linux二进制可执行文件的兼容层。注意它并不是虚拟机。<br>步骤<br>右键单击windows徽标，打开Powershell（管理员），执行</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></pre><p>即可将WSL功能激活。<br>接着在微软商店中挑一个你想用的Linux发行版</p><p><img src="https://oss.jayce.icu/markdown/image-20221128152641580.png" alt="image-20221128152641580"></p><p>这里我选择了Ubuntu 20，直接点击安装即可。安装成功后，在开始菜单中点击运行，看看是否正常，一般第一次都需要设置用户和密码</p><p><img src="https://oss.jayce.icu/markdown/image-20221128152909237.png" alt="image-20221128152909237"></p><p>这就是wsl Ubuntu的界面，当你正常设置好用户名和密码，出现这个节目后，说明你的WSL安装正常了<img src="https://oss.jayce.icu/markdown/image-20221128152945459.png" alt="image-20221128152945459"></p><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>想必大家肯定不是第一次使用vscode的人了，就直接开门见山，直说需要安装什么插件好了</p><ul><li>Code Runner</li><li>WSL</li><li>Remote - SSH</li><li>ShellCheck</li><li>Shellman</li><li>Shell-format</li></ul><p>更多好用的脚本可自行安装</p><p>这里核心的插件是WSL，这里的wsl只是一个插件，和刚才安装的不一样，这个是用来连接WSL的</p><p>此时，在新建终端时，就可以看到刚才安装的WSL，这里我把它设置成了默认</p><p><img src="https://oss.jayce.icu/markdown/image-20221128154132874.png" alt="image-20221128154132874"></p><p>新建一个终端看看是不是WSL</p><p><img src="https://oss.jayce.icu/markdown/image-20221128154228391.png" alt="image-20221128154228391"></p><p>此时就可以在这里的终端直接输入各类命令使用了，目录也是windows下的目录，比如上图中当前的目录为<code>/mnt/e</code>，就代表现在在windows 中的E盘，这里需要注意的是，访问windows的文件管理器时，都要在mnt目录下寻找，WSL将windows 下的各个盘挂载在mnt下，当然你也可以使用WSL环境的linux目录结构。</p><p>vscode中setting.json部分配置如下</p><p><img src="https://oss.jayce.icu/markdown/image-20221128161645440.png" alt="image-20221128161645440"></p><h2 id="Code-Runner插件配置"><a href="#Code-Runner插件配置" class="headerlink" title="Code Runner插件配置"></a>Code Runner插件配置</h2><p>在vscode安装好linux环境后还不能优雅的调试写好的脚本，我们希望在点击run code按钮后，终端直接执行脚本，但现在还无法做到，现在执行脚本会有如下报错：</p><p><img src="https://oss.jayce.icu/markdown/image-20221128155757738.png" alt="image-20221128155757738"></p><p>这是因为code runner 在执行shell时不能识别WSL，这时我们就要对code runner做一些修改。</p><p>找到code runner的安装目录，插件一般放在<code>C:\Users\用户名\.vscode\extensions</code></p><p>code runner的文件名是formulahendry.code-runner，进入out\src 下，找到codeManager.js，在编辑器中打开。</p><p>找到</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">else if (windowsShell &amp;&amp; windowsShell.toLowerCase().indexOf("bash") &gt; -1 &amp;&amp; windowsShell.toLowerCase().indexOf("windows") &gt; -1) {    command = command.replace(/([A-Za-z]):\\/g, this.replacer).replace(/\\/g, "/");</code></pre><p>这段代码需改改成</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">else if (windowsShell &amp;&amp; windowsShell.toLowerCase().indexOf("wsl") &gt; -1) {command = command.replace(/([A-Za-z]):/g, this.replacer).replace(/\\/g, "/");</code></pre><p>保存重启vscode即可</p><p>此时我们再运行code runner，即可正常在WSL里执行脚本了</p><p><img src="https://oss.jayce.icu/markdown/image-20221128161103550.png" alt="image-20221128161103550"></p><h2 id="Python脚本"><a href="#Python脚本" class="headerlink" title="Python脚本"></a>Python脚本</h2><p>只需要在WSL中安装python即可</p><p><img src="https://oss.jayce.icu/markdown/image-20221128161529394.png" alt="image-20221128161529394"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> python </tag>
+            
+            <tag> shell </tag>
+            
+            <tag> WSL </tag>
+            
+            <tag> vscode </tag>
+            
+            <tag> 脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>shell学习笔记</title>
       <link href="//post/shell.html"/>
       <url>//post/shell.html</url>
@@ -228,9 +263,9 @@
       
         <tags>
             
-            <tag> 服务器 </tag>
-            
             <tag> 运维 </tag>
+            
+            <tag> 服务器 </tag>
             
             <tag> linux </tag>
             
@@ -257,9 +292,9 @@
       
         <tags>
             
-            <tag> 阿里云 </tag>
-            
             <tag> linux </tag>
+            
+            <tag> 阿里云 </tag>
             
             <tag> Jenkins </tag>
             
@@ -286,13 +321,13 @@
       
         <tags>
             
+            <tag> linux </tag>
+            
             <tag> github </tag>
             
             <tag> 阿里云 </tag>
             
             <tag> hexo </tag>
-            
-            <tag> linux </tag>
             
             <tag> Jenkins </tag>
             
@@ -383,15 +418,15 @@
       
         <tags>
             
+            <tag> 运维 </tag>
+            
             <tag> 服务器 </tag>
+            
+            <tag> linux </tag>
             
             <tag> github </tag>
             
             <tag> 阿里云 </tag>
-            
-            <tag> 运维 </tag>
-            
-            <tag> linux </tag>
             
             <tag> v2ray </tag>
             
