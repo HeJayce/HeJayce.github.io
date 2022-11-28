@@ -6,7 +6,7 @@
   <link href="https://jayce.icu/atom.xml" rel="self"/>
   
   <link href="https://jayce.icu/"/>
-  <updated>2022-11-28T08:42:27.275Z</updated>
+  <updated>2022-11-28T08:47:41.779Z</updated>
   <id>https://jayce.icu/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>vscode_wsl</title>
+    <title>使用vscode在linux环境编写shell和python脚本</title>
     <link href="https://jayce.icu/post/vscode-wsl.html"/>
     <id>https://jayce.icu/post/vscode-wsl.html</id>
     <published>2022-11-28T07:07:34.000Z</published>
-    <updated>2022-11-28T08:42:27.275Z</updated>
+    <updated>2022-11-28T08:47:41.779Z</updated>
     
     
       
