@@ -6,7 +6,7 @@
   <link href="https://jayce.icu/atom.xml" rel="self"/>
   
   <link href="https://jayce.icu/"/>
-  <updated>2022-11-28T08:47:41.779Z</updated>
+  <updated>2023-02-16T01:34:34.260Z</updated>
   <id>https://jayce.icu/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ansible_install</title>
+    <link href="https://jayce.icu/post/ansible-install.html"/>
+    <id>https://jayce.icu/post/ansible-install.html</id>
+    <published>2023-02-15T07:32:39.000Z</published>
+    <updated>2023-02-16T01:34:34.260Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ansible的部署配置与简单使用&quot;&gt;&lt;a href=&quot;#ansible的部署配置与简单使用&quot; class=&quot;headerlink&quot; title=&quot;ansible的部署配置与简单使用&quot;&gt;&lt;/a&gt;ansible的部署配置与简单使用&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="https://jayce.icu/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="运维" scheme="https://jayce.icu/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
+    
+    <category term="部署" scheme="https://jayce.icu/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="ansible" scheme="https://jayce.icu/tags/ansible/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用vscode在linux环境编写shell和python脚本</title>
     <link href="https://jayce.icu/post/vscode-wsl.html"/>
     <id>https://jayce.icu/post/vscode-wsl.html</id>
     <published>2022-11-28T07:07:34.000Z</published>
-    <updated>2022-11-28T08:47:41.779Z</updated>
+    <updated>2023-02-15T07:29:59.848Z</updated>
     
     
       
@@ -52,11 +85,11 @@
   </entry>
   
   <entry>
-    <title>shell学习笔记</title>
+    <title>SHELL学习笔记</title>
     <link href="https://jayce.icu/post/shell.html"/>
     <id>https://jayce.icu/post/shell.html</id>
     <published>2022-06-29T01:59:41.000Z</published>
-    <updated>2022-11-28T08:42:27.269Z</updated>
+    <updated>2023-02-15T07:31:54.895Z</updated>
     
     
       
@@ -75,18 +108,18 @@
     
     <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
     
-    <category term="mysql" scheme="https://jayce.icu/tags/mysql/"/>
-    
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
+    
+    <category term="mysql" scheme="https://jayce.icu/tags/mysql/"/>
     
   </entry>
   
   <entry>
-    <title>linux学习笔记</title>
+    <title>LINUX学习笔记</title>
     <link href="https://jayce.icu/post/linux.html"/>
     <id>https://jayce.icu/post/linux.html</id>
     <published>2022-06-29T01:59:28.000Z</published>
-    <updated>2022-11-15T06:57:08.909Z</updated>
+    <updated>2023-02-15T07:31:22.990Z</updated>
     
     
       
@@ -107,11 +140,11 @@
   </entry>
   
   <entry>
-    <title>mysql</title>
+    <title>关于mysql数据库</title>
     <link href="https://jayce.icu/post/mysql.html"/>
     <id>https://jayce.icu/post/mysql.html</id>
     <published>2022-06-29T01:59:03.000Z</published>
-    <updated>2022-11-16T09:00:15.728Z</updated>
+    <updated>2023-02-15T07:31:48.037Z</updated>
     
     
       
@@ -250,7 +283,7 @@
     <link href="https://jayce.icu/post/jupyter-notebook.html"/>
     <id>https://jayce.icu/post/jupyter-notebook.html</id>
     <published>2022-02-15T16:38:48.000Z</published>
-    <updated>2022-11-15T06:57:08.908Z</updated>
+    <updated>2023-02-15T07:30:21.379Z</updated>
     
     
       
@@ -435,7 +468,7 @@
     <link href="https://jayce.icu/post/ecs-github.html"/>
     <id>https://jayce.icu/post/ecs-github.html</id>
     <published>2022-01-31T07:24:52.000Z</published>
-    <updated>2022-11-15T06:57:08.907Z</updated>
+    <updated>2023-02-15T07:29:59.858Z</updated>
     
     
       

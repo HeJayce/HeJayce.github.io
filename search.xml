@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>ansible_install</title>
+      <link href="//post/ansible-install.html"/>
+      <url>//post/ansible-install.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="ansible的部署配置与简单使用"><a href="#ansible的部署配置与简单使用" class="headerlink" title="ansible的部署配置与简单使用"></a>ansible的部署配置与简单使用</h1><h2 id="安装部署"><a href="#安装部署" class="headerlink" title="安装部署"></a>安装部署</h2><p>分别在centos的主机和docker中的centos部署ansible</p><h3 id="物理主机部署"><a href="#物理主机部署" class="headerlink" title="物理主机部署"></a>物理主机部署</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum -y install epel-releaseyum -y install ansible</code></pre><p>如果安装失败，尝试配置一下yum源</p><p>配置yum：</p><p>进入<code>/etc/yum.repos.d/</code>文件夹下创建一个阿里的镜像地址配置文件<code>aliBase.repo</code>,内容如下</p><pre class="line-numbers language-repo" data-language="repo"><code class="language-repo">[base]name=aliBasebaseurl=https://mirrors.aliyun.com/centos/$releasever/os/$basearch/gpgcheck=0[aliEpel]name=aliEpelbaseurl=https://mirrors.aliyun.com/epel/$releasever\Server/$basearch/gpgcheck=0[epel]name=epelbaseurl=https://mirrors.aliyun.com/epel-archive/7/x86_64/gpgcheck=0</code></pre><p>然后再执行<code>yum -y install ansible</code>即可</p><p>安装成功后执行<code>ansible --version</code>验证</p><p><img src="https://oss.jayce.icu/markdown/image-20230215161647664.png" alt="image-20230215161647664"></p><h2 id="机器配置与分组"><a href="#机器配置与分组" class="headerlink" title="机器配置与分组"></a>机器配置与分组</h2><p>主机的信息配置在<code>/etc/ansible/hosts</code> 文件中，想要批量操作主机，就需要提前对主机的连接参数进行配置，根据业务再把不同的主机分组，来执行各项命令</p><p>打开hosts文件已经有一些配置的样例在里面，如果想添加主机，需要先设置一个组，在这个组里填写每台主机的连接参数，实例如下：</p><pre class="line-numbers language-none"><code class="language-none">[webservers]192.168.42.131 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass="12345"192.168.42.132 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass="12345"</code></pre><p>该配置将两台主机分到webservers这一组下，配置了ip，ssh端口，用户名及密码，此时保存退出，使用ansible webservers -m ping 来试一下连通性</p><p>如果网络正常的话，可能会出现下面的报错</p><p><img src="https://oss.jayce.icu/markdown/image-20230215162530953.png" alt="image-20230215162530953"></p><p>原因是该主机没有连接过配置中的主机，导致宿主机的known_hosts中没有相关记录，简单的方法是直接使用ssh命令连一下</p><p><img src="https://oss.jayce.icu/markdown/image-20230215162756540.png" alt="image-20230215162756540"></p><p>输入yes后即可更新known_hosts</p><p>如果不想每台主机都ssh连一下，可以修改配置文件关闭验证</p><p>在<code>/etc/ansible/ansible.cfg</code> 文件下将<code>host_key_checking = False</code> 前的注释去掉</p><p>测试成功的输出如下</p><p><img src="https://oss.jayce.icu/markdown/image-20230215163151910.png" alt="image-20230215163151910"></p><p>除了最简单的ip加用户名密码这种最简单的方式外，多个ip还支持合并，比如</p><p><code>192.168.42.13[1:3]</code> 代表<code>192.168.42.131</code> <code>192.168.42.132</code> <code>192.168.42.133</code> 这三个ip</p><p>端口也可以直接跟在ip后面</p><pre class="line-numbers language-none"><code class="language-none">192.168.42.131:22 ansible_ssh_user=root ansible_ssh_pass="12345"192.168.42.13[1:3]:22 ansible_ssh_user=root ansible_ssh_pass="12345"</code></pre><h2 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 部署 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> linux </tag>
+            
+            <tag> 部署 </tag>
+            
+            <tag> ansible </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用vscode在linux环境编写shell和python脚本</title>
       <link href="//post/vscode-wsl.html"/>
       <url>//post/vscode-wsl.html</url>
@@ -39,7 +72,7 @@
     
     
     <entry>
-      <title>shell学习笔记</title>
+      <title>SHELL学习笔记</title>
       <link href="//post/shell.html"/>
       <url>//post/shell.html</url>
       
@@ -57,9 +90,9 @@
             
             <tag> linux </tag>
             
-            <tag> mysql </tag>
-            
             <tag> shell </tag>
+            
+            <tag> mysql </tag>
             
         </tags>
       
@@ -68,7 +101,7 @@
     
     
     <entry>
-      <title>linux学习笔记</title>
+      <title>LINUX学习笔记</title>
       <link href="//post/linux.html"/>
       <url>//post/linux.html</url>
       
@@ -93,7 +126,7 @@
     
     
     <entry>
-      <title>mysql</title>
+      <title>关于mysql数据库</title>
       <link href="//post/mysql.html"/>
       <url>//post/mysql.html</url>
       

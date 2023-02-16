@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="使用hexo框架搭建个人博客, Jayce">
-    <meta name="description" content="使用hexo框架搭建个人博客">
+    <meta name="keywords" content="ansible_install, Jayce">
+    <meta name="description" content="部署ansible，实现自动化运维，批量系统操作">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +30,7 @@
 <script async defer data-website-id="10bdd701-05ac-4f44-bddd-18c87dbcfb54" src="https://umami.jayce.icu/umami.js"></script>
 
 
-    <title>使用hexo框架搭建个人博客 | 菜狗的生活记录</title>
+    <title>ansible_install | 菜狗的生活记录</title>
     <link rel="icon" type="image/png" href="https://oss.jayce.icu/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://oss.jayce.icu/code/source/libs/awesome/css/all.min.css">
@@ -324,12 +324,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://oss.jayce.icu/20220501170040.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://oss.jayce.icu/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用hexo框架搭建个人博客</h1>
+                    <h1 class="description center-align post-title">ansible_install</h1>
                 </div>
             </div>
         </div>
@@ -445,32 +445,24 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                <span class="chip bg-color">运维</span>
+                            </a>
+                        
                             <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
                                 <span class="chip bg-color">服务器</span>
                             </a>
                         
-                            <a href="/tags/github/">
-                                <span class="chip bg-color">github</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
                             </a>
                         
-                            <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                                <span class="chip bg-color">阿里云</span>
+                            <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                                <span class="chip bg-color">部署</span>
                             </a>
                         
-                            <a href="/tags/https/">
-                                <span class="chip bg-color">https</span>
-                            </a>
-                        
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                <span class="chip bg-color">博客</span>
-                            </a>
-                        
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/ansible/">
+                                <span class="chip bg-color">ansible</span>
                             </a>
                         
                     </div>
@@ -494,28 +486,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-25
+                    2023-02-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-15
+                    2023-02-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    556
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 
@@ -533,149 +525,58 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>使用hexo框架搭建个人博客已有2个多月，是时候写一篇部署步骤以及踩坑总结了<br>为什么使用hexo</p>
-<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>hexo可以直接通过npm进行安装，windows同理</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install -g hexo-cli</code></pre>
+                <h1 id="ansible的部署配置与简单使用"><a href="#ansible的部署配置与简单使用" class="headerlink" title="ansible的部署配置与简单使用"></a>ansible的部署配置与简单使用</h1><h2 id="安装部署"><a href="#安装部署" class="headerlink" title="安装部署"></a>安装部署</h2><p>分别在centos的主机和docker中的centos部署ansible</p>
+<h3 id="物理主机部署"><a href="#物理主机部署" class="headerlink" title="物理主机部署"></a>物理主机部署</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum -y install epel-release
+yum -y install ansible</code></pre>
 
-<p><img src="https://oss.jayce.icu/image-20220427224941463.png" alt="image-20220427224941463"></p>
-<p>出现此报错命令前加sudo</p>
-<p>安装成功后，可以直接新建一个项目</p>
-<p><img src="https://oss.jayce.icu/image-20220427225043033.png" alt="image-20220427225043033"></p>
-<p>新建一个项目，并初始化，其中名字自定义    </p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">hexo init blog_name</code></pre>
+<p>如果安装失败，尝试配置一下yum源</p>
+<p>配置yum：</p>
+<p>进入<code>/etc/yum.repos.d/</code>文件夹下创建一个阿里的镜像地址配置文件<code>aliBase.repo</code>,内容如下</p>
+<pre class="line-numbers language-repo" data-language="repo"><code class="language-repo">[base]
+name=aliBase
+baseurl=https://mirrors.aliyun.com/centos/$releasever/os/$basearch/
+gpgcheck=0
 
-<p>此时hexo会从github将框架拉到本地的项目名称文件夹下</p>
-<p><img src="https://oss.jayce.icu/image-20220427225351741.png" alt="image-20220427225351741"></p>
-<p><img src="https://oss.jayce.icu/image-20220427225423970.png" alt="image-20220427225423970"></p>
-<p>使用ide打开，我使用的是webstorm，根据个人喜好即可</p>
-<p>打开项目后，使用``npm install` 将package.json 中的包下载下来</p>
-<p><img src="https://oss.jayce.icu/image-20220427225734227.png" alt="image-20220427225734227"></p>
-<p>此时这个最简单的项目基本框架就算有了，生成一下静态文件，用浏览器看看吧</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">hexo generate  #生成静态文件   简写hexo g
-hexo server    #启动服务器    简写hexo s</code></pre>
+[aliEpel]
+name=aliEpel
+baseurl=https://mirrors.aliyun.com/epel/$releasever\Server/$basearch/
+gpgcheck=0
 
-<p><img src="https://oss.jayce.icu/image-20220427230214814.png" alt="image-20220427230214814"></p>
-<p>打开<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
-<p>即可进入欢迎界面：</p>
-<p><img src="https://oss.jayce.icu/image-20220427230335376.png" alt="image-20220427230335376"></p>
-<p>接着我们在github上新建一个仓库，仓库的名字必须是<code>用户名.github.io</code>格式，比如<img src="https://oss.jayce.icu/image-20220427231524340.png" alt="image-20220427231524340"></p>
-<p>将静态网页部署在此仓库即可通过上面的域名进行访问。如果觉得github的网络不好也可以使用国内的gitee，操作方法一致。</p>
-<p>接着安装deploy-git</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">npm install hexo-deployer-git --save</code></pre>
+[epel]
+name=epel
+baseurl=https://mirrors.aliyun.com/epel-archive/7/x86_64/
+gpgcheck=0</code></pre>
 
-<p>在配置文件<code>_config.yml</code>中添加刚才的仓库信息，注意这里的config是根目录下的，而不是主题配置文件</p>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go">deploy:
-  type: git
-  repo: git@github.com:HeJayce/HeJayce.github.io.git
-  branch: master</code></pre>
+<p>然后再执行<code>yum -y install ansible</code>即可</p>
+<p>安装成功后执行<code>ansible --version</code>验证</p>
+<p><img src="https://oss.jayce.icu/markdown/image-20230215161647664.png" alt="image-20230215161647664"></p>
+<h2 id="机器配置与分组"><a href="#机器配置与分组" class="headerlink" title="机器配置与分组"></a>机器配置与分组</h2><p>主机的信息配置在<code>/etc/ansible/hosts</code> 文件中，想要批量操作主机，就需要提前对主机的连接参数进行配置，根据业务再把不同的主机分组，来执行各项命令</p>
+<p>打开hosts文件已经有一些配置的样例在里面，如果想添加主机，需要先设置一个组，在这个组里填写每台主机的连接参数，实例如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">[webservers]
+192.168.42.131 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass="12345"
+192.168.42.132 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass="12345"</code></pre>
 
-<p>这里的repo是你仓库的git地址，branch默认master，如需要分支，可改为相应分支</p>
-<p>使用<code>hexo d</code>即可将项目push到github仓库去</p>
-<h2 id="模板选择"><a href="#模板选择" class="headerlink" title="模板选择"></a>模板选择</h2><p>在github中有许多开源的模板（主题）可供大家选择，大家也可自行百度，选择自己喜欢的模板。我选择的是<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">mater模板</a>，不同的模板有不同的配置，选择的时候需要仔细阅读开发者提供的使用说明</p>
-<p><img src="https://oss.jayce.icu/image-20220427230711782.png" alt="image-20220427230711782"></p>
-<p>将喜欢的模板下载下来后，放入themes 文件夹下，直接将整个文件夹放入就好</p>
-<p><img src="https://oss.jayce.icu/image-20220427231227399.png" alt="image-20220427231227399"></p>
-<p>接着在<code>_config.yml</code>中找到theme ，将theme的参数改为模板名称，注意模板名称为文件夹名称，改完后重新生成文件并启动服务：</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">hexo cl
-hexo g
-hexo s</code></pre>
-
-<p><img src="https://oss.jayce.icu/image-20220501161105372.png" alt="image-20220501161105372"></p>
-<p>此时再打开localhost 4000端口，看看主题有没有配置成功</p>
-<p><img src="https://oss.jayce.icu/image-20220501161543955-20220501171717958.png" alt="image-20220501161217056"></p>
-<h2 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h2><p>框架打好后，试一下写第一篇博客吧，新建一个post，hexo会自动生成一个md文件，需要熟悉markdown这种文件格式</p>
-<pre class="line-numbers language-none"><code class="language-none">hexo new post [blog_name]</code></pre>
-
-<p><img src="https://oss.jayce.icu/image-20220501161543955-20220501171717958.png" alt="image-20220501161543955"></p>
-<p><img src="https://oss.jayce.icu/image-20220501162931117-20220501171718190.png" alt="image-20220501162931117"></p>
-<p>此时就可以编写了，随便写点内容，看看有没有发布吧。编写好后按照上面的方法生成静态文件，再次打开localhost 4000 ，看看有无文章</p>
-<p><img src="https://oss.jayce.icu/image-20220501163000610.png" alt="image-20220501163000610"> <img src="https://oss.jayce.icu/image-20220501163019437.png" alt="image-20220501163019437"></p>
-<h2 id="服务器部署"><a href="#服务器部署" class="headerlink" title="服务器部署"></a>服务器部署</h2><p>由于是静态网页，服务器部署起来非常简单，如果自己有服务器可以进行服务器部署，后续可增加可玩性。</p>
-<p>静态网页通过nginx即可完成，没有nginx的通过yum安装即可</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">yum install epel-release
-yum install -y nginx</code></pre>
-
-<p>将github上发布的代码克隆到服务器即可</p>
-<p><img src="https://oss.jayce.icu/markdown/202204281451049.png" alt="image-20220428145145675"></p>
-<p>在nginx配置文件中修改成下面的配置，root填写项目文件夹地址</p>
-<pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx">server {
-        listen       80;
-        server_name  localhost;
-        location / {
-            root  /root/HeJayce.github.io;
-            index index.html;
-        }
-}</code></pre>
-
-<p>改好别忘了重载nginx配置</p>
-<p>这时打开浏览器访问IP:80 或域名就会打开index.html，即你的主页</p>
-<h2 id="https"><a href="#https" class="headerlink" title="https"></a>https</h2><p>设置https可以到阿里云申请免费的证书，每人有20个额度</p>
-<p><img src="https://oss.jayce.icu/markdown/202204261132101.png" alt="image-20220426113211531"></p>
-<p><img src="https://oss.jayce.icu/markdown/202204261133715.png" alt="image-20220426113304547"></p>
-<p>购买完成后，进入ssl证书管理台，选择免费证书</p>
-<p><img src="https://oss.jayce.icu/markdown/202204261134061.png" alt="image-20220426113400984"></p>
-<p>点击创建证书，会在列表里新建一个待申请证书，点击右边证书申请，填写你的域名以及信息，CSR选择系统生成</p>
-<p><img src="https://oss.jayce.icu/markdown/202204261137893.png" alt="image-20220426113751817"></p>
-<p>注意你的域名需要添加到DNS解析当中</p>
-<p>创建好证书后，将申请好的证书下载下来，使用nginx代理就选择nginx证书</p>
-<p><img src="https://oss.jayce.icu/image-20220427223638482.png" alt="image-20220427223638482"></p>
-<p>下载下来后是两个文件</p>
-<p><img src="https://oss.jayce.icu/image-20220427223736666.png" alt="image-20220427223736666"></p>
-<p>进入服务器，打开nginx的配置，添加以下内容：</p>
-<pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx">server {
-        listen       443 ssl;
-        server_name  jayce.icu;
-        # ssl证书地址
-        ssl_certificate     /usr/local/nginx/cert/jayce.pem;  # pem文件的路径
-        ssl_certificate_key  /usr/local/nginx/cert/jayce.key; # key文件的路径
-
-        # ssl验证相关配置
-        ssl_session_timeout  5m;    #缓存有效期
-        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;    #加密算法
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;    #安全链接可选的加密协议
-        ssl_prefer_server_ciphers on;   #使用服务器端的首选算法
-        location / {
-            root /var/lib/jenkins/workspace/jayce_blog;
-            index index.html;
-        }
-
-}</code></pre>
-
-<p>其中将刚才下载的两个文件放入服务器，将配置文件中两个文件的路径改为实际路径，注意pem和key文件的位置</p>
-<p>server_name 填写你申请证书的地址</p>
-<p>ssl相关配置可以不用管，复制即可</p>
-<p>重载nginx，过几分钟后验证即可</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">nginx -s reload</code></pre>
-
-<p>强制http转https:</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">server {
-    listen 80;
-    server_name  jayce.icu  www.jayce.icu;
-    return 301 https://jayce.icu$request_uri;
-}</code></pre>
+<p>该配置将两台主机分到webservers这一组下，配置了ip，ssh端口，用户名及密码，此时保存退出，使用ansible webservers -m ping 来试一下连通性</p>
+<p>如果网络正常的话，可能会出现下面的报错</p>
+<p><img src="https://oss.jayce.icu/markdown/image-20230215162530953.png" alt="image-20230215162530953"></p>
+<p>原因是该主机没有连接过配置中的主机，导致宿主机的known_hosts中没有相关记录，简单的方法是直接使用ssh命令连一下</p>
+<p><img src="https://oss.jayce.icu/markdown/image-20230215162756540.png" alt="image-20230215162756540"></p>
+<p>输入yes后即可更新known_hosts</p>
+<p>如果不想每台主机都ssh连一下，可以修改配置文件关闭验证</p>
+<p>在<code>/etc/ansible/ansible.cfg</code> 文件下将<code>host_key_checking = False</code> 前的注释去掉</p>
+<p>测试成功的输出如下</p>
+<p><img src="https://oss.jayce.icu/markdown/image-20230215163151910.png" alt="image-20230215163151910"></p>
+<p>除了最简单的ip加用户名密码这种最简单的方式外，多个ip还支持合并，比如</p>
+<p><code>192.168.42.13[1:3]</code> 代表<code>192.168.42.131</code> <code>192.168.42.132</code> <code>192.168.42.133</code> 这三个ip</p>
+<p>端口也可以直接跟在ip后面</p>
+<pre class="line-numbers language-none"><code class="language-none">192.168.42.131:22 ansible_ssh_user=root ansible_ssh_pass="12345"
+192.168.42.13[1:3]:22 ansible_ssh_user=root ansible_ssh_pass="12345"</code></pre>
 
 
 
-<h2 id="个性化改装"><a href="#个性化改装" class="headerlink" title="个性化改装"></a>个性化改装</h2><p>我使用的是<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">matert</a>主题，主要的配置方法都在他的主页中有讲解，但如果需要更换颜色，字体，以及更加复杂的需求时，就需要对代码进行修改，充分利用F12以及IDE全局搜索，快速定位到css，js文件，进行修改。</p>
-<p>举个例子：</p>
-<p>我想修改原来模板的导航栏渐变颜色</p>
-<p><img src="https://oss.jayce.icu/image-20220501163715336.png" alt="image-20220501163715336"></p>
-<p>打开F12，看哪个文件定义了标题栏的颜色</p>
-<img src="https://oss.jayce.icu/image-20220501163956503.png" alt="image-20220501163956503" style="zoom: 200%;">
 
-<p>从开发者模式可得，<code>matery.css</code>下面的代码是修改背景渐变颜色的</p>
-<p><img src="https://oss.jayce.icu/image-20220501164233110.png" alt="image-20220501164233110"></p>
-<p>找到该文件，并自行修改</p>
-<p><img src="https://oss.jayce.icu/image-20220501164407058.png" alt="image-20220501164407058"></p>
-<p>再看看页面，颜色就变了</p>
-<p><img src="https://oss.jayce.icu/image-20220501164451931.png" alt="image-20220501164451931"></p>
-<h2 id="代码部署同步"><a href="#代码部署同步" class="headerlink" title="代码部署同步"></a>代码部署同步</h2><p>使用jenkins实现服务器与github代码同步，本地部署到github后，服务器会自动拉取最新的代码</p>
-<p><a href="https://jayce.icu/post/jenkins-github.html">在服务器部署Jenkins同步github代码 | Jayce’s Blog</a></p>
-<h2 id="git-分支"><a href="#git-分支" class="headerlink" title="git 分支"></a>git 分支</h2><p>有多个版本的需求，可在IDE中创建新的分支，一个是github.io的分支，一个是该项目的分支，并且在config中将master分支改为你创建的分支名</p>
-<p><img src="https://oss.jayce.icu/image-20220501165147849.png" alt="image-20220501165147849"></p>
-<p><img src="https://oss.jayce.icu/image-20220501165200028.png" alt="image-20220501165200028"></p>
-<p><img src="https://oss.jayce.icu/image-20220501165230041.png" alt="image-20220501165230041"></p>
 
+<h2 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h2>
                 
             </div>
             <hr/>
@@ -701,7 +602,7 @@ yum install -y nginx</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jayce.icu/post/hexo-install.html">https://jayce.icu/post/hexo-install.html</a>
+                    <a href="https://jayce.icu/post/ansible-install.html">https://jayce.icu/post/ansible-install.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -739,32 +640,24 @@ yum install -y nginx</code></pre>
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                                    <span class="chip bg-color">运维</span>
+                                </a>
+                            
                                 <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
                                     <span class="chip bg-color">服务器</span>
                                 </a>
                             
-                                <a href="/tags/github/">
-                                    <span class="chip bg-color">github</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
                                 </a>
                             
-                                <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                                    <span class="chip bg-color">阿里云</span>
+                                <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                                    <span class="chip bg-color">部署</span>
                                 </a>
                             
-                                <a href="/tags/https/">
-                                    <span class="chip bg-color">https</span>
-                                </a>
-                            
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                    <span class="chip bg-color">博客</span>
-                                </a>
-                            
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/ansible/">
+                                    <span class="chip bg-color">ansible</span>
                                 </a>
                             
                         </div>
@@ -1204,36 +1097,66 @@ yum install -y nginx</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/post/mysql.html">
+                <a href="/post/ansible-install.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://oss.jayce.icu/featureimages/14.jpg" class="responsive-img" alt="关于mysql数据库">
+                        <img src="https://oss.jayce.icu/featureimages/4.jpg" class="responsive-img" alt="ansible_install">
                         
-                        <span class="card-title">关于mysql数据库</span>
+                        <span class="card-title">ansible_install</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            部署ansible，实现自动化运维，批量系统操作
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-15
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jayce he
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                    部署
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">服务器</span>
+                    </a>
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                        <span class="chip bg-color">部署</span>
+                    </a>
+                    
+                    <a href="/tags/ansible/">
+                        <span class="chip bg-color">ansible</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1245,28 +1168,32 @@ yum install -y nginx</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/watchdog.html">
+                <a href="/post/vscode-wsl.html">
                     <div class="card-image">
                         
-                        <img src="https://oss.jayce.icu/markdown/202208161500819.svg" class="responsive-img" alt="服务器简单的监控脚本">
+                        <img src="https://oss.jayce.icu/markdown/vscode-svgrepo-com.svg" class="responsive-img" alt="使用vscode在linux环境编写shell和python脚本">
                         
-                        <span class="card-title">服务器简单的监控脚本</span>
+                        <span class="card-title">使用vscode在linux环境编写shell和python脚本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            使用vscode在linux环境编写shell和python脚本
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jayce he
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1274,16 +1201,28 @@ yum install -y nginx</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
-                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">服务器</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                     <a href="/tags/shell/">
                         <span class="chip bg-color">shell</span>
+                    </a>
+                    
+                    <a href="/tags/WSL/">
+                        <span class="chip bg-color">WSL</span>
+                    </a>
+                    
+                    <a href="/tags/vscode/">
+                        <span class="chip bg-color">vscode</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                        <span class="chip bg-color">脚本</span>
                     </a>
                     
                 </div>
