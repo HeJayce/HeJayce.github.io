@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>菜狗的生活记录</title>
+  <title>Jayce运维站</title>
   
-  <subtitle>菜狗的生活记录</subtitle>
+  <subtitle>Jayce运维站</subtitle>
   <link href="https://jayce.icu/atom.xml" rel="self"/>
   
   <link href="https://jayce.icu/"/>
-  <updated>2023-02-16T01:34:34.260Z</updated>
+  <updated>2023-02-16T01:38:32.011Z</updated>
   <id>https://jayce.icu/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ansible_install</title>
+    <title>ansible的部署配置与简单使用</title>
     <link href="https://jayce.icu/post/ansible-install.html"/>
     <id>https://jayce.icu/post/ansible-install.html</id>
     <published>2023-02-15T07:32:39.000Z</published>
-    <updated>2023-02-16T01:34:34.260Z</updated>
+    <updated>2023-02-16T01:38:32.011Z</updated>
     
     
       
@@ -54,7 +54,7 @@
     <link href="https://jayce.icu/post/vscode-wsl.html"/>
     <id>https://jayce.icu/post/vscode-wsl.html</id>
     <published>2022-11-28T07:07:34.000Z</published>
-    <updated>2023-02-15T07:29:59.848Z</updated>
+    <updated>2023-02-16T02:09:58.953Z</updated>
     
     
       
@@ -74,11 +74,11 @@
     
     <category term="python" scheme="https://jayce.icu/tags/python/"/>
     
-    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
-    
     <category term="WSL" scheme="https://jayce.icu/tags/WSL/"/>
     
     <category term="vscode" scheme="https://jayce.icu/tags/vscode/"/>
+    
+    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
     <category term="脚本" scheme="https://jayce.icu/tags/%E8%84%9A%E6%9C%AC/"/>
     
@@ -108,9 +108,9 @@
     
     <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
     
-    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
-    
     <category term="mysql" scheme="https://jayce.icu/tags/mysql/"/>
+    
+    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
   </entry>
   
@@ -218,9 +218,9 @@
     
     
     
-    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
-    
     <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
     
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
@@ -312,7 +312,7 @@
     <link href="https://jayce.icu/post/alias.html"/>
     <id>https://jayce.icu/post/alias.html</id>
     <published>2022-02-13T16:35:16.000Z</published>
-    <updated>2022-11-15T06:57:08.907Z</updated>
+    <updated>2023-02-16T08:50:39.472Z</updated>
     
     
       
