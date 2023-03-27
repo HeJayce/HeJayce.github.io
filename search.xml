@@ -57,11 +57,11 @@
             
             <tag> python </tag>
             
+            <tag> shell </tag>
+            
             <tag> WSL </tag>
             
             <tag> vscode </tag>
-            
-            <tag> shell </tag>
             
             <tag> 脚本 </tag>
             
@@ -161,9 +161,9 @@
             
             <tag> 阿里云 </tag>
             
-            <tag> hexo </tag>
-            
             <tag> https </tag>
+            
+            <tag> hexo </tag>
             
             <tag> 博客 </tag>
             
@@ -360,9 +360,9 @@
             
             <tag> 阿里云 </tag>
             
-            <tag> Jenkins </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> Jenkins </tag>
             
         </tags>
       

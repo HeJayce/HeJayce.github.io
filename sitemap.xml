@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://jayce.icu/post/jenkins-github.html</loc>
+    <loc>https://jayce.icu/post/hexo-install.html</loc>
     
     <lastmod>2022-11-15</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://jayce.icu/post/hexo-install.html</loc>
+    <loc>https://jayce.icu/post/jenkins-github.html</loc>
     
     <lastmod>2022-11-15</lastmod>
     
@@ -267,6 +267,20 @@
   </url>
   
   <url>
+    <loc>https://jayce.icu/tags/%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/ansible/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jayce.icu/tags/github/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -288,7 +302,7 @@
   </url>
   
   <url>
-    <loc>https://jayce.icu/tags/Jenkins/</loc>
+    <loc>https://jayce.icu/tags/https/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -296,13 +310,6 @@
   
   <url>
     <loc>https://jayce.icu/tags/hexo/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/https/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -323,6 +330,13 @@
   </url>
   
   <url>
+    <loc>https://jayce.icu/tags/Jenkins/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jayce.icu/tags/python/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -331,20 +345,6 @@
   
   <url>
     <loc>https://jayce.icu/tags/jupyter-notebook/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/ansible/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -365,28 +365,7 @@
   </url>
   
   <url>
-    <loc>https://jayce.icu/tags/WSL/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/vscode/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jayce.icu/tags/shell/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/%E8%84%9A%E6%9C%AC/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -401,6 +380,27 @@
   
   <url>
     <loc>https://jayce.icu/tags/typora/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/WSL/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/vscode/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/%E8%84%9A%E6%9C%AC/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
