@@ -34,7 +34,8 @@
 }
 
 body {
-    background-color: #eaeaea;
+    /*background-color: #eaeaea;*/
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     margin: 0;
     color: #34495e;
     overflow-x: hidden;

@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="alias的详解与运维, Jayce">
-    <meta name="description" content="alias的详解alias 可以为命令指定别名，所谓别名可以省去一长串命令的麻烦
-查看别名直接使用命令alias可以查看所有的别名，如果想看某一命令，在alias后跟命令即可
+    <meta name="keywords" content="linux添加虚拟内存交换内存, Jayce">
+    <meta name="description" content="linux添加虚拟内存交换内存当Linux内存不够的情况下，可以适当增加swap内存来分担
+新建交换分区文件夹
+dd if=/dev/zero of=/tmp/swapfile bs=1024 count=1024k
 
-创建别名例如：
-alias newcmd=&#39;cmd&#39;
-alia">
+
+格式化该分区为交换">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +35,7 @@ alia">
 <script async defer data-website-id="10bdd701-05ac-4f44-bddd-18c87dbcfb54" src="https://umami.jayce.icu/umami.js"></script>
 
 
-    <title>alias的详解与运维 | Jayce运维站</title>
+    <title>linux添加虚拟内存交换内存 | Jayce运维站</title>
     <link rel="icon" type="image/png" href="https://oss.jayce.icu/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://oss.jayce.icu/code/source/libs/awesome/css/all.min.css">
@@ -329,12 +329,12 @@ alia">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://oss.jayce.icu/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://oss.jayce.icu/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">alias的详解与运维</h1>
+                    <h1 class="description center-align post-title">linux添加虚拟内存交换内存</h1>
                 </div>
             </div>
         </div>
@@ -450,10 +450,6 @@ alia">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                                <span class="chip bg-color">运维</span>
-                            </a>
-                        
                             <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
                                 <span class="chip bg-color">服务器</span>
                             </a>
@@ -470,8 +466,8 @@ alia">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%96%87%E7%AB%A0/" class="post-category">
-                                文章
+                            <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="post-category">
+                                问题解决
                             </a>
                         
                     </div>
@@ -483,21 +479,21 @@ alia">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-14
+                    2023-05-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-16
+                    2023-05-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    390
+                    211
                 </div>
                 
 
@@ -522,40 +518,37 @@ alia">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="alias的详解"><a href="#alias的详解" class="headerlink" title="alias的详解"></a>alias的详解</h1><p>alias 可以为命令指定别名，所谓别名可以省去一长串命令的麻烦</p>
-<h2 id="查看别名"><a href="#查看别名" class="headerlink" title="查看别名"></a>查看别名</h2><p>直接使用命令<code>alias</code>可以查看所有的别名，如果想看某一命令，在alias后跟命令即可</p>
-<p><img src="https://oss.jayce.icu/markdown/202202141523138.png" alt="image-20220214152355809"></p>
-<h2 id="创建别名"><a href="#创建别名" class="headerlink" title="创建别名"></a>创建别名</h2><p>例如：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alias newcmd='cmd'
-alias install='sudo apt-get	install'</code></pre>
+                <h2 id="linux添加虚拟内存交换内存"><a href="#linux添加虚拟内存交换内存" class="headerlink" title="linux添加虚拟内存交换内存"></a>linux添加虚拟内存交换内存</h2><p>当Linux内存不够的情况下，可以适当增加swap内存来分担</p>
+<p>新建交换分区文件夹</p>
+<pre class="line-numbers language-none"><code class="language-none">dd if=/dev/zero of=/tmp/swapfile bs=1024 count=1024k</code></pre>
 
-<p>上述方式一旦关闭终端，设置的别名就失效了</p>
-<p>可以将命令放入 <del>/.bashrc 中，当每个进程生成时，都要执行`</del>/.bashrc`中的命令</p>
-<h2 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h2><p><code>unalias</code> 命令可以将之前的别名删除</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">unalias vi</code></pre>
+<p><img src="https://oss.jayce.icu/markdown/image-20230515155918499.png" alt="image-20230515155918499"></p>
+<p>格式化该分区为交换分区</p>
+<pre class="line-numbers language-none"><code class="language-none">mkswap /tmp/swapfile</code></pre>
 
-<p>使用<code>-a</code>参数可以清除所有的别名</p>
-<h2 id="不使用别名"><a href="#不使用别名" class="headerlink" title="不使用别名"></a>不使用别名</h2><p>当我们为命令加上日常参数后，但有时需要使用原始的命令时，有三种方法可以调用原始命令</p>
-<ol>
-<li>使用命令的绝对路径</li>
-<li>切换命令所在目录，使用<code>./cmd</code></li>
-<li>在命令前使用反斜线<code>\</code></li>
-</ol>
-<h2 id="别名永久生效"><a href="#别名永久生效" class="headerlink" title="别名永久生效"></a>别名永久生效</h2><p>我们通过 alias 命令设置的别名，仅限于在当前的 Shell 中使用，如果系统重启了，那么新设置的别名就失效了。</p>
-<p>如果想让别名永久有效的话，就需要把所有的别名设置方案加入到（$HOME）目录下的 .alias 文件中（如果系统中没有这个文件，你可以创建一个），然后在 .bashrc 文件中增加这样一段代码：</p>
-<pre class="line-numbers language-none"><code class="language-none"># Aliases
-if [ -f ~/.alias ]; then
-  . ~/.alias
-fi</code></pre>
+<p>开启该交换分区</p>
+<pre class="line-numbers language-none"><code class="language-none">swapon /tmp/swapfile</code></pre>
 
-<p>.alias文件：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vim .alias
-######
-alias tf='tail -f'  #动态查看文件变化</code></pre>
+<p>如果报错提示权限不足的话，还需添加权限    </p>
+<p><code>swapon: /tmp/swapfile: insecure permissions 0644, 0600 suggested.</code></p>
+<pre class="line-numbers language-none"><code class="language-none">chmod 600 /tmp/swapfile</code></pre>
 
-<p>执行<code>source ~/.bashrc</code></p>
-<h2 id="安全删除"><a href="#安全删除" class="headerlink" title="安全删除"></a>安全删除</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">alias rm='saferm(){ /bin/cp -a $@ ~/backup;rm $@; };saferm $@'</code></pre>
+<p> 接着启用sawp</p>
+<pre class="line-numbers language-none"><code class="language-none">swapon /tmp/swapfile</code></pre>
 
+<p>如果提示报错<code>swapon: /tmp/swapfile: swapon failed: Device or resource busy</code></p>
+<p>先关闭在打开</p>
+<pre class="line-numbers language-none"><code class="language-none">swapoff /tmp/swapfile
+swapon /tmp/swapfile</code></pre>
+
+<p> 此时free查看swap内存已添加</p>
+<p>设置</p>
+<p><code>vim /etc/fstab</code></p>
+<p>文件新加</p>
+<pre class="line-numbers language-none"><code class="language-none">vm.swappiness=10      #当内存在使用到100-10=90%的时候，交换分区启动
+vm.vfs_cache_pressure=50  #虚拟内存回收directory和inode缓冲的倾向，这个值越大。越易回收</code></pre>
+
+<p>重启生效</p>
 
                 
             </div>
@@ -582,7 +575,7 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jayce.icu/post/alias.html">https://jayce.icu/post/alias.html</a>
+                    <a href="https://jayce.icu/post/linux-swap.html">https://jayce.icu/post/linux-swap.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -619,10 +612,6 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                                    <span class="chip bg-color">运维</span>
-                                </a>
                             
                                 <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
                                     <span class="chip bg-color">服务器</span>
@@ -1069,16 +1058,18 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/post/jupyter-notebook.html">
+                <a href="/post/linux-swap.html">
                     <div class="card-image">
                         
-                        <img src="https://oss.jayce.icu/markdown/202208161501458.svg" class="responsive-img" alt="在服务器部署jupyter notebook，实现服务器环境运算">
                         
-                        <span class="card-title">在服务器部署jupyter notebook，实现服务器环境运算</span>
+                        <img src="https://oss.jayce.icu/featureimages/22.jpg" class="responsive-img" alt="linux添加虚拟内存交换内存">
+                        
+                        <span class="card-title">linux添加虚拟内存交换内存</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1088,21 +1079,22 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
+                            <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="post-category">
+                                    问题解决
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1110,12 +1102,8 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                         <span class="chip bg-color">服务器</span>
                     </a>
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/jupyter-notebook/">
-                        <span class="chip bg-color">jupyter notebook</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
@@ -1129,23 +1117,23 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/jenkins-install.html">
+                <a href="/post/ansible-install.html">
                     <div class="card-image">
                         
-                        <img src="https://oss.jayce.icu/markdown/202207121023935.svg" class="responsive-img" alt="Jenkins安装">
+                        <img src="https://oss.jayce.icu/markdown/ansible-svgrepo-com.svg" class="responsive-img" alt="ansible的部署配置与简单使用">
                         
-                        <span class="card-title">Jenkins安装</span>
+                        <span class="card-title">ansible的部署配置与简单使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            部署ansible，实现自动化运维，批量系统操作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-15
                             </span>
                         <span class="publish-author">
                             
@@ -1162,16 +1150,24 @@ alias tf='tail -f'  #动态查看文件变化</code></pre>
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">服务器</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                        <span class="chip bg-color">部署</span>
+                    </a>
+                    
                     <a href="/tags/linux/">
                         <span class="chip bg-color">linux</span>
                     </a>
                     
-                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                        <span class="chip bg-color">阿里云</span>
-                    </a>
-                    
-                    <a href="/tags/Jenkins/">
-                        <span class="chip bg-color">Jenkins</span>
+                    <a href="/tags/ansible/">
+                        <span class="chip bg-color">ansible</span>
                     </a>
                     
                 </div>

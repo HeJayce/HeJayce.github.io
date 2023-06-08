@@ -6,7 +6,7 @@
   <link href="https://jayce.icu/atom.xml" rel="self"/>
   
   <link href="https://jayce.icu/"/>
-  <updated>2023-02-16T01:38:32.011Z</updated>
+  <updated>2023-05-16T01:59:59.320Z</updated>
   <id>https://jayce.icu/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux添加虚拟内存交换内存</title>
+    <link href="https://jayce.icu/post/linux-swap.html"/>
+    <id>https://jayce.icu/post/linux-swap.html</id>
+    <published>2023-05-15T07:54:57.000Z</published>
+    <updated>2023-05-16T01:59:59.320Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;linux添加虚拟内存交换内存&quot;&gt;&lt;a href=&quot;#linux添加虚拟内存交换内存&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="问题解决" scheme="https://jayce.icu/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+    
+    <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>ansible的部署配置与简单使用</title>
@@ -41,9 +68,9 @@
     
     <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-    <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
-    
     <category term="部署" scheme="https://jayce.icu/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
     
     <category term="ansible" scheme="https://jayce.icu/tags/ansible/"/>
     
@@ -74,11 +101,11 @@
     
     <category term="python" scheme="https://jayce.icu/tags/python/"/>
     
-    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
-    
     <category term="WSL" scheme="https://jayce.icu/tags/WSL/"/>
     
     <category term="vscode" scheme="https://jayce.icu/tags/vscode/"/>
+    
+    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
     <category term="脚本" scheme="https://jayce.icu/tags/%E8%84%9A%E6%9C%AC/"/>
     
@@ -108,9 +135,9 @@
     
     <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
     
-    <category term="mysql" scheme="https://jayce.icu/tags/mysql/"/>
-    
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
+    
+    <category term="mysql" scheme="https://jayce.icu/tags/mysql/"/>
     
   </entry>
   
@@ -166,7 +193,7 @@
     <link href="https://jayce.icu/post/hexo-install.html"/>
     <id>https://jayce.icu/post/hexo-install.html</id>
     <published>2022-04-25T08:36:01.000Z</published>
-    <updated>2022-11-15T06:57:08.907Z</updated>
+    <updated>2023-05-12T02:00:10.957Z</updated>
     
     
       
@@ -218,9 +245,9 @@
     
     
     
-    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
-    
     <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
     
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
@@ -256,7 +283,7 @@
     <link href="https://jayce.icu/post/mysql-install.html"/>
     <id>https://jayce.icu/post/mysql-install.html</id>
     <published>2022-03-09T07:14:07.000Z</published>
-    <updated>2022-11-15T06:57:08.909Z</updated>
+    <updated>2023-06-05T02:50:50.254Z</updated>
     
     
       
@@ -371,7 +398,7 @@
     <link href="https://jayce.icu/post/jenkins-github.html"/>
     <id>https://jayce.icu/post/jenkins-github.html</id>
     <published>2022-02-04T20:10:46.000Z</published>
-    <updated>2022-11-15T06:57:08.907Z</updated>
+    <updated>2023-05-12T02:02:42.552Z</updated>
     
     
       
@@ -435,7 +462,7 @@
     <link href="https://jayce.icu/post/typora-oss.html"/>
     <id>https://jayce.icu/post/typora-oss.html</id>
     <published>2022-02-02T13:29:17.000Z</published>
-    <updated>2022-11-15T06:57:08.910Z</updated>
+    <updated>2023-05-12T01:58:38.211Z</updated>
     
     
       

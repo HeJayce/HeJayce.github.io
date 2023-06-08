@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>linux添加虚拟内存交换内存</title>
+      <link href="//post/linux-swap.html"/>
+      <url>//post/linux-swap.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="linux添加虚拟内存交换内存"><a href="#linux添加虚拟内存交换内存" class="headerlink" title="linux添加虚拟内存交换内存"></a>linux添加虚拟内存交换内存</h2><p>当Linux内存不够的情况下，可以适当增加swap内存来分担</p><p>新建交换分区文件夹</p><pre class="line-numbers language-none"><code class="language-none">dd if=/dev/zero of=/tmp/swapfile bs=1024 count=1024k</code></pre><p><img src="https://oss.jayce.icu/markdown/image-20230515155918499.png" alt="image-20230515155918499"></p><p>格式化该分区为交换分区</p><pre class="line-numbers language-none"><code class="language-none">mkswap /tmp/swapfile</code></pre><p>开启该交换分区</p><pre class="line-numbers language-none"><code class="language-none">swapon /tmp/swapfile</code></pre><p>如果报错提示权限不足的话，还需添加权限    </p><p><code>swapon: /tmp/swapfile: insecure permissions 0644, 0600 suggested.</code></p><pre class="line-numbers language-none"><code class="language-none">chmod 600 /tmp/swapfile</code></pre><p> 接着启用sawp</p><pre class="line-numbers language-none"><code class="language-none">swapon /tmp/swapfile</code></pre><p>如果提示报错<code>swapon: /tmp/swapfile: swapon failed: Device or resource busy</code></p><p>先关闭在打开</p><pre class="line-numbers language-none"><code class="language-none">swapoff /tmp/swapfileswapon /tmp/swapfile</code></pre><p> 此时free查看swap内存已添加</p><p>设置</p><p><code>vim /etc/fstab</code></p><p>文件新加</p><pre class="line-numbers language-none"><code class="language-none">vm.swappiness=10      #当内存在使用到100-10=90%的时候，交换分区启动vm.vfs_cache_pressure=50  #虚拟内存回收directory和inode缓冲的倾向，这个值越大。越易回收</code></pre><p>重启生效</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题解决 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ansible的部署配置与简单使用</title>
       <link href="//post/ansible-install.html"/>
       <url>//post/ansible-install.html</url>
@@ -24,9 +51,9 @@
             
             <tag> 服务器 </tag>
             
-            <tag> linux </tag>
-            
             <tag> 部署 </tag>
+            
+            <tag> linux </tag>
             
             <tag> ansible </tag>
             
@@ -57,11 +84,11 @@
             
             <tag> python </tag>
             
-            <tag> shell </tag>
-            
             <tag> WSL </tag>
             
             <tag> vscode </tag>
+            
+            <tag> shell </tag>
             
             <tag> 脚本 </tag>
             
@@ -90,9 +117,9 @@
             
             <tag> linux </tag>
             
-            <tag> mysql </tag>
-            
             <tag> shell </tag>
+            
+            <tag> mysql </tag>
             
         </tags>
       
@@ -186,9 +213,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 服务器 </tag>
+            
+            <tag> Linux </tag>
             
             <tag> shell </tag>
             
@@ -228,7 +255,7 @@
       <link href="//post/mysql-install.html"/>
       <url>//post/mysql-install.html</url>
       
-        <content type="html"><![CDATA[<h1 id="mysql-在ubuntu和centos上的安装"><a href="#mysql-在ubuntu和centos上的安装" class="headerlink" title="mysql 在ubuntu和centos上的安装"></a>mysql 在ubuntu和centos上的安装</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><p>系统：Ubuntu16.04</p><pre class="line-numbers language-none"><code class="language-none">apt-get updateapt-get install mysql-server</code></pre><p>需要注意的是，在安装mysql 后是不可以使用navicat等远程工具进行连接的</p><p>默认安装后，3306端口只绑定给了localhost，所以外网是无法访问的</p><p>解决方法：</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre><p>将bind-address   = 127.0.0.1注释掉</p><p><img src="https://oss.jayce.icu/markdown/202203091514554.png" alt="image-20210721175850771"></p><p>重启即可</p><pre class="line-numbers language-none"><code class="language-none">systemctl restart mysql service mysql restart</code></pre><p> 接着授予权限：</p><h2 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h2><p>系统：centos7</p><p>下载mysql5.7的本地仓库文件</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</code></pre><p>将仓库信息添加至yum</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum -y install mysql57-community-release-el7-10.noarch.rpm</code></pre><p>接着在通过yum进行安装</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum -y install mysql-community-server --nogpgcheck</code></pre><p>此时mysql会取代mariadb</p><p>启动mysql服务</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl start mysqldsystemctl status mysqld</code></pre><p>此时的登陆密码存放在文件里，查看密码，用该初始化密码登录</p><pre class="line-numbers language-none"><code class="language-none">grep "A temporary password is generated" /var/log/mysqld.log|awk '{print $11}'</code></pre><p><img src="https://oss.jayce.icu/markdown/202203091514491.png" alt="image-20220309150733851"></p><p>使用命令登录数据库后，修改该默认密码，否则无法使用</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER USER 'root'@'localhost' IDENTIFIED BY '$Password';</code></pre><p>其中，新密码必须使用大写，小写，数字和特殊字符组成</p><p>开启远程登录</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;flush privileges; </code></pre><p>其中%代表所有ip，password替换为数据库密码。</p><h2 id="centos一键部署脚本"><a href="#centos一键部署脚本" class="headerlink" title="centos一键部署脚本"></a>centos一键部署脚本</h2><p><strong><a href="https://github.com/HeJayce/linux-and-shell/blob/main/mysql/mysql_install.sh">Rate limit · GitHub</a>，初来乍到，有错请指教，默认密码为<code>Abc123!@#</code></strong></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="mysql-在ubuntu和centos上的安装"><a href="#mysql-在ubuntu和centos上的安装" class="headerlink" title="mysql 在ubuntu和centos上的安装"></a>mysql 在ubuntu和centos上的安装</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><p>系统：Ubuntu16.04</p><pre class="line-numbers language-none"><code class="language-none">apt-get updateapt-get install mysql-server</code></pre><p>需要注意的是，在安装mysql 后是不可以使用navicat等远程工具进行连接的</p><p>默认安装后，3306端口只绑定给了localhost，所以外网是无法访问的</p><p>解决方法：</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre><p>将bind-address   = 127.0.0.1注释掉</p><p><img src="https://oss.jayce.icu/markdown/202203091514554.png" alt="image-20210721175850771"></p><p>重启即可</p><pre class="line-numbers language-none"><code class="language-none">systemctl restart mysql service mysql restart</code></pre><p> 接着授予权限：</p><h2 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h2><p>系统：centos7</p><p>下载mysql5.7的本地仓库文件</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</code></pre><p>将仓库信息添加至yum</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum -y install mysql57-community-release-el7-10.noarch.rpm</code></pre><p>接着在通过yum进行安装</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum -y install mysql-community-server --nogpgcheck</code></pre><p>此时mysql会取代mariadb</p><p>启动mysql服务</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl start mysqldsystemctl status mysqld</code></pre><p>此时的登陆密码存放在文件里，查看密码，用该初始化密码登录</p><pre class="line-numbers language-none"><code class="language-none">grep "A temporary password is generated" /var/log/mysqld.log|awk '{print $11}'</code></pre><p><img src="https://oss.jayce.icu/markdown/202203091514491.png" alt="image-20220309150733851"></p><p>使用命令登录数据库后，修改该默认密码，否则无法使用</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER USER 'root'@'localhost' IDENTIFIED BY '$Password';</code></pre><p>其中，新密码必须使用大写，小写，数字和特殊字符组成</p><p>开启远程登录</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;flush privileges; </code></pre><p>其中%代表所有ip，password替换为数据库密码。</p><h2 id="离线部署"><a href="#离线部署" class="headerlink" title="离线部署"></a>离线部署</h2><p>使用下载好的压缩包解压安装</p><p>首先新建一个mysql账户</p><h2 id="centos一键部署脚本"><a href="#centos一键部署脚本" class="headerlink" title="centos一键部署脚本"></a>centos一键部署脚本</h2><p><strong><a href="https://github.com/HeJayce/linux-and-shell/blob/main/mysql/mysql_install.sh">Rate limit · GitHub</a>，初来乍到，有错请指教，默认密码为<code>Abc123!@#</code></strong></p>]]></content>
       
       
       <categories>
