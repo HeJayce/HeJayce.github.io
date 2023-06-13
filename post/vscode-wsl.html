@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="使用vscode在linux环境编写shell和python脚本, Jayce">
+    <meta name="keywords" content="windows环境使用vscode在linux环境编写shell和python脚本, Jayce">
     <meta name="description" content="使用vscode在linux环境编写shell和python脚本">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -30,7 +30,7 @@
 <script async defer data-website-id="10bdd701-05ac-4f44-bddd-18c87dbcfb54" src="https://umami.jayce.icu/umami.js"></script>
 
 
-    <title>使用vscode在linux环境编写shell和python脚本 | Jayce运维站</title>
+    <title>windows环境使用vscode在linux环境编写shell和python脚本 | Jayce运维站</title>
     <link rel="icon" type="image/png" href="https://oss.jayce.icu/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://oss.jayce.icu/code/source/libs/awesome/css/all.min.css">
@@ -42,9 +42,9 @@
     <link rel="stylesheet" type="text/css" href="https://oss.jayce.icu/code/source/css/my.css">
 
     <script src="https://oss.jayce.icu/code/source/libs/jquery/jquery-3.6.0.min.js"></script>
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Jayce运维站" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Jayce运维站" type="application/atom+xml">
 </head>
 
 
@@ -329,7 +329,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用vscode在linux环境编写shell和python脚本</h1>
+                    <h1 class="description center-align post-title">windows环境使用vscode在linux环境编写shell和python脚本</h1>
                 </div>
             </div>
         </div>
@@ -453,16 +453,16 @@
                                 <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/shell/">
-                                <span class="chip bg-color">shell</span>
-                            </a>
-                        
                             <a href="/tags/WSL/">
                                 <span class="chip bg-color">WSL</span>
                             </a>
                         
                             <a href="/tags/vscode/">
                                 <span class="chip bg-color">vscode</span>
+                            </a>
+                        
+                            <a href="/tags/shell/">
+                                <span class="chip bg-color">shell</span>
                             </a>
                         
                             <a href="/tags/%E8%84%9A%E6%9C%AC/">
@@ -497,14 +497,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-16
+                    2023-06-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    854
+                    855
                 </div>
                 
 
@@ -529,16 +529,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用vscode在linux环境编写shell和python脚本"><a href="#使用vscode在linux环境编写shell和python脚本" class="headerlink" title="使用vscode在linux环境编写shell和python脚本"></a>使用vscode在linux环境编写shell和python脚本</h1><p>对于经常编写脚本的人来说，编写shell一般都会在vim或记事本中，这样的方式没什么问题，但遇到需要测试的时候，就没有IDE那样的方便，而且使用IDE对shell的自动补全会让效率翻倍。<br>此文章将讲述如何在vscode中配置Linux运行环境，让你run code即可看到输出。</p>
+                <h1 id="使用vscode在linux环境编写shell和python脚本"><a href="#使用vscode在linux环境编写shell和python脚本" class="headerlink" title="使用vscode在linux环境编写shell和python脚本"></a>使用vscode在linux环境编写shell和python脚本</h1><p>对于经常编写脚本的人来说，编写shell一般都会在vim或记事本中，这样的方式没什么问题，但遇到需要测试的时候，就没有IDE那样的方便，而且使用IDE对shell的自动补全会让效率翻倍。<br>此文章将讲述如何在windows vscode中配置Linux运行环境，让你run code即可看到输出。</p>
 <h2 id="安装vscode"><a href="#安装vscode" class="headerlink" title="安装vscode"></a>安装vscode</h2><p>安装vscode的方式在这就不做大篇的叙述了，百度vscode，下载安装包，点击下一步安装即可<br><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">下载地址点我</a>    </p>
 <h2 id="安装WSL"><a href="#安装WSL" class="headerlink" title="安装WSL"></a>安装WSL</h2><p>简单讲下WSL，这里我们将使用WSL作为脚本的运行环境<br>WSL是一个在Windows 10\11上能够运行原生Linux二进制可执行文件的兼容层。注意它并不是虚拟机。<br>步骤<br>右键单击windows徽标，打开Powershell（管理员），执行</p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></pre>
-
-<p>即可将WSL功能激活。<br>接着在微软商店中挑一个你想用的Linux发行版</p>
+<p>即可将WSL功能激活。</p>
+<p>接着在微软商店中挑一个你想用的Linux发行版</p>
 <p><img src="https://oss.jayce.icu/markdown/image-20221128152641580.png" alt="image-20221128152641580"></p>
 <p>这里我选择了Ubuntu 20，直接点击安装即可。安装成功后，在开始菜单中点击运行，看看是否正常，一般第一次都需要设置用户和密码</p>
 <p><img src="https://oss.jayce.icu/markdown/image-20221128152909237.png" alt="image-20221128152909237"></p>
-<p>这就是wsl Ubuntu的界面，当你正常设置好用户名和密码，出现这个节目后，说明你的WSL安装正常了<img src="https://oss.jayce.icu/markdown/image-20221128152945459.png" alt="image-20221128152945459"></p>
+<p>这就是wsl Ubuntu的界面，当你正常设置好用户名和密码，出现这个界面后，说明你的WSL安装正常了<img src="https://oss.jayce.icu/markdown/image-20221128152945459.png" alt="image-20221128152945459"></p>
 <h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>想必大家肯定不是第一次使用vscode的人了，就直接开门见山，直说需要安装什么插件好了</p>
 <ul>
 <li>Code Runner</li>
@@ -647,16 +647,16 @@
                                     <span class="chip bg-color">python</span>
                                 </a>
                             
-                                <a href="/tags/shell/">
-                                    <span class="chip bg-color">shell</span>
-                                </a>
-                            
                                 <a href="/tags/WSL/">
                                     <span class="chip bg-color">WSL</span>
                                 </a>
                             
                                 <a href="/tags/vscode/">
                                     <span class="chip bg-color">vscode</span>
+                                </a>
+                            
+                                <a href="/tags/shell/">
+                                    <span class="chip bg-color">shell</span>
                                 </a>
                             
                                 <a href="/tags/%E8%84%9A%E6%9C%AC/">
