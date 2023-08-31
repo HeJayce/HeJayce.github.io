@@ -6,7 +6,7 @@
   <link href="https://jayce.icu/atom.xml" rel="self"/>
   
   <link href="https://jayce.icu/"/>
-  <updated>2023-05-16T01:59:59.320Z</updated>
+  <updated>2023-08-02T02:08:24.348Z</updated>
   <id>https://jayce.icu/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python</title>
+    <link href="https://jayce.icu/post/python.html"/>
+    <id>https://jayce.icu/post/python.html</id>
+    <published>2023-08-01T07:14:50.000Z</published>
+    <updated>2023-08-02T02:08:24.348Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;python-内置函数&quot;&gt;&lt;a href=&quot;#python-内置函数&quot; class=&quot;headerlink&quot; title=&quot;python 内置函数&quot;&gt;&lt;/a&gt;python 内置函数&lt;/h1&gt;&lt;h2 id=&quot;Python-open&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>linux添加虚拟内存交换内存</title>
@@ -68,9 +89,9 @@
     
     <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-    <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
-    
     <category term="部署" scheme="https://jayce.icu/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
     
     <category term="ansible" scheme="https://jayce.icu/tags/ansible/"/>
     
@@ -101,11 +122,11 @@
     
     <category term="python" scheme="https://jayce.icu/tags/python/"/>
     
+    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
+    
     <category term="WSL" scheme="https://jayce.icu/tags/WSL/"/>
     
     <category term="vscode" scheme="https://jayce.icu/tags/vscode/"/>
-    
-    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
     <category term="脚本" scheme="https://jayce.icu/tags/%E8%84%9A%E6%9C%AC/"/>
     
@@ -171,7 +192,7 @@
     <link href="https://jayce.icu/post/mysql.html"/>
     <id>https://jayce.icu/post/mysql.html</id>
     <published>2022-06-29T01:59:03.000Z</published>
-    <updated>2023-02-15T07:31:48.037Z</updated>
+    <updated>2023-08-02T02:08:27.637Z</updated>
     
     
       
@@ -216,9 +237,9 @@
     
     <category term="阿里云" scheme="https://jayce.icu/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
-    <category term="hexo" scheme="https://jayce.icu/tags/hexo/"/>
-    
     <category term="https" scheme="https://jayce.icu/tags/https/"/>
+    
+    <category term="hexo" scheme="https://jayce.icu/tags/hexo/"/>
     
     <category term="博客" scheme="https://jayce.icu/tags/%E5%8D%9A%E5%AE%A2/"/>
     
@@ -245,9 +266,9 @@
     
     
     
-    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
-    
     <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
     
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
@@ -420,9 +441,9 @@
     
     <category term="阿里云" scheme="https://jayce.icu/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
-    <category term="Jenkins" scheme="https://jayce.icu/tags/Jenkins/"/>
-    
     <category term="hexo" scheme="https://jayce.icu/tags/hexo/"/>
+    
+    <category term="Jenkins" scheme="https://jayce.icu/tags/Jenkins/"/>
     
   </entry>
   
