@@ -266,9 +266,9 @@
     
     
     
-    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
-    
     <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
     
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
