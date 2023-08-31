@@ -236,41 +236,6 @@
 
   
   <url>
-    <loc>https://jayce.icu/tags/%E8%BF%90%E7%BB%B4/</loc>
-    <lastmod>2023-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2023-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2023-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/linux/</loc>
-    <lastmod>2023-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/ansible/</loc>
-    <lastmod>2023-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jayce.icu/tags/Prometheus/</loc>
     <lastmod>2023-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -299,6 +264,41 @@
   </url>
   
   <url>
+    <loc>https://jayce.icu/tags/%E8%BF%90%E7%BB%B4/</loc>
+    <lastmod>2023-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2023-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/linux/</loc>
+    <lastmod>2023-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2023-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/ansible/</loc>
+    <lastmod>2023-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jayce.icu/tags/github/</loc>
     <lastmod>2023-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -307,13 +307,6 @@
   
   <url>
     <loc>https://jayce.icu/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
-    <lastmod>2023-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/v2ray/</loc>
     <lastmod>2023-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -355,6 +348,13 @@
   </url>
   
   <url>
+    <loc>https://jayce.icu/tags/v2ray/</loc>
+    <lastmod>2023-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jayce.icu/tags/python/</loc>
     <lastmod>2023-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -377,6 +377,20 @@
   
   <url>
     <loc>https://jayce.icu/tags/mysql/</loc>
+    <lastmod>2023-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/OSS/</loc>
+    <lastmod>2023-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jayce.icu/tags/typora/</loc>
     <lastmod>2023-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -410,20 +424,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://jayce.icu/tags/OSS/</loc>
-    <lastmod>2023-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayce.icu/tags/typora/</loc>
-    <lastmod>2023-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -448,14 +448,14 @@
   </url>
   
   <url>
-    <loc>https://jayce.icu/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
+    <loc>https://jayce.icu/categories/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jayce.icu/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://jayce.icu/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
     <lastmod>2023-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

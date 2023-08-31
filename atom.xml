@@ -89,9 +89,9 @@
     
     <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-    <category term="部署" scheme="https://jayce.icu/tags/%E9%83%A8%E7%BD%B2/"/>
-    
     <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
+    
+    <category term="部署" scheme="https://jayce.icu/tags/%E9%83%A8%E7%BD%B2/"/>
     
     <category term="ansible" scheme="https://jayce.icu/tags/ansible/"/>
     
@@ -266,9 +266,9 @@
     
     
     
-    <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
     <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
+    
+    <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
