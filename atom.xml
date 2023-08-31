@@ -122,11 +122,11 @@
     
     <category term="python" scheme="https://jayce.icu/tags/python/"/>
     
-    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
-    
     <category term="WSL" scheme="https://jayce.icu/tags/WSL/"/>
     
     <category term="vscode" scheme="https://jayce.icu/tags/vscode/"/>
+    
+    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
     <category term="脚本" scheme="https://jayce.icu/tags/%E8%84%9A%E6%9C%AC/"/>
     
@@ -156,9 +156,9 @@
     
     <category term="linux" scheme="https://jayce.icu/tags/linux/"/>
     
-    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
-    
     <category term="mysql" scheme="https://jayce.icu/tags/mysql/"/>
+    
+    <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
   </entry>
   
@@ -266,9 +266,9 @@
     
     
     
-    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
-    
     <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
     
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
