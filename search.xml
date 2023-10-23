@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>opengauss(华为高斯数据库) 在docker上的安装</title>
+      <link href="//post/opengauss-docker-install.html"/>
+      <url>//post/opengauss-docker-install.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="centos系统下使用docker安装opengauss数据库（单机）"><a href="#centos系统下使用docker安装opengauss数据库（单机）" class="headerlink" title="centos系统下使用docker安装opengauss数据库（单机）"></a>centos系统下使用docker安装opengauss数据库（单机）</h1><h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><h2 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker pull enmotech/opengauss:latest</code></pre><h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><p>在基础的启动命令基础上，增加了环境变量、端口映射于持久化存储数据</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -v /enmotech/opengauss:/var/lib/opengauss -u root -p 5432:5432 enmotech/opengauss:latest</code></pre><h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><ul><li>GS_PASSWORD：设置openGauss数据库的超级用户omm以及测试用户gaussdb的密码。如果要从容器外部（其它主机或者其它容器）连接则必须要输入密码。</li><li>GS_NODENAME：数据库节点名称，默认为gaussdb。</li><li>GS_USERNAME：数据库连接用户名，默认为gaussdb。</li><li>GS_PORT：数据库端口，默认为5432。</li></ul><h3 id="端口映射"><a href="#端口映射" class="headerlink" title="端口映射"></a>端口映射</h3><p>openGauss的默认监听启动在容器内的5432端口上，如果想要从容器外部访问数据库，则需要在<code>docker run</code>的时候指定<code>-p</code>参数。比如以下命令将允许使用外部的5432端口访问容器数据库。</p><h3 id="持久化存储数据"><a href="#持久化存储数据" class="headerlink" title="持久化存储数据"></a>持久化存储数据</h3><p>容器一旦被删除，容器内的所有数据和配置也均会丢失，通过在<code>docker run</code>的时候指定<code>-v</code>参数来实现。比如以下命令将会指定将openGauss的所有数据文件存储在宿主机的/enmotech/opengauss下。<code>-u root</code>参数用于指定容器启动的时候以root用户执行脚本，否则会遇到没有权限创建数据文件目录的问题。</p><p>使用<code>docker ps -a</code>查看容器是否启动</p><h2 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker exec -it opengauss /bin/bash</code></pre><p>进入容器后是root账户，切换至omm账户</p><pre class="line-numbers language-none"><code class="language-none">su - omm</code></pre><p>在omm账户下即可使用连接命令进入数据库</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">gsql</code></pre><p><img src="https://oss.jayce.icu/markdown/image-20231023150447811.png" alt="image-20231023150447811"></p><h2 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h2><p><img src="https://oss.jayce.icu/markdown/image-20231023150634936.png" alt="image-20231023150634936"></p><p>在远程接入数据库时出现FATAL: Forbid remote connection with initial user报错，该原因禁止omm账户登录，解决方法为创建远程账户接入。</p><p>具体步骤：</p><ul><li><p>增加需要访问计算机的 IP 地址</p></li><li><p>对所有 IP 地址进行开放：0.0.0.0/0</p></li><li><p>修改 trust 替换成 md5 加密方式</p><ul><li>```sh<br>vim /var/lib/opengauss/data/pg_hba.conf<br>#在IPv4 local connections下新加一行<br>host    all             all             0.0.0.0/0               md5<pre class="line-numbers language-none"><code class="language-none">- 修改监听地址和加密方式  - ```sh    vim /var/lib/opengauss/data/postgresql.conf    #修改成下面两行    listen_addresses = '*'    password_encryption_type = 0</code></pre></li><li>重启<ul><li>```sh<br>gs_om -t stop<br>gs_om -t start<pre class="line-numbers language-none"><code class="language-none">- 创建远程登录用户：```sqlcreate user testuser password 'openGauss!666';</code></pre></li></ul></li></ul><p>再使用远程账户登录</p><p><img src="https://oss.jayce.icu/markdown/image-20231023153259026.png" alt="image-20231023153259026"></p></li></ul><p>vim提示没有该命令：</p><p>root下安装vim</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">apt-get updateapt -y install vim</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 部署 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> opengauss </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python</title>
       <link href="//post/python.html"/>
       <url>//post/python.html</url>
@@ -97,11 +124,11 @@
             
             <tag> python </tag>
             
-            <tag> shell </tag>
-            
             <tag> WSL </tag>
             
             <tag> vscode </tag>
+            
+            <tag> shell </tag>
             
             <tag> 脚本 </tag>
             
@@ -201,9 +228,9 @@
             
             <tag> 阿里云 </tag>
             
-            <tag> hexo </tag>
-            
             <tag> https </tag>
+            
+            <tag> hexo </tag>
             
             <tag> 博客 </tag>
             
@@ -226,9 +253,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 服务器 </tag>
+            
+            <tag> Linux </tag>
             
             <tag> shell </tag>
             
@@ -400,9 +427,9 @@
             
             <tag> 阿里云 </tag>
             
-            <tag> Jenkins </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> Jenkins </tag>
             
         </tags>
       
