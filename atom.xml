@@ -6,7 +6,7 @@
   <link href="https://jayce.icu/atom.xml" rel="self"/>
   
   <link href="https://jayce.icu/"/>
-  <updated>2023-10-23T07:34:25.331Z</updated>
+  <updated>2023-10-23T08:38:29.957Z</updated>
   <id>https://jayce.icu/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://jayce.icu/post/opengauss-docker-install.html"/>
     <id>https://jayce.icu/post/opengauss-docker-install.html</id>
     <published>2023-10-23T06:14:07.000Z</published>
-    <updated>2023-10-23T07:34:25.331Z</updated>
+    <updated>2023-10-23T08:38:29.957Z</updated>
     
     
       
@@ -293,9 +293,9 @@
     
     
     
-    <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
     <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
+    
+    <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
