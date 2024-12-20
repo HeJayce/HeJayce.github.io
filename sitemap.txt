@@ -1,3 +1,4 @@
+https://jayce.icu/post/aliyun-move.html
 https://jayce.icu/post/opengauss-docker-install.html
 https://jayce.icu/post/mysql.html
 https://jayce.icu/post/python.html
@@ -13,7 +14,6 @@ https://jayce.icu/post/ansible-install.html
 https://jayce.icu/post/shell.html
 https://jayce.icu/post/linux.html
 https://jayce.icu/post/jupyter-notebook.html
-https://jayce.icu/post/ecs-github.html
 https://jayce.icu/tags/index.html
 https://jayce.icu/friends/index.html
 https://jayce.icu/contact/index.html
@@ -43,7 +43,6 @@ https://jayce.icu/tags/%E5%8D%9A%E5%AE%A2/
 https://jayce.icu/tags/Markdown/
 https://jayce.icu/tags/python/
 https://jayce.icu/tags/jupyter-notebook/
-https://jayce.icu/tags/v2ray/
 https://jayce.icu/tags/mysql/
 https://jayce.icu/tags/opengauss/
 https://jayce.icu/tags/%E7%BD%91%E7%BB%9C/

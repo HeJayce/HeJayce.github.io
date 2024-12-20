@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>aliyun_move</title>
+      <link href="//post/aliyun-move.html"/>
+      <url>//post/aliyun-move.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>opengauss(华为高斯数据库) 在docker上的安装</title>
       <link href="//post/opengauss-docker-install.html"/>
       <url>//post/opengauss-docker-install.html</url>
@@ -494,41 +507,6 @@
             <tag> OSS </tag>
             
             <tag> typora </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>阿里云等国内服务器github加速</title>
-      <link href="//post/ecs-github.html"/>
-      <url>//post/ecs-github.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="阿里云等国内服务器github加速"><a href="#阿里云等国内服务器github加速" class="headerlink" title="阿里云等国内服务器github加速"></a>阿里云等国内服务器github加速</h1><p>解决在阿里云等国内的服务器上从github上拉代码，但网络不通的情况。</p><p>准备一个v2ray节点</p><h3 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h3><h4 id="安装v2ray"><a href="#安装v2ray" class="headerlink" title="安装v2ray"></a>安装v2ray</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh  --user-agent="Mozilla/5.0"</code></pre><p>如果下载不下来，请通过ftp等方式上传</p><h4 id="运行下载的脚本"><a href="#运行下载的脚本" class="headerlink" title="运行下载的脚本"></a>运行下载的脚本</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">bash install-release.sh</code></pre><p>这个过程时间会有点长，但实测阿里云网络可以安装</p><h4 id="运行v2ray"><a href="#运行v2ray" class="headerlink" title="运行v2ray"></a>运行v2ray</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl start v2ray</code></pre><p><img src="https://oss.jayce.icu/markdown/202201292331756.png" alt="image-20220129233139100"></p><h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>在你的Windows 等v2ray客户端下，将配置文件config.json的内容复制到<code>/usr/local/etc/v2ray/config.json</code>下</p><p>   方法：</p><p>   <img src="https://oss.jayce.icu/markdown/202201292333040.png" alt="image-20220129233337800"></p><h4 id="重启v2ray"><a href="#重启v2ray" class="headerlink" title="重启v2ray"></a>重启v2ray</h4><h4 id="使用下命名可测试节点"><a href="#使用下命名可测试节点" class="headerlink" title="使用下命名可测试节点"></a>使用下命名可测试节点</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">/usr/local/bin/v2ray -test -config /usr/local/etc/v2ray/config.json</code></pre><p><img src="https://oss.jayce.icu/markdown/202201292335792.png" alt="image-20220129233516568"></p><p>检查端口是否通畅</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">lsof -i:10809</code></pre><p><img src="https://oss.jayce.icu/markdown/202201292336185.png" alt="image-20220129233619810"></p><p><code>lsof</code>没有命令的可yum install lsof</p><h4 id="添加github代理"><a href="#添加github代理" class="headerlink" title="添加github代理"></a>添加github代理</h4>   <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git config --global http.proxy http://127.0.0.1:10809git config --global https.proxy http://127.0.0.1:10809</code></pre><p>此时再克隆代码速度飞快</p><p><img src="https://oss.jayce.icu/markdown/202201292339343.png" alt="image-20220129233925182"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 部署 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 运维 </tag>
-            
-            <tag> 服务器 </tag>
-            
-            <tag> linux </tag>
-            
-            <tag> github </tag>
-            
-            <tag> 阿里云 </tag>
-            
-            <tag> v2ray </tag>
             
         </tags>
       
