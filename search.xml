@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>aliyun_move</title>
-      <link href="//post/aliyun-move.html"/>
-      <url>//post/aliyun-move.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>opengauss(华为高斯数据库) 在docker上的安装</title>
       <link href="//post/opengauss-docker-install.html"/>
       <url>//post/opengauss-docker-install.html</url>
@@ -38,6 +25,19 @@
             <tag> opengauss </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>aliyun_move</title>
+      <link href="//post/aliyun-move.html"/>
+      <url>//post/aliyun-move.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       
     </entry>
     
@@ -266,9 +266,9 @@
       
         <tags>
             
-            <tag> 服务器 </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> 服务器 </tag>
             
             <tag> shell </tag>
             

@@ -6,7 +6,7 @@
   <link href="https://jayce.icu/atom.xml" rel="self"/>
   
   <link href="https://jayce.icu/"/>
-  <updated>2024-07-08T08:22:27.653Z</updated>
+  <updated>2025-03-27T07:50:18.141Z</updated>
   <id>https://jayce.icu/</id>
   
   <author>
@@ -17,24 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>aliyun_move</title>
-    <link href="https://jayce.icu/post/aliyun-move.html"/>
-    <id>https://jayce.icu/post/aliyun-move.html</id>
-    <published>2024-07-08T08:22:27.000Z</published>
-    <updated>2024-07-08T08:22:27.653Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>opengauss(华为高斯数据库) 在docker上的安装</title>
     <link href="https://jayce.icu/post/opengauss-docker-install.html"/>
     <id>https://jayce.icu/post/opengauss-docker-install.html</id>
-    <published>2023-10-23T06:14:07.000Z</published>
-    <updated>2023-10-24T07:47:34.336Z</updated>
+    <published>2024-10-23T06:14:07.000Z</published>
+    <updated>2025-03-27T07:50:18.141Z</updated>
     
     
       
@@ -53,6 +40,19 @@
     <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     <category term="opengauss" scheme="https://jayce.icu/tags/opengauss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>aliyun_move</title>
+    <link href="https://jayce.icu/post/aliyun-move.html"/>
+    <id>https://jayce.icu/post/aliyun-move.html</id>
+    <published>2024-07-08T08:22:27.000Z</published>
+    <updated>2024-07-08T08:22:27.653Z</updated>
+    
+    
+    
+    
     
   </entry>
   
@@ -306,9 +306,9 @@
     
     
     
-    <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
     <category term="Linux" scheme="https://jayce.icu/tags/Linux/"/>
+    
+    <category term="服务器" scheme="https://jayce.icu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     <category term="shell" scheme="https://jayce.icu/tags/shell/"/>
     
