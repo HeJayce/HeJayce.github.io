@@ -237,9 +237,9 @@
             
             <tag> 服务器 </tag>
             
-            <tag> github </tag>
-            
             <tag> 阿里云 </tag>
+            
+            <tag> github </tag>
             
             <tag> https </tag>
             
@@ -407,9 +407,9 @@
             
             <tag> linux </tag>
             
-            <tag> 阿里云 </tag>
-            
             <tag> Jenkins </tag>
+            
+            <tag> 阿里云 </tag>
             
         </tags>
       
@@ -436,13 +436,13 @@
             
             <tag> linux </tag>
             
-            <tag> github </tag>
+            <tag> Jenkins </tag>
             
             <tag> 阿里云 </tag>
             
-            <tag> hexo </tag>
+            <tag> github </tag>
             
-            <tag> Jenkins </tag>
+            <tag> hexo </tag>
             
         </tags>
       
