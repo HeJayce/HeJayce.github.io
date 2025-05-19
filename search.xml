@@ -237,9 +237,9 @@
             
             <tag> 服务器 </tag>
             
-            <tag> 阿里云 </tag>
-            
             <tag> github </tag>
+            
+            <tag> 阿里云 </tag>
             
             <tag> https </tag>
             
@@ -393,7 +393,7 @@
       <link href="//post/jenkins-install.html"/>
       <url>//post/jenkins-install.html</url>
       
-        <content type="html"><![CDATA[<h1 id="Jenkins-安装"><a href="#Jenkins-安装" class="headerlink" title="Jenkins 安装"></a>Jenkins 安装</h1><h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><h3 id="下载jdk"><a href="#下载jdk" class="headerlink" title="下载jdk"></a>下载jdk</h3><p>进入<a href="https://www.oracle.com/java/technologies/downloads/#java8">JDK下载官网</a> 下载JDK</p><p>这里选择下载131版本，如果版本较新也没问题，<a href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html">老版本下载链接</a> </p><p>在服务器下创建安装的文件夹，在<code>usr</code>文件夹下创建java文件夹</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mkdir -p /usr/java</code></pre><p>将下载好的JDK解压至该文件夹</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tar -zvxf jdk-8u131-linux-x64.tar.gz -C /usr/java</code></pre><h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>与windows类似，Linux下配置环境变量只需修改配置文件即可</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vim /etc/profile</code></pre><p>在文件下添加：</p><pre class="line-numbers language-none"><code class="language-none">#javaexport JAVA_HOME=/usr/java/jdk1.8.0_131export PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</code></pre><p>执行<code>source /etc/profile</code>生效</p><p>执行<code>java -version</code> 如果返回版本号则安装成功</p><h2 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h2><h3 id="yum源导入"><a href="#yum源导入" class="headerlink" title="yum源导入"></a>yum源导入</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#添加Yum源wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo</code></pre><p>如果该步骤无法下载，报错ERROR: cannot verify pkg.jenkins.io’s certificate, issued by ‘/C=US/O=Let’s Encrypt/CN=R3’:</p><p>这是因为wget命令下载不安全的https 域名下的内容，此时需要安装ca-certificates</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum install -y ca-certificates</code></pre><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#导入密钥rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key</code></pre><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum install -y jenkins</code></pre><p>如果缺少daemonize，则同样yum安装daemonize</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>访问IP+8080 端口即可访问Jenkins界面</p><p><img src="https://oss.jayce.icu/markdown/202203081427668.png" alt="image-20220308142711995"></p><p>如果不能访问请检查防火墙，添加8080端口</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">firewall-cmd --add-port=8080/tcp --permanentfirewall-cmd --reload</code></pre><p>第一次打开需要解锁Jenkins，查看web端提示的密码文件</p><p><img src="https://oss.jayce.icu/markdown/202203081429423.png" alt="image-20220308142939118"></p><p>将此行密码复制进去即可</p><p>接着选择安装推荐的插件</p><p><img src="https://oss.jayce.icu/markdown/202203081430531.png" alt="image-20220308143042461"></p><p>等待即可</p><p><img src="https://oss.jayce.icu/markdown/202203081431177.png" alt="image-20220308143106111"></p><p>创建管理员</p><p><img src="https://oss.jayce.icu/markdown/202203081445918.png" alt="image-20220308144503922"></p><p>URL可自愿修改</p><p><img src="https://oss.jayce.icu/markdown/202203081458412.png" alt="image-20220308144542253"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Jenkins-安装"><a href="#Jenkins-安装" class="headerlink" title="Jenkins 安装"></a>Jenkins 安装</h1><h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><h3 id="下载jdk"><a href="#下载jdk" class="headerlink" title="下载jdk"></a>下载jdk</h3><p>进入<a href="https://www.oracle.com/java/technologies/downloads/#java8">JDK下载官网</a> 下载JDK</p><p>这里选择下载131版本，如果版本较新也没问题，<a href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html">老版本下载链接</a> </p><p>在服务器下创建安装的文件夹，在<code>usr</code>文件夹下创建java文件夹</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mkdir -p /usr/java</code></pre><p>将下载好的JDK解压至该文件夹 hello</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tar -zvxf jdk-8u131-linux-x64.tar.gz -C /usr/java</code></pre><h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>与windows类似，Linux下配置环境变量只需修改配置文件即可</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vim /etc/profile</code></pre><p>在文件下添加：</p><pre class="line-numbers language-none"><code class="language-none">#javaexport JAVA_HOME=/usr/java/jdk1.8.0_131export PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</code></pre><p>执行<code>source /etc/profile</code>生效</p><p>执行<code>java -version</code> 如果返回版本号则安装成功</p><h2 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h2><h3 id="yum源导入"><a href="#yum源导入" class="headerlink" title="yum源导入"></a>yum源导入</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#添加Yum源wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo</code></pre><p>如果该步骤无法下载，报错ERROR: cannot verify pkg.jenkins.io’s certificate, issued by ‘/C=US/O=Let’s Encrypt/CN=R3’:</p><p>这是因为wget命令下载不安全的https 域名下的内容，此时需要安装ca-certificates</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum install -y ca-certificates</code></pre><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#导入密钥rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key</code></pre><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum install -y jenkins</code></pre><p>如果缺少daemonize，则同样yum安装daemonize</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>访问IP+8080 端口即可访问Jenkins界面</p><p><img src="https://oss.jayce.icu/markdown/202203081427668.png" alt="image-20220308142711995"></p><p>如果不能访问请检查防火墙，添加8080端口</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">firewall-cmd --add-port=8080/tcp --permanentfirewall-cmd --reload</code></pre><p>第一次打开需要解锁Jenkins，查看web端提示的密码文件</p><p><img src="https://oss.jayce.icu/markdown/202203081429423.png" alt="image-20220308142939118"></p><p>将此行密码复制进去即可</p><p>接着选择安装推荐的插件</p><p><img src="https://oss.jayce.icu/markdown/202203081430531.png" alt="image-20220308143042461"></p><p>等待即可</p><p><img src="https://oss.jayce.icu/markdown/202203081431177.png" alt="image-20220308143106111"></p><p>创建管理员</p><p><img src="https://oss.jayce.icu/markdown/202203081445918.png" alt="image-20220308144503922"></p><p>URL可自愿修改</p><p><img src="https://oss.jayce.icu/markdown/202203081458412.png" alt="image-20220308144542253"></p>]]></content>
       
       
       <categories>
@@ -407,9 +407,9 @@
             
             <tag> linux </tag>
             
-            <tag> Jenkins </tag>
-            
             <tag> 阿里云 </tag>
+            
+            <tag> Jenkins </tag>
             
         </tags>
       
@@ -436,13 +436,13 @@
             
             <tag> linux </tag>
             
-            <tag> Jenkins </tag>
+            <tag> github </tag>
             
             <tag> 阿里云 </tag>
             
-            <tag> github </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> Jenkins </tag>
             
         </tags>
       

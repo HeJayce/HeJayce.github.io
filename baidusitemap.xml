@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://jayce.icu//post/jenkins-install.html</loc>
+    <lastmod>2025-05-19</lastmod>
+  </url>
+  <url>
     <loc>https://jayce.icu//post/opengauss-docker-install.html</loc>
     <lastmod>2025-03-27</lastmod>
   </url>
@@ -62,10 +66,6 @@
   </url>
   <url>
     <loc>https://jayce.icu//post/watchdog.html</loc>
-    <lastmod>2022-11-15</lastmod>
-  </url>
-  <url>
-    <loc>https://jayce.icu//post/jenkins-install.html</loc>
     <lastmod>2022-11-15</lastmod>
   </url>
   <url>
